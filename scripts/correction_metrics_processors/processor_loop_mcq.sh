@@ -4,7 +4,7 @@
 # Processes all configurations for MMLU datasets with progress tracking
 
 set -e  # Exit on error
-CORRECTION_METHOD="SPECIFIC" # Can be "SPECIFIC", "BOS", "BC", or "CC"
+CORRECTION_METHOD="SPECIFIC" # Can be "SPECIFIC", "BC", or "CC"
 ######################################################################
 
 # Color codes for output

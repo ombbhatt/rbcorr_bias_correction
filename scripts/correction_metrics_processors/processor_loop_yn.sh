@@ -4,7 +4,7 @@
 # Processes all configurations for Yes-No datasets with progress tracking
 
 set -e  # Exit on error
-CORRECTION_METHOD="SPECIFIC" # Can be "SPECIFIC", "BOS", "BC", or "CC"
+CORRECTION_METHOD="SPECIFIC" # Can be "SPECIFIC", "BC", or "CC"
 ######################################################################
 
 # Color codes for output
@@ -19,8 +19,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [ "$CORRECTION_METHOD" == "SPECIFIC" ]; then
     PROCESSOR_SCRIPT="${SCRIPT_DIR}/process_specific_metrics.py"
-elif [ "$CORRECTION_METHOD" == "BOS" ]; then
-    PROCESSOR_SCRIPT="${SCRIPT_DIR}/process_bos_metrics.py"
 elif [ "$CORRECTION_METHOD" == "BC" ]; then
     PROCESSOR_SCRIPT="${SCRIPT_DIR}/process_batchcalib_metrics.py"
 elif [ "$CORRECTION_METHOD" == "CC" ]; then
