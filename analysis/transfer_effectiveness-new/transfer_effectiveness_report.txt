@@ -1,0 +1,422 @@
+================================================================================
+TRANSFER EFFECTIVENESS ANALYSIS REPORT
+================================================================================
+
+BASELINE (SAME-CONDITION) EFFECTIVENESS
+--------------------------------------------------------------------------------
+Total baseline configurations analyzed: 3695
+
+Accuracy Improvement:
+  Success rate (Δacc > 0): 70.9%
+  Mean Δ accuracy (all): +0.0224
+  Mean Δ accuracy (successful only): +0.0334
+  Best improvement: +0.2938
+  Worst degradation: -0.0325
+
+Bias Reduction:
+  Success rate (bias reduced): 13.2%
+  Mean Δ bias: -0.1907
+  Best bias reduction: +0.1381
+  Worst bias increase: -0.9638
+
+
+================================================================================
+BASELINE EFFECTIVENESS BY CALIBRATION SET SIZE (ALL QUESTION TYPES)
+================================================================================
+
+Size       Success Rate    Mean Δacc       Median Δacc     Std Δacc       
+--------------------------------------------------------------------------------
+10                 55.3%         0.0189         0.0013         0.0470
+20                 65.7%         0.0216         0.0039         0.0471
+50                 71.1%         0.0231         0.0050         0.0472
+100                71.7%         0.0307         0.0089         0.0562
+200                74.2%         0.0229         0.0070         0.0452
+300                72.9%         0.0311         0.0096         0.0562
+400                75.0%         0.0231         0.0070         0.0453
+500                72.9%         0.0313         0.0101         0.0562
+600                77.1%         0.0150         0.0055         0.0285
+800                76.7%         0.0150         0.0055         0.0285
+1000               77.1%         0.0151         0.0055         0.0284
+
+BASELINE EFFECTIVENESS BY CALIBRATION SET SIZE (YES-NO QUESTIONS)
+--------------------------------------------------------------------------------
+
+Size       Success Rate    Mean Δacc       Median Δacc     Std Δacc       
+--------------------------------------------------------------------------------
+10                 62.5%         0.0266         0.0063         0.0558
+20                 68.2%         0.0286         0.0067         0.0560
+50                 70.8%         0.0300         0.0085         0.0561
+100                71.7%         0.0307         0.0089         0.0562
+200                72.1%         0.0310         0.0093         0.0562
+300                72.9%         0.0311         0.0096         0.0562
+400                73.3%         0.0312         0.0098         0.0563
+500                72.9%         0.0313         0.0101         0.0562
+
+BASELINE EFFECTIVENESS BY CALIBRATION SET SIZE (MCQ QUESTIONS)
+--------------------------------------------------------------------------------
+
+Size       Success Rate    Mean Δacc       Median Δacc     Std Δacc       
+--------------------------------------------------------------------------------
+10                 46.4%         0.0093        -0.0006         0.0304
+20                 62.5%         0.0128         0.0018         0.0306
+50                 71.4%         0.0145         0.0026         0.0309
+200                76.2%         0.0149         0.0053         0.0285
+400                76.7%         0.0150         0.0055         0.0284
+600                77.1%         0.0150         0.0055         0.0285
+800                76.7%         0.0150         0.0055         0.0285
+1000               77.1%         0.0151         0.0055         0.0284
+
+
+================================================================================
+OVERALL TRANSFER EFFECTIVENESS (ALL QUESTION TYPES)
+
+================================================================================
+OVERALL TRANSFER EFFECTIVENESS (ALL QUESTION TYPES)
+--------------------------------------------------------------------------------
+Total transfer configurations analyzed: 7296
+
+Accuracy Improvement:
+  Success rate (Δacc > 0): 48.9%
+  Mean Δ accuracy (all): -0.0029
+  Mean Δ accuracy (successful only): +0.0252
+  Best improvement: +0.2925
+  Worst degradation: -0.4192
+
+Bias Reduction:
+  Success rate (bias reduced): 47.9%
+  Mean Δ bias: +0.0057
+  Best bias reduction: +0.9991
+  Worst bias increase: -0.9033
+
+
+================================================================================
+TRANSFER VS BASELINE COMPARISON
+================================================================================
+
+OVERALL (All Question Types)
+--------------------------------------------------------------------------------
+Baseline: 70.9% success, +0.0224 mean Δacc
+
+  CROSS DATASET:
+    Success rate: 57.3% (-13.6% vs baseline, 80.8% of baseline)
+    Mean Δacc: +0.0107 (-0.0117 vs baseline)
+
+  CROSS MODEL:
+    Success rate: 43.8% (-27.2% vs baseline, 61.7% of baseline)
+    Mean Δacc: -0.0128 (-0.0352 vs baseline)
+
+  CROSS PROMPT:
+    Success rate: 43.9% (-27.0% vs baseline, 61.9% of baseline)
+    Mean Δacc: -0.0087 (-0.0311 vs baseline)
+
+
+YES-NO QUESTIONS
+--------------------------------------------------------------------------------
+Baseline: 70.6% success, +0.0301 mean Δacc
+
+  CROSS DATASET:
+    Success rate: 49.4% (-21.1% vs baseline, 70.1% of baseline)
+    Mean Δacc: +0.0089 (-0.0211 vs baseline)
+
+  CROSS MODEL:
+    Success rate: 44.7% (-25.8% vs baseline, 63.4% of baseline)
+    Mean Δacc: -0.0142 (-0.0443 vs baseline)
+
+  CROSS PROMPT:
+    Success rate: 37.9% (-32.6% vs baseline, 53.7% of baseline)
+    Mean Δacc: -0.0168 (-0.0469 vs baseline)
+
+
+MCQ QUESTIONS
+--------------------------------------------------------------------------------
+Baseline: 71.3% success, +0.0141 mean Δacc
+
+  CROSS DATASET:
+    Success rate: 66.1% (-5.2% vs baseline, 92.7% of baseline)
+    Mean Δacc: +0.0127 (-0.0014 vs baseline)
+
+  CROSS MODEL:
+    Success rate: 42.7% (-28.7% vs baseline, 59.8% of baseline)
+    Mean Δacc: -0.0112 (-0.0253 vs baseline)
+
+  CROSS PROMPT:
+    Success rate: 50.6% (-20.8% vs baseline, 70.9% of baseline)
+    Mean Δacc: +0.0004 (-0.0137 vs baseline)
+
+
+================================================================================
+EFFECTIVENESS BY QUESTION TYPE
+================================================================================
+
+YES-NO QUESTIONS
+--------------------------------------------------------------------------------
+BASELINE (Same-Condition):
+  Total configurations: 1919
+  Success rate: 70.6%
+  Mean Δ accuracy: +0.0301
+  Mean Δ bias: -0.1907
+
+TRANSFER (All Modalities):
+  Total configurations: 3840
+  Success rate: 44.8%
+  Mean Δ accuracy: -0.0062
+  Mean Δ bias: +0.0057
+
+MULTIPLE CHOICE QUESTIONS (MMLU)
+--------------------------------------------------------------------------------
+BASELINE (Same-Condition):
+  Total configurations: 1776
+  Success rate: 71.3%
+  Mean Δ accuracy: +0.0141
+  Mean Δ bias: -0.0375
+
+TRANSFER (All Modalities):
+  Total configurations: 3456
+  Success rate: 53.4%
+  Mean Δ accuracy: +0.0007
+  Mean Δ bias: +0.0062
+
+
+================================================================================
+EFFECTIVENESS BY TRANSFER MODALITY (ALL QUESTION TYPES)
+================================================================================
+
+CROSS DATASET
+--------------------------------------------------------------------------------
+  Total configs: 2736
+  Success rate: 57.3%
+  Mean Δ accuracy: +0.0107
+  Mean Δ bias: -0.0390
+
+  By Model Family:
+    Llama: Δacc=+0.0297, success=73.1%
+    Falcon: Δacc=+0.0150, success=65.1%
+    Llama3: Δacc=+0.0095, success=48.6%
+    Qwen2: Δacc=+0.0086, success=58.0%
+    Gemma3: Δacc=-0.0045, success=45.8%
+
+CROSS MODEL
+--------------------------------------------------------------------------------
+  Total configs: 2736
+  Success rate: 43.8%
+  Mean Δ accuracy: -0.0128
+  Mean Δ bias: +0.0278
+
+  By Model Family:
+    Llama3: Δacc=-0.0003, success=42.4%
+    Llama: Δacc=-0.0090, success=45.1%
+    Qwen2: Δacc=-0.0162, success=46.7%
+    Falcon: Δacc=-0.0175, success=46.5%
+    Gemma3: Δacc=-0.0200, success=38.4%
+
+CROSS PROMPT
+--------------------------------------------------------------------------------
+  Total configs: 1824
+  Success rate: 43.9%
+  Mean Δ accuracy: -0.0087
+  Mean Δ bias: +0.0398
+
+  By Model Family:
+    Gemma3: Δacc=-0.0031, success=48.7%
+    Falcon: Δacc=-0.0049, success=53.6%
+    Qwen2: Δacc=-0.0071, success=35.7%
+    Llama3: Δacc=-0.0116, success=36.7%
+    Llama: Δacc=-0.0192, success=45.1%
+
+
+================================================================================
+EFFECTIVENESS BY MODALITY AND QUESTION TYPE
+================================================================================
+
+YES-NO QUESTIONS
+--------------------------------------------------------------------------------
+
+  BASELINE (Same-Condition):
+    Total configs: 1919
+    Success rate: 70.6%
+    Mean Δ accuracy: +0.0301
+    Mean Δ bias/rstd: -0.1907
+    By Model Family:
+      Llama: Δacc=+0.0780, success=88.3%
+      Llama3: Δacc=+0.0281, success=64.3%
+      Falcon: Δacc=+0.0235, success=70.0%
+      Qwen2: Δacc=+0.0112, success=62.2%
+      Gemma3: Δacc=+0.0097, success=68.0%
+
+  CROSS DATASET:
+    Total configs: 1440
+    Success rate: 49.4%
+    Mean Δ accuracy: +0.0089
+    Mean Δ bias/rstd: -0.0390
+    By Model Family:
+      Llama: Δacc=+0.0391, success=68.8%
+      Llama3: Δacc=+0.0122, success=46.5%
+      Falcon: Δacc=+0.0045, success=51.0%
+      Qwen2: Δacc=-0.0002, success=47.2%
+      Gemma3: Δacc=-0.0108, success=33.7%
+
+  CROSS MODEL:
+    Total configs: 1440
+    Success rate: 44.7%
+    Mean Δ accuracy: -0.0142
+    Mean Δ bias/rstd: +0.0278
+    By Model Family:
+      Llama3: Δacc=-0.0013, success=43.4%
+      Llama: Δacc=-0.0017, success=52.1%
+      Qwen2: Δacc=-0.0130, success=49.7%
+      Gemma3: Δacc=-0.0258, success=37.2%
+      Falcon: Δacc=-0.0291, success=41.3%
+
+  CROSS PROMPT:
+    Total configs: 960
+    Success rate: 37.9%
+    Mean Δ accuracy: -0.0168
+    Mean Δ bias/rstd: +0.0398
+    By Model Family:
+      Gemma3: Δacc=-0.0048, success=43.2%
+      Qwen2: Δacc=-0.0057, success=35.9%
+      Falcon: Δacc=-0.0188, success=43.8%
+      Llama3: Δacc=-0.0224, success=34.4%
+      Llama: Δacc=-0.0323, success=32.3%
+
+MULTIPLE CHOICE QUESTIONS
+--------------------------------------------------------------------------------
+
+  BASELINE (Same-Condition):
+    Total configs: 1776
+    Success rate: 71.3%
+    Mean Δ accuracy: +0.0141
+    Mean Δ bias/rstd: -0.0375
+    By Model Family:
+      Falcon: Δacc=+0.0273, success=80.2%
+      Qwen2: Δacc=+0.0191, success=71.4%
+      Llama: Δacc=+0.0121, success=85.4%
+      Llama3: Δacc=+0.0086, success=59.1%
+      Gemma3: Δacc=+0.0026, success=65.9%
+
+  CROSS DATASET:
+    Total configs: 1296
+    Success rate: 66.1%
+    Mean Δ accuracy: +0.0127
+    Mean Δ bias/rstd: -0.0196
+    By Model Family:
+      Falcon: Δacc=+0.0255, success=79.2%
+      Qwen2: Δacc=+0.0174, success=68.8%
+      Llama: Δacc=+0.0110, success=81.9%
+      Llama3: Δacc=+0.0068, success=50.7%
+      Gemma3: Δacc=+0.0018, success=58.0%
+
+  CROSS MODEL:
+    Total configs: 1296
+    Success rate: 42.7%
+    Mean Δ accuracy: -0.0112
+    Mean Δ bias/rstd: +0.0330
+    By Model Family:
+      Llama3: Δacc=+0.0007, success=41.3%
+      Falcon: Δacc=-0.0058, success=51.7%
+      Gemma3: Δacc=-0.0141, success=39.6%
+      Qwen2: Δacc=-0.0193, success=43.8%
+      Llama: Δacc=-0.0236, success=31.2%
+
+  CROSS PROMPT:
+    Total configs: 864
+    Success rate: 50.6%
+    Mean Δ accuracy: +0.0004
+    Mean Δ bias/rstd: +0.0049
+    By Model Family:
+      Falcon: Δacc=+0.0090, success=63.5%
+      Llama: Δacc=+0.0070, success=70.8%
+      Llama3: Δacc=-0.0009, success=39.1%
+      Gemma3: Δacc=-0.0013, success=54.2%
+      Qwen2: Δacc=-0.0086, success=35.4%
+
+
+================================================================================
+TOP PERFORMERS (ALL QUESTION TYPES)
+================================================================================
+
+Best Model Families (Transfer Overall):
+  1. Llama: Δacc=0.0030 (n=1152)
+  2. Llama3: Δacc=0.0006 (n=1536)
+  3. Falcon: Δacc=-0.0022 (n=1536)
+
+Best Prompts (Transfer Overall):
+  1. fewshot: Δacc=0.0009 (n=2432)
+  2. zeroshot: Δacc=-0.0038 (n=2432)
+  3. instronly: Δacc=-0.0059 (n=2432)
+
+
+================================================================================
+DETAILED RANKINGS BY MODALITY
+================================================================================
+
+CROSS DATASET
+--------------------------------------------------------------------------------
+
+  Best Sources for Calibration:
+    1. EWOK: Δacc=+0.0204 (n=360)
+    2. MMLU-HUMANITIES: Δacc=+0.0142 (n=324)
+    3. MMLU-OTHERS: Δacc=+0.0126 (n=324)
+    4. MMLU-STEM: Δacc=+0.0123 (n=324)
+    5. BABI: Δacc=+0.0122 (n=360)
+
+  Worst Sources for Calibration:
+    1. MMLU-STEM: Δacc=+0.0123 (n=324)
+    2. BABI: Δacc=+0.0122 (n=360)
+    3. MMLU-SOCIAL_SCI: Δacc=+0.0114 (n=324)
+    4. ARITH: Δacc=+0.0109 (n=360)
+    5. COMPS: Δacc=-0.0077 (n=360)
+
+  Best Targets for Correction:
+    1. MMLU-SOCIAL_SCI: Δacc=+0.0170 (n=324)
+    2. MMLU-STEM: Δacc=+0.0145 (n=324)
+    3. MMLU-OTHERS: Δacc=+0.0133 (n=324)
+    4. BABI: Δacc=+0.0128 (n=360)
+    5. ARITH: Δacc=+0.0116 (n=360)
+
+CROSS MODEL
+--------------------------------------------------------------------------------
+
+  Best Sources for Calibration:
+    1. Llama-2-13b-hf: Δacc=+0.0170 (n=108)
+    2. Llama-2-7b-hf: Δacc=+0.0113 (n=108)
+    3. Qwen2.5-14B: Δacc=+0.0068 (n=144)
+    4. Qwen2.5-32B: Δacc=+0.0059 (n=144)
+    5. Llama-3.1-70B: Δacc=+0.0057 (n=144)
+
+  Worst Sources for Calibration:
+    1. Falcon3-3B-Instruct: Δacc=-0.0334 (n=144)
+    2. Falcon3-10B-Instruct: Δacc=-0.0372 (n=144)
+    3. gemma-3-27b-it: Δacc=-0.0402 (n=144)
+    4. gemma-3-12b-it: Δacc=-0.0410 (n=144)
+    5. Qwen2.5-14B-Instruct: Δacc=-0.0557 (n=144)
+
+  Best Targets for Correction:
+    1. Llama-2-7b-chat-hf: Δacc=+0.0148 (n=108)
+    2. Qwen2.5-32B-Instruct: Δacc=+0.0095 (n=144)
+    3. Falcon3-10B-Instruct: Δacc=+0.0082 (n=144)
+    4. Llama-3.1-8B: Δacc=+0.0056 (n=144)
+    5. Qwen2.5-14B-Instruct: Δacc=+0.0035 (n=144)
+
+CROSS PROMPT
+--------------------------------------------------------------------------------
+
+  Best Sources for Calibration:
+    1. zeroshot: Δacc=-0.0010 (n=608)
+    2. instronly: Δacc=-0.0066 (n=608)
+    3. fewshot: Δacc=-0.0183 (n=608)
+
+  Worst Sources for Calibration:
+    1. zeroshot: Δacc=-0.0010 (n=608)
+    2. instronly: Δacc=-0.0066 (n=608)
+    3. fewshot: Δacc=-0.0183 (n=608)
+
+  Best Targets for Correction:
+    1. fewshot: Δacc=-0.0040 (n=608)
+    2. zeroshot: Δacc=-0.0105 (n=608)
+    3. instronly: Δacc=-0.0115 (n=608)
+
+
+================================================================================
+END OF REPORT
+================================================================================

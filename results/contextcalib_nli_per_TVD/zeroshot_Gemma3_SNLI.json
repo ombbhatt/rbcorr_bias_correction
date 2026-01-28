@@ -1,0 +1,9 @@
+{
+  "zeroshot": {
+    "SNLI": {
+      "snli": {
+        "Gemma3": {}
+      }
+    }
+  }
+}

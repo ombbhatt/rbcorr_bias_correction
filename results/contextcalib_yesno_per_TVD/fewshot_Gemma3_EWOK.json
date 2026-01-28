@@ -1,0 +1,98 @@
+{
+  "fewshot": {
+    "EWOK": {
+      "all_domains": {
+        "Gemma3": {
+          "gemma-3-27b-pt": {
+            "raw_tvd": 0.0688202247191011,
+            "raw_model_dist": {
+              "Yes": 0.4311797752808989,
+              "No": 0.5688202247191011
+            },
+            "raw_acc": 0.8047752808988764,
+            "corrected_tvd": 0.08754681647940077,
+            "corrected_model_dist": {
+              "Yes": 0.41245318352059923,
+              "No": 0.5875468164794008
+            },
+            "corrected_acc": 0.8066479400749064,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.52090272224294,
+              "cf_no_prob": 0.4790972777570601
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          },
+          "gemma-3-27b-it": {
+            "raw_tvd": 0.0491573033707865,
+            "raw_model_dist": {
+              "Yes": 0.4508426966292135,
+              "No": 0.5491573033707865
+            },
+            "raw_acc": 0.8047752808988764,
+            "corrected_tvd": 0.03792134831460672,
+            "corrected_model_dist": {
+              "Yes": 0.46207865168539325,
+              "No": 0.5379213483146067
+            },
+            "corrected_acc": 0.8103932584269663,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.3123803575592031,
+              "cf_no_prob": 0.6876196424407968
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          },
+          "gemma-3-12b-pt": {
+            "raw_tvd": 0.07069288389513106,
+            "raw_model_dist": {
+              "Yes": 0.42930711610486894,
+              "No": 0.5706928838951311
+            },
+            "raw_acc": 0.7860486891385767,
+            "corrected_tvd": 0.017322097378277168,
+            "corrected_model_dist": {
+              "Yes": 0.48267790262172283,
+              "No": 0.5173220973782772
+            },
+            "corrected_acc": 0.7869850187265918,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.418270701347015,
+              "cf_no_prob": 0.581729298652985
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          },
+          "gemma-3-12b-it": {
+            "raw_tvd": 0.0646067415730337,
+            "raw_model_dist": {
+              "Yes": 0.4353932584269663,
+              "No": 0.5646067415730337
+            },
+            "raw_acc": 0.7734082397003745,
+            "corrected_tvd": 0.04775280898876402,
+            "corrected_model_dist": {
+              "Yes": 0.45224719101123595,
+              "No": 0.547752808988764
+            },
+            "corrected_acc": 0.7752808988764045,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.2088445474260621,
+              "cf_no_prob": 0.7911554525739378
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          }
+        }
+      }
+    }
+  }
+}

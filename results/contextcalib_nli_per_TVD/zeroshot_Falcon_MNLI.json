@@ -1,0 +1,9 @@
+{
+  "zeroshot": {
+    "MNLI": {
+      "mnli": {
+        "Falcon": {}
+      }
+    }
+  }
+}
