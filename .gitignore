@@ -1,0 +1,4 @@
+data/mnli-scripts-data/mnli.zip
+data/snli-scripts-data/snli_1.0/snli_1.0_train.jsonl
+data/snli-scripts-data/snli_1.0/snli_1.0_train.txt
+analysis/
