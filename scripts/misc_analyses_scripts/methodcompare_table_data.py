@@ -267,6 +267,5 @@ def create_table_data(results_dir, output_file='../../results/table_outputs/meth
     print("\n".join(output_lines))
 
 if __name__ == "__main__":
-    # results_dir = os.path.expanduser("~/scratch/yes-bias-in-llms/results")
     results_dir = Path("../../results")
     create_table_data(results_dir)

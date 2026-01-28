@@ -266,7 +266,6 @@ def create_visualization(results_dir, output_file='../../results/plot_outputs/sp
 
 if __name__ == "__main__":
     # Set the results directory
-    # results_dir = os.path.expanduser("~/scratch/yes-bias-in-llms/results")
     results_dir = Path("../../results")
     
     # Create the visualization

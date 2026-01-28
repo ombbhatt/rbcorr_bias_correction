@@ -6,7 +6,6 @@ import matplotlib.patches as mpatches
 from pathlib import Path
 
 # Define the base directory
-# BASE_DIR = Path.home() / "scratch/yes-bias-in-llms/results"
 BASE_DIR = Path("../../results")
 
 # Define datasets and models
@@ -227,7 +226,6 @@ def main():
     plt.tight_layout()
     
     # Save figure
-    # output_path = Path.home() / "scratch/yes-bias-in-llms/" / "transfer_yesno_heatmaps_zeroshot.png"
     output_path = Path("../../results/plot_outputs/transfer_heatmap_yn_zeroshot.png")
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"Heatmaps saved to {output_path}")

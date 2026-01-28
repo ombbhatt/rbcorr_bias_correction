@@ -5,7 +5,6 @@ import numpy as np
 from pathlib import Path
 
 # Configuration
-# RESULTS_DIR = Path.home() / "scratch/yes-bias-in-llms/results"
 RESULTS_DIR = Path("../../results")
 PROMPT_LEVEL = "zeroshot"
 CALIB_SIZES = [10, 20, 50, 100, 500, 1000]
@@ -245,7 +244,6 @@ if __name__ == "__main__":
     fig = create_comparison_plot()
     
     # Save the figure
-    # output_path = Path.home() / "scratch/yes-bias-in-llms" / "calibration_comparison.png"
     output_path = Path("../../results/plot_outputs/specific_calibsize_lineplot.png")
     fig.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"Figure saved to: {output_path}")

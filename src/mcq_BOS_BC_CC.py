@@ -436,60 +436,6 @@ def _initialize_dataframe(df, impl):
         
     return new_df
 
-
-# def _get_calibration_indices_mcq(calib_count, total_questions, calib_run, eval_df, calib_df=None):
-#     """Generate calibration and evaluation indices for MCQ with class balancing across A, B, C, D
-    
-#     Args:
-#         calib_count: Number of calibration samples to draw
-#         total_questions: Total questions in target (evaluation) dataset
-#         calib_run: Random seed for this calibration run
-#         eval_df: Target dataset dataframe
-#         calib_df: External calibration dataframe (None for same-dataset, DataFrame for cross-dataset/model)
-#     """
-#     np.random.seed(calib_run)  # For reproducibility
-    
-#     # Use external calibration data if provided (cross-dataset OR cross-model)
-#     calibration_source = calib_df if calib_df is not None else eval_df
-    
-#     # Separate questions by correct answer from calibration source
-#     a_indices = calibration_source[calibration_source['answer'] == 'A'].index.tolist()
-#     b_indices = calibration_source[calibration_source['answer'] == 'B'].index.tolist()
-#     c_indices = calibration_source[calibration_source['answer'] == 'C'].index.tolist()
-#     d_indices = calibration_source[calibration_source['answer'] == 'D'].index.tolist()
-    
-#     # Calculate how many questions we need from each class
-#     questions_per_class = calib_count // 4
-#     remainder = calib_count % 4
-    
-#     # Distribute remainder questions across classes, rotating which classes get extra
-#     # This ensures fairness across different runs
-#     class_counts = [questions_per_class] * 4
-#     for i in range(remainder):
-#         class_counts[(calib_run + i) % 4] += 1
-    
-#     a_needed, b_needed, c_needed, d_needed = class_counts
-    
-#     # Sample with replacement from each class
-#     selected_a = np.random.choice(a_indices, size=a_needed, replace=True) if a_needed > 0 and len(a_indices) > 0 else []
-#     selected_b = np.random.choice(b_indices, size=b_needed, replace=True) if b_needed > 0 and len(b_indices) > 0 else []
-#     selected_c = np.random.choice(c_indices, size=c_needed, replace=True) if c_needed > 0 and len(c_indices) > 0 else []
-#     selected_d = np.random.choice(d_indices, size=d_needed, replace=True) if d_needed > 0 and len(d_indices) > 0 else []
-    
-#     # Combine all selected indices
-#     calib_indices = list(selected_a) + list(selected_b) + list(selected_c) + list(selected_d)
-    
-#     # Evaluation indices depend on whether we're using external calibration
-#     if calib_df is not None:
-#         # Cross-dataset OR cross-model mode: all target dataset questions are evaluated
-#         eval_indices = list(range(total_questions))
-#     else:
-#         # Same-dataset, same-model mode: exclude calibration questions
-#         eval_indices = [i for i in range(total_questions) if i not in set(calib_indices)]
-    
-#     return calib_indices, eval_indices
-
-
 def _get_calibration_indices_mcq(calib_count, total_questions, calib_run, eval_df, calib_df=None):
     """Generate calibration and evaluation indices for MCQ with class balancing across A, B, C, D
     
@@ -566,24 +512,12 @@ def _calculate_calibration_means_mcq(calibration_source, calib_indices, cross_do
         cross_domain_mode: If True, calibration_source is external data (cross-dataset or cross-model)
     """
     if cross_domain_mode:
-        # Use external calibration data (could be different dataset and/or different model)
-        # calib_oa_mean = np.mean([calibration_source.iloc[i]['oa_logprob'] for i in calib_indices])
-        # calib_ob_mean = np.mean([calibration_source.iloc[i]['ob_logprob'] for i in calib_indices])
-        # calib_oc_mean = np.mean([calibration_source.iloc[i]['oc_logprob'] for i in calib_indices])
-        # calib_od_mean = np.mean([calibration_source.iloc[i]['od_logprob'] for i in calib_indices])
-
         # Testing median instead of mean for robustness to outliers
         calib_oa_mean = np.median([calibration_source.iloc[i]['oa_logprob'] for i in calib_indices])
         calib_ob_mean = np.median([calibration_source.iloc[i]['ob_logprob'] for i in calib_indices])
         calib_oc_mean = np.median([calibration_source.iloc[i]['oc_logprob'] for i in calib_indices])
         calib_od_mean = np.median([calibration_source.iloc[i]['od_logprob'] for i in calib_indices])
     else:
-        # Use same-dataset, same-model calibration
-        # calib_oa_mean = np.mean([calibration_source.iloc[i]['raw_oa_logprob'][0] for i in calib_indices])
-        # calib_ob_mean = np.mean([calibration_source.iloc[i]['raw_ob_logprob'][0] for i in calib_indices])
-        # calib_oc_mean = np.mean([calibration_source.iloc[i]['raw_oc_logprob'][0] for i in calib_indices])
-        # calib_od_mean = np.mean([calibration_source.iloc[i]['raw_od_logprob'][0] for i in calib_indices])
-
         # Testing median instead of mean for robustness to outliers
         calib_oa_mean = np.median([calibration_source.iloc[i]['raw_oa_logprob'][0] for i in calib_indices])
         calib_ob_mean = np.median([calibration_source.iloc[i]['raw_ob_logprob'][0] for i in calib_indices])
@@ -793,77 +727,3 @@ def do_entire_batchcalib_thing(plain_df, batch_size=None):
 
     print("Batch calibration completed successfully.")
     return new_df
-
-
-# def do_entire_batchcalib_thing(plain_df, batch_size=None):
-#     """Apply batch calibration to MCQ logprobs with within-batch correction
-    
-#     Args:
-#         plain_df: DataFrame with plain inference results
-#         batch_size: Size of each batch. If None, uses entire dataset.
-#     """
-    
-#     print(f"=== BATCH CALIBRATION START ===")
-#     total_questions = len(plain_df)
-    
-#     # If no batch size specified, use entire dataset (original paper's approach)
-#     if batch_size is None:
-#         batch_size = total_questions
-    
-#     print(f"Processing {total_questions} questions with batch_size={batch_size}")
-    
-#     # Initialize new dataframe
-#     new_df = _initialize_dataframe(plain_df, "batchcalib")
-
-#     # Shuffle dataset to avoid systematic ordering bias (e.g., all A answers first)
-#     shuffled_indices = np.random.RandomState(seed=42).permutation(len(new_df))
-#     new_df = new_df.iloc[shuffled_indices].reset_index(drop=True)
-#     print(f"Dataset shuffled with fixed seed for reproducibility")
-    
-#     # Process dataset in batches
-#     num_batches = (total_questions + batch_size - 1) // batch_size  # Ceiling division
-    
-#     for batch_idx in range(num_batches):
-#         start_idx = batch_idx * batch_size
-#         end_idx = min(start_idx + batch_size, total_questions)
-        
-#         # Get batch
-#         batch_indices = range(start_idx, end_idx)
-        
-#         # Calculate batch means (no class balancing, use all questions in this batch)
-#         batch_oa_mean = new_df.iloc[start_idx:end_idx]['raw_oa_logprob'].mean()
-#         batch_ob_mean = new_df.iloc[start_idx:end_idx]['raw_ob_logprob'].mean()
-#         batch_oc_mean = new_df.iloc[start_idx:end_idx]['raw_oc_logprob'].mean()
-#         batch_od_mean = new_df.iloc[start_idx:end_idx]['raw_od_logprob'].mean()
-        
-#         print(f"  Batch {batch_idx + 1}/{num_batches} (questions {start_idx}-{end_idx-1}): " +
-#               f"A={batch_oa_mean:.4f}, B={batch_ob_mean:.4f}, C={batch_oc_mean:.4f}, D={batch_od_mean:.4f}")
-        
-#         # Apply calibration to questions in this batch only
-#         for idx in batch_indices:
-#             # Store batch means for reference
-#             new_df.loc[idx, 'batch_oa_mean'] = batch_oa_mean
-#             new_df.loc[idx, 'batch_ob_mean'] = batch_ob_mean
-#             new_df.loc[idx, 'batch_oc_mean'] = batch_oc_mean
-#             new_df.loc[idx, 'batch_od_mean'] = batch_od_mean
-            
-#             # Calculate corrected logprobs
-#             new_df.loc[idx, 'calibrated_oa_logprob'] = new_df.iloc[idx]['raw_oa_logprob'] - batch_oa_mean
-#             new_df.loc[idx, 'calibrated_ob_logprob'] = new_df.iloc[idx]['raw_ob_logprob'] - batch_ob_mean
-#             new_df.loc[idx, 'calibrated_oc_logprob'] = new_df.iloc[idx]['raw_oc_logprob'] - batch_oc_mean
-#             new_df.loc[idx, 'calibrated_od_logprob'] = new_df.iloc[idx]['raw_od_logprob'] - batch_od_mean
-            
-#             # Make predictions
-#             calibrated_logprobs = [
-#                 new_df.iloc[idx]['calibrated_oa_logprob'],
-#                 new_df.iloc[idx]['calibrated_ob_logprob'], 
-#                 new_df.iloc[idx]['calibrated_oc_logprob'],
-#                 new_df.iloc[idx]['calibrated_od_logprob']
-#             ]
-#             max_idx = np.argmax(calibrated_logprobs)
-#             batchcalib_predicted = ['A', 'B', 'C', 'D'][max_idx]
-#             new_df.loc[idx, 'batchcalib_predicted_answer'] = batchcalib_predicted
-#             new_df.loc[idx, 'batchcalib_is_correct'] = batchcalib_predicted == new_df.iloc[idx]['answer']
-
-#     print("Batch calibration completed successfully.")
-#     return new_df

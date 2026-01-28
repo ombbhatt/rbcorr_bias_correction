@@ -5,7 +5,6 @@ from pathlib import Path
 from collections import defaultdict
 
 # Define the base directory
-# BASE_DIR = Path.home() / "scratch/yes-bias-in-llms/results"
 BASE_DIR = Path("../../results")
 
 # Define all configurations
@@ -587,7 +586,6 @@ def main():
     print("\n" + "="*80)
     
     # Save to CSV
-    # output_file = Path.home() / "scratch/yes-bias-in-llms" / "transfer_efficacy_summary.csv"
     output_file = Path("../../results/table_outputs/transfer_success_table.csv")
     with open(output_file, 'w') as f:
         f.write("Transfer_Type,Total_Pairs,Successful_Pairs,Success_Rate, Failed_Bias_Only, Failed_Accuracy_Only, Failed_Both, Avg_Acc_Change,Avg_TVD_Change\n")

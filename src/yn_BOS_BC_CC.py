@@ -461,20 +461,10 @@ def do_entire_specific_thing(plain_df, dataset_name, calib_count, calib_data=Non
         # print(f"  Evaluation set: {len(eval_indices)} questions")
         
         # Calculate calibration means from appropriate source
-        if cross_transfer_mode:
-            # Use external calibration data (could be different dataset and/or different model)
-            # calib_yes_mean = np.mean([calib_data.iloc[i]['yes_logprob'] for i in calib_indices])
-            # calib_no_mean = np.mean([calib_data.iloc[i]['no_logprob'] for i in calib_indices])
-            
-            # Testing median instead of mean for robustness to outliers
+        if cross_transfer_mode:        
             calib_yes_mean = np.median([calib_data.iloc[i]['yes_logprob'] for i in calib_indices])
             calib_no_mean = np.median([calib_data.iloc[i]['no_logprob'] for i in calib_indices])
         else:
-            # Use same-dataset, same-model calibration
-            # calib_yes_mean = np.mean([new_df.iloc[i]['raw_yes_logprob'][0] for i in calib_indices])
-            # calib_no_mean = np.mean([new_df.iloc[i]['raw_no_logprob'][0] for i in calib_indices])
-
-            # Testing median instead of mean for robustness to outliers
             calib_yes_mean = np.median([new_df.iloc[i]['raw_yes_logprob'][0] for i in calib_indices])
             calib_no_mean = np.median([new_df.iloc[i]['raw_no_logprob'][0] for i in calib_indices])
         
@@ -646,66 +636,3 @@ def do_entire_batchcalib_thing(plain_df, batch_size=None):
 
     print("Batch calibration completed successfully.")
     return new_df
-
-
-# def do_entire_batchcalib_thing(plain_df, batch_size=None):
-#     """Apply batch calibration with within-batch correction
-    
-#     Args:
-#         plain_df: DataFrame with plain inference results
-#         batch_size: Size of each batch. If None, uses entire dataset.
-#     """
-    
-#     print(f"=== BATCH CALIBRATION START ===")
-#     total_questions = len(plain_df)
-    
-#     # If no batch size specified, use entire dataset (original paper's approach)
-#     if batch_size == 0:
-#         batch_size = total_questions
-    
-#     print(f"Processing {total_questions} questions with batch_size={batch_size}")
-    
-#     # Initialize new dataframe
-#     new_df = _initialize_dataframe(plain_df, "batchcalib")
-    
-#     # Shuffle dataset to avoid systematic ordering bias (e.g., all Yes first, then No)
-#     shuffled_indices = np.random.RandomState(seed=42).permutation(len(new_df))
-#     new_df = new_df.iloc[shuffled_indices].reset_index(drop=True)
-#     print(f"Dataset shuffled with fixed seed for reproducibility")
-
-#     # Process dataset in batches
-#     num_batches = (total_questions + batch_size - 1) // batch_size  # Ceiling division
-    
-#     for batch_idx in range(num_batches):
-#         start_idx = batch_idx * batch_size
-#         end_idx = min(start_idx + batch_size, total_questions)
-        
-#         # Get batch
-#         batch_indices = range(start_idx, end_idx)
-        
-#         # Calculate batch means
-#         batch_yes_mean = new_df.iloc[start_idx:end_idx]['raw_yes_logprob'].mean()
-#         batch_no_mean = new_df.iloc[start_idx:end_idx]['raw_no_logprob'].mean()
-        
-#         print(f"  Batch {batch_idx + 1}/{num_batches} (questions {start_idx}-{end_idx-1}): " +
-#               f"Yes_mean={batch_yes_mean:.4f}, No_mean={batch_no_mean:.4f}")
-        
-#         # Apply calibration to questions in this batch only
-#         for idx in batch_indices:
-#             # Store batch means for reference
-#             new_df.loc[idx, 'batch_yes_mean'] = batch_yes_mean
-#             new_df.loc[idx, 'batch_no_mean'] = batch_no_mean
-            
-#             # Calculate corrected logprobs
-#             new_df.loc[idx, 'calibrated_yes_logprob'] = new_df.iloc[idx]['raw_yes_logprob'] - batch_yes_mean
-#             new_df.loc[idx, 'calibrated_no_logprob'] = new_df.iloc[idx]['raw_no_logprob'] - batch_no_mean
-            
-#             # Make predictions
-#             calibrated_yes = new_df.iloc[idx]['calibrated_yes_logprob']
-#             calibrated_no = new_df.iloc[idx]['calibrated_no_logprob']
-#             batchcalib_predicted = "Yes" if calibrated_yes > calibrated_no else "No"
-#             new_df.loc[idx, 'batchcalib_predicted_answer'] = batchcalib_predicted
-#             new_df.loc[idx, 'batchcalib_is_correct'] = batchcalib_predicted == new_df.iloc[idx]['Correct Answer']
-
-#     print("Batch calibration completed successfully.")
-#     return new_df
