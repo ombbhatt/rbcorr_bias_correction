@@ -438,7 +438,7 @@ def do_entire_specific_thing(plain_df, dataset_name, calib_count, calib_data=Non
     
     # Check if already processed
     if any(col in plain_df.columns for col in ['raw_yes_logprob', 'fold', 'corrected_yes_logprob']):
-        print("❌ WARNING: Input DataFrame already contains specific columns!")
+        print("WARNING: Input DataFrame already contains specific columns!")
         return plain_df
 
     total_questions = len(plain_df)

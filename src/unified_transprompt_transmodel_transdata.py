@@ -78,17 +78,17 @@ IMPLEMENTATIONS = {
     "yesnospecific": process_dataset_yesno,
     "yesnobos": process_dataset_yesno,
     "yesnocontextcalib": process_dataset_yesno,
-    "yesnobatchcalib": process_dataset_yesno,  # Add this line
+    "yesnobatchcalib": process_dataset_yesno,
     "mcqplain": process_dataset_mcq,
     "mcqspecific": process_dataset_mcq,
     "mcqbos": process_dataset_mcq,
     "mcqcontextcalib": process_dataset_mcq,
-    "mcqbatchcalib": process_dataset_mcq,  # Add this line
+    "mcqbatchcalib": process_dataset_mcq,
     "nliplain": process_dataset_nli,
     "nlispecific": process_dataset_nli,
     "nlibos": process_dataset_nli,
     "nlicontextcalib": process_dataset_nli,
-    "nlibatchcalib": process_dataset_nli,  # Add this line
+    "nlibatchcalib": process_dataset_nli
 }
 
 
@@ -120,8 +120,6 @@ def combine_mmlu_domain(dataset_path, domain_name):
     """
     # Define the path to your domain folders here
     domain_folder = dataset_path / domain_name
-    
-    # Get all CSV files in the domain folder
     csv_files = list(domain_folder.glob("*.csv"))
     
     # Read and combine all CSV files
@@ -218,11 +216,11 @@ def setup_model_and_tokenizer(model_name, model_family):
 def process_single_output(impl, model, tokenizer, model_name, model_family, implementation_fn, 
                          input_file, output_file, plain_file, domain, calib_count=80, batch_size=4, 
                          target_dataset=None, calib_dataset=None, calib_prompt=None, target_prompt=None, calib_data=None, force=False):
-    if output_file.exists() and not force:  # CHANGED: Check force flag
+    if output_file.exists() and not force:  
         print(f"Results exist for {model_name}, skipping...")
         return
     
-    if output_file.exists() and force:  # ADDED: Log when forcing re-run
+    if output_file.exists() and force: 
         print(f"Results exist for {model_name}, but forcing re-run...")
         
     kwargs = {
@@ -353,11 +351,6 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
 
     print(f"Output base: {output_base}")
     
-    # Special handling for contextual calibration with zeroshot
-    # if "contextcalib" in impl and calib_prompt == "zeroshot":
-    #     print(f"Cannot do contextual calibration using zeroshot prompting on the calibration prompt, skipping...")
-    #     return
-    
     # Check if all outputs exist before loading model
     if check_all_outputs_exist(target_model_name, domains, output_base, force):  # CHANGED: Pass force
         print(f"All results exist for {target_model_name}, skipping...")
@@ -382,7 +375,7 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                         "specific" in impl)
 
     
-    # NEW LOGIC: Only load model if we actually need inference
+    # Only load model if we actually need inference
     needs_model = not can_do_corrections_only
     
     # Load calibration data early if needed for cross-dataset/model corrections
@@ -460,9 +453,6 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                     calib_counts = [20, 50, 100, 500, 1000]  # batch sizes to try
 
                 for calib_count in calib_counts:
-                    # if calib_count > 0 and calib_count > 0.5 * curr_count:
-                    #     print("Reached calib_count more than half of total domain/dataset size, no more")
-                    #     continue
 
                     if "specific" in impl:
                         if calib_count == 0:
@@ -502,7 +492,7 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                     process_single_output(
                         impl, model, tokenizer, target_model_name, target_model_family, implementation_fn,
                         input_file, output_file, plain_file, domain, calib_count,
-                        batch_size, target_dataset, calib_dataset, calib_prompt, target_prompt, calib_data, force  # CHANGED: Pass force
+                        batch_size, target_dataset, calib_dataset, calib_prompt, target_prompt, calib_data, force
                     )
         
             else:
@@ -514,7 +504,7 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                 process_single_output(
                     impl, model, tokenizer, target_model_name, target_model_family, implementation_fn,
                     input_file, output_file, plain_file, domain, calib_count,
-                    batch_size, target_dataset, calib_dataset, calib_prompt, target_prompt, calib_data, force  # CHANGED: Pass force
+                    batch_size, target_dataset, calib_dataset, calib_prompt, target_prompt, calib_data, force 
                 )
 
     finally:
@@ -531,7 +521,7 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
 
 def run_single_configuration(calib_dataset, target_dataset, target_model_name, target_model_family,
                             calib_model_name, calib_model_family, calib_prompt, target_prompt, implementation, 
-                            batch_size, domain, calib_count, force=False):  # CHANGED: Add force parameter
+                            batch_size, domain, calib_count, force=False): 
     """Run a single configuration of calib_dataset, target_dataset, target_model, and calib_model"""
     
     print(f"\n{'='*80}")
@@ -673,7 +663,7 @@ def main():
             batch_size=args.batch_size,
             domain=args.domain,
             calib_count=args.calib_count,
-            force=args.force  # CHANGED: Pass force
+            force=args.force
         )
                     
     except KeyboardInterrupt:
