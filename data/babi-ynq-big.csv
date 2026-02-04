@@ -1,0 +1,1201 @@
+task,QID,AnsRefIDs,Context,Question,Correct Answer
+qa1,15,[13],Sandra went to the hallway.,Is Sandra in the hallway?,Yes
+qa1,15,[13],Sandra went to the hallway.,Is Sandra in the bathroom?,No
+qa1,6,[1],John travelled to the kitchen.,Is John in the kitchen?,Yes
+qa1,6,[1],John travelled to the kitchen.,Is John in the hallway?,No
+qa1,6,[2],Sandra moved to the kitchen.,Is Sandra in the kitchen?,Yes
+qa1,6,[2],Sandra moved to the kitchen.,Is Sandra in the garden?,No
+qa1,6,[4],Sandra went to the bathroom.,Is Sandra in the bathroom?,Yes
+qa1,6,[4],Sandra went to the bathroom.,Is Sandra in the bedroom?,No
+qa1,6,[4],Sandra travelled to the office.,Is Sandra in the office?,Yes
+qa1,6,[4],Sandra travelled to the office.,Is Sandra in the hallway?,No
+qa1,15,[11],John moved to the bathroom.,Is John in the bathroom?,Yes
+qa1,15,[11],John moved to the bathroom.,Is John in the office?,No
+qa1,15,[11],Sandra went back to the bathroom.,Is Sandra in the bathroom?,Yes
+qa1,15,[11],Sandra went back to the bathroom.,Is Sandra in the kitchen?,No
+qa1,12,[10],Mary went to the bathroom.,Is Mary in the bathroom?,Yes
+qa1,12,[10],Mary went to the bathroom.,Is Mary in the kitchen?,No
+qa1,3,[1],John moved to the bathroom.,Is John in the bathroom?,Yes
+qa1,3,[1],John moved to the bathroom.,Is John in the garden?,No
+qa1,3,[2],Mary moved to the bedroom.,Is Mary in the bedroom?,Yes
+qa1,3,[2],Mary moved to the bedroom.,Is Mary in the hallway?,No
+qa1,9,[7],Mary moved to the hallway.,Is Mary in the hallway?,Yes
+qa1,9,[7],Mary moved to the hallway.,Is Mary in the bedroom?,No
+qa1,3,[2],Sandra travelled to the bathroom.,Is Sandra in the bathroom?,Yes
+qa1,3,[2],Sandra travelled to the bathroom.,Is Sandra in the hallway?,No
+qa1,15,[13],Mary went back to the bathroom.,Is Mary in the bathroom?,Yes
+qa1,15,[13],Mary went back to the bathroom.,Is Mary in the bedroom?,No
+qa1,9,[5],Daniel journeyed to the office.,Is Daniel in the office?,Yes
+qa1,9,[5],Daniel journeyed to the office.,Is Daniel in the hallway?,No
+qa1,15,[13],Daniel went to the garden.,Is Daniel in the garden?,Yes
+qa1,15,[13],Daniel went to the garden.,Is Daniel in the bathroom?,No
+qa1,12,[8],Sandra moved to the garden.,Is Sandra in the garden?,Yes
+qa1,12,[8],Sandra moved to the garden.,Is Sandra in the bedroom?,No
+qa1,6,[1],Daniel went back to the hallway.,Is Daniel in the hallway?,Yes
+qa1,6,[1],Daniel went back to the hallway.,Is Daniel in the kitchen?,No
+qa1,3,[2],Daniel journeyed to the hallway.,Is Daniel in the hallway?,Yes
+qa1,3,[2],Daniel journeyed to the hallway.,Is Daniel in the office?,No
+qa1,6,[2],Daniel journeyed to the hallway.,Is Daniel in the hallway?,Yes
+qa1,6,[2],Daniel journeyed to the hallway.,Is Daniel in the kitchen?,No
+qa1,6,[5],Sandra journeyed to the garden.,Is Sandra in the garden?,Yes
+qa1,6,[5],Sandra journeyed to the garden.,Is Sandra in the hallway?,No
+qa1,15,[11],John journeyed to the garden.,Is John in the garden?,Yes
+qa1,15,[11],John journeyed to the garden.,Is John in the bedroom?,No
+qa1,15,[11],John moved to the hallway.,Is John in the hallway?,Yes
+qa1,15,[11],John moved to the hallway.,Is John in the garden?,No
+qa1,12,[7],Mary journeyed to the bedroom.,Is Mary in the bedroom?,Yes
+qa1,12,[7],Mary journeyed to the bedroom.,Is Mary in the bathroom?,No
+qa1,6,[4],Daniel went back to the office.,Is Daniel in the office?,Yes
+qa1,6,[4],Daniel went back to the office.,Is Daniel in the hallway?,No
+qa1,9,[8],Daniel travelled to the garden.,Is Daniel in the garden?,Yes
+qa1,9,[8],Daniel travelled to the garden.,Is Daniel in the bathroom?,No
+qa1,15,[14],Daniel travelled to the bedroom.,Is Daniel in the bedroom?,Yes
+qa1,15,[14],Daniel travelled to the bedroom.,Is Daniel in the garden?,No
+qa1,15,[14],Mary journeyed to the bedroom.,Is Mary in the bedroom?,Yes
+qa1,15,[14],Mary journeyed to the bedroom.,Is Mary in the hallway?,No
+qa1,6,[5],Sandra moved to the bedroom.,Is Sandra in the bedroom?,Yes
+qa1,6,[5],Sandra moved to the bedroom.,Is Sandra in the office?,No
+qa1,6,[4],Mary went to the office.,Is Mary in the office?,Yes
+qa1,6,[4],Mary went to the office.,Is Mary in the garden?,No
+qa1,6,[4],John went back to the bathroom.,Is John in the bathroom?,Yes
+qa1,6,[4],John went back to the bathroom.,Is John in the office?,No
+qa1,6,[2],Sandra travelled to the garden.,Is Sandra in the garden?,Yes
+qa1,6,[2],Sandra travelled to the garden.,Is Sandra in the kitchen?,No
+qa1,3,[1],Sandra journeyed to the kitchen.,Is Sandra in the kitchen?,Yes
+qa1,3,[1],Sandra journeyed to the kitchen.,Is Sandra in the office?,No
+qa1,12,[8],Sandra journeyed to the hallway.,Is Sandra in the hallway?,Yes
+qa1,12,[8],Sandra journeyed to the hallway.,Is Sandra in the bathroom?,No
+qa1,9,[4],Daniel journeyed to the office.,Is Daniel in the office?,Yes
+qa1,9,[4],Daniel journeyed to the office.,Is Daniel in the kitchen?,No
+qa1,9,[8],John travelled to the bathroom.,Is John in the bathroom?,Yes
+qa1,9,[8],John travelled to the bathroom.,Is John in the hallway?,No
+qa1,3,[2],John travelled to the garden.,Is John in the garden?,Yes
+qa1,3,[2],John travelled to the garden.,Is John in the office?,No
+qa1,6,[4],Sandra journeyed to the bedroom.,Is Sandra in the bedroom?,Yes
+qa1,6,[4],Sandra journeyed to the bedroom.,Is Sandra in the kitchen?,No
+qa1,6,[2],Sandra moved to the garden.,Is Sandra in the garden?,Yes
+qa1,6,[2],Sandra moved to the garden.,Is Sandra in the bathroom?,No
+qa1,9,[5],Daniel went to the bathroom.,Is Daniel in the bathroom?,Yes
+qa1,9,[5],Daniel went to the bathroom.,Is Daniel in the garden?,No
+qa1,15,[14],Mary moved to the office.,Is Mary in the office?,Yes
+qa1,15,[14],Mary moved to the office.,Is Mary in the kitchen?,No
+qa1,12,[5],Mary moved to the office.,Is Mary in the office?,Yes
+qa1,12,[5],Mary moved to the office.,Is Mary in the kitchen?,No
+qa1,15,[11],Daniel journeyed to the office.,Is Daniel in the office?,Yes
+qa1,15,[11],Daniel journeyed to the office.,Is Daniel in the bedroom?,No
+qa1,6,[2],Daniel travelled to the bathroom.,Is Daniel in the bathroom?,Yes
+qa1,6,[2],Daniel travelled to the bathroom.,Is Daniel in the hallway?,No
+qa1,9,[8],John journeyed to the garden.,Is John in the garden?,Yes
+qa1,9,[8],John journeyed to the garden.,Is John in the bathroom?,No
+qa1,15,[13],Daniel journeyed to the bedroom.,Is Daniel in the bedroom?,Yes
+qa1,15,[13],Daniel journeyed to the bedroom.,Is Daniel in the kitchen?,No
+qa1,12,[8],Sandra moved to the bedroom.,Is Sandra in the bedroom?,Yes
+qa1,12,[8],Sandra moved to the bedroom.,Is Sandra in the kitchen?,No
+qa1,9,[7],Sandra moved to the bathroom.,Is Sandra in the bathroom?,Yes
+qa1,9,[7],Sandra moved to the bathroom.,Is Sandra in the kitchen?,No
+qa1,12,[11],Daniel moved to the hallway.,Is Daniel in the hallway?,Yes
+qa1,12,[11],Daniel moved to the hallway.,Is Daniel in the bathroom?,No
+qa1,15,[11],Daniel moved to the hallway.,Is Daniel in the hallway?,Yes
+qa1,15,[11],Daniel moved to the hallway.,Is Daniel in the garden?,No
+qa1,6,[1],Sandra travelled to the garden.,Is Sandra in the garden?,Yes
+qa1,6,[1],Sandra travelled to the garden.,Is Sandra in the bedroom?,No
+qa10,3,[2],Bill is in the kitchen.,Is Bill in the bedroom?,No
+qa10,6,[4],Bill journeyed to the bedroom.,Is Bill in the bedroom?,Yes
+qa10,9,[4],Fred went to the bedroom.,Is Fred in the bedroom?,Yes
+qa10,12,[11],Mary went back to the office.,Is Mary in the kitchen?,No
+qa10,15,[14],Fred moved to the cinema.,Is Fred in the kitchen?,No
+qa10,6,[5],Mary is in the office.,Is Mary in the office?,Yes
+qa10,15,[14],Fred is either in the school or the cinema.,Is Fred in the office?,No
+qa10,15,[14],Mary went to the park.,Is Mary in the park?,Yes
+qa10,9,[4],Fred went back to the cinema.,Is Fred in the office?,No
+qa10,6,[2],Mary moved to the school.,Is Mary in the school?,Yes
+qa10,9,[8],Mary moved to the office.,Is Mary in the office?,Yes
+qa10,12,[10],Mary is in the school.,Is Mary in the school?,Yes
+qa10,15,[13],Fred moved to the office.,Is Fred in the kitchen?,No
+qa10,3,[2],Bill is in the office.,Is Bill in the park?,No
+qa10,12,[11],Julie went to the park.,Is Julie in the park?,Yes
+qa10,12,[11],Bill went to the bedroom.,Is Bill in the bedroom?,Yes
+qa10,15,[14],Bill went back to the school.,Is Bill in the park?,No
+qa10,12,[8],Mary travelled to the school.,Is Mary in the office?,No
+qa10,15,[8],Mary travelled to the school.,Is Mary in the school?,Yes
+qa10,3,[1],Mary went back to the bedroom.,Is Mary in the bedroom?,Yes
+qa10,3,[2],Fred is in the office.,Is Fred in the cinema?,No
+qa10,6,[5],Bill is in the kitchen.,Is Bill in the kitchen?,Yes
+qa10,15,[14],Bill journeyed to the park.,Is Bill in the cinema?,No
+qa10,3,[2],Bill went to the park.,Is Bill in the bedroom?,No
+qa10,9,[8],Mary is in the office.,Is Mary in the office?,Yes
+qa10,6,[5],Bill went back to the office.,Is Bill in the kitchen?,No
+qa10,15,[13],Bill travelled to the kitchen.,Is Bill in the kitchen?,Yes
+qa10,15,[13],Fred went to the bedroom.,Is Fred in the school?,No
+qa10,3,[1],Fred is in the kitchen.,Is Fred in the school?,No
+qa10,6,[5],Julie went back to the cinema.,Is Julie in the cinema?,Yes
+qa10,9,[4],Julie went back to the park.,Is Julie in the park?,Yes
+qa10,3,[2],Fred went to the kitchen.,Is Fred in the park?,No
+qa10,9,[8],Bill moved to the cinema.,Is Bill in the cinema?,Yes
+qa10,12,[8],Julie journeyed to the office.,Is Julie in the office?,Yes
+qa10,15,[13],Mary is either in the bedroom or the park.,Is Mary in the school?,No
+qa10,12,[11],Fred went to the school.,Is Fred in the cinema?,No
+qa10,9,[8],Fred travelled to the bedroom.,Is Fred in the bedroom?,Yes
+qa10,12,[11],Bill is in the bedroom.,Is Bill in the kitchen?,No
+qa10,3,[2],Julie moved to the office.,Is Julie in the office?,Yes
+qa10,15,[14],Julie is in the kitchen.,Is Julie in the cinema?,No
+qa10,9,[5],Julie went to the kitchen.,Is Julie in the kitchen?,Yes
+qa10,12,[11],Julie is in the park.,Is Julie in the school?,No
+qa10,15,[14],Mary travelled to the school.,Is Mary in the school?,Yes
+qa10,3,[1],Bill went back to the bedroom.,Is Bill in the cinema?,No
+qa10,15,[13],Mary is in the cinema.,Is Mary in the office?,No
+qa10,12,[7],Julie is in the office.,Is Julie in the office?,Yes
+qa10,3,[2],Julie journeyed to the park.,Is Julie in the park?,Yes
+qa10,9,[8],Bill is in the cinema.,Is Bill in the bedroom?,No
+qa10,9,[8],Mary is in the kitchen.,Is Mary in the kitchen?,Yes
+qa10,3,[1],Fred went to the office.,Is Fred in the bedroom?,No
+qa10,9,[7],Julie moved to the school.,Is Julie in the school?,Yes
+qa10,3,[1],Bill went to the cinema.,Is Bill in the cinema?,Yes
+qa10,9,[7],Bill went to the bedroom.,Is Bill in the office?,No
+qa10,3,[1],Julie is either in the bedroom or the kitchen.,Is Julie in the school?,No
+qa10,15,[14],Julie moved to the bedroom.,Is Julie in the school?,No
+qa10,15,[14],Mary moved to the office.,Is Mary in the office?,Yes
+qa10,3,[1],Julie is in the park.,Is Julie in the cinema?,No
+qa10,3,[1],Fred went back to the school.,Is Fred in the school?,Yes
+qa10,3,[1],Julie went to the school.,Is Julie in the cinema?,No
+qa10,6,[5],Julie went to the office.,Is Julie in the bedroom?,No
+qa10,3,[1],Fred went back to the office.,Is Fred in the office?,Yes
+qa10,6,[1],Fred went back to the office.,Is Fred in the office?,Yes
+qa10,6,[5],Mary is in the school.,Is Mary in the school?,Yes
+qa10,12,[8],Mary is in the office.,Is Mary in the school?,No
+qa10,3,[1],Bill journeyed to the bedroom.,Is Bill in the bedroom?,Yes
+qa10,15,[10],Mary is either in the cinema or the office.,Is Mary in the kitchen?,No
+qa10,15,[11],Fred went back to the office.,Is Fred in the office?,Yes
+qa10,3,[2],Julie is in the kitchen.,Is Julie in the office?,No
+qa10,15,[11],Julie is in the park.,Is Julie in the school?,No
+qa10,3,[2],Julie is in the kitchen.,Is Julie in the kitchen?,Yes
+qa10,12,[10],Bill journeyed to the kitchen.,Is Bill in the kitchen?,Yes
+qa10,15,[14],Fred is in the cinema.,Is Fred in the park?,No
+qa10,15,[14],Mary journeyed to the park.,Is Mary in the park?,Yes
+qa10,9,[7],Bill is in the park.,Is Bill in the park?,Yes
+qa10,15,[11],Bill went to the cinema.,Is Bill in the cinema?,Yes
+qa10,6,[5],Julie is either in the cinema or the cinema.,Is Julie in the kitchen?,No
+qa10,3,[1],Mary is in the school.,Is Mary in the school?,Yes
+qa10,12,[11],Bill went to the park.,Is Bill in the office?,No
+qa10,15,[13],Bill journeyed to the school.,Is Bill in the kitchen?,No
+qa10,9,[7],Mary went back to the cinema.,Is Mary in the school?,No
+qa10,15,[13],Mary went back to the park.,Is Mary in the park?,Yes
+qa10,6,[2],Mary went to the park.,Is Mary in the kitchen?,No
+qa10,9,[2],Mary went to the park.,Is Mary in the park?,Yes
+qa10,3,[2],Julie travelled to the park.,Is Julie in the bedroom?,No
+qa10,12,[11],Bill is in the park.,Is Bill in the cinema?,No
+qa10,3,[2],Mary is in the cinema.,Is Mary in the cinema?,Yes
+qa10,12,[11],Julie is either in the school or the school.,Is Julie in the office?,No
+qa10,6,[4],Mary journeyed to the kitchen.,Is Mary in the office?,No
+qa10,12,[5],Bill journeyed to the cinema.,Is Bill in the cinema?,Yes
+qa10,15,[14],Julie went to the kitchen.,Is Julie in the bedroom?,No
+qa10,9,[7],Mary went to the kitchen.,Is Mary in the cinema?,No
+qa10,12,[5],Julie is in the park.,Is Julie in the cinema?,No
+qa10,15,[14],Bill moved to the park.,Is Bill in the park?,Yes
+qa10,15,[14],Julie went back to the school.,Is Julie in the school?,Yes
+qa10,9,[7],Julie travelled to the park.,Is Julie in the park?,Yes
+qa10,15,[14],Fred is in the cinema.,Is Fred in the cinema?,Yes
+qa10,3,[1],Mary is either in the park or the cinema.,Is Mary in the kitchen?,No
+qa10,9,[7],Bill is in the school.,Is Bill in the bedroom?,No
+qa10,6,[2],Bill went back to the office.,Is Bill in the office?,Yes
+qa10,9,[8],Bill is in the park.,Is Bill in the park?,Yes
+qa11,15,"[7, 8]",John travelled to the garden. Afterwards he went to the hallway.,Is John in the hallway?,Yes
+qa11,15,"[7, 8]",John travelled to the garden. Afterwards he went to the hallway.,Is John in the garden?,No
+qa11,6,"[1, 2]",Daniel journeyed to the hallway. Then he journeyed to the bathroom.,Is Daniel in the bathroom?,Yes
+qa11,6,"[1, 2]",Daniel journeyed to the hallway. Then he journeyed to the bathroom.,Is Daniel in the office?,No
+qa11,6,"[1, 2]",Sandra moved to the hallway. Following that she went back to the bathroom.,Is Sandra in the bathroom?,Yes
+qa11,6,"[1, 2]",Sandra moved to the hallway. Following that she went back to the bathroom.,Is Sandra in the bedroom?,No
+qa11,6,"[1, 2]",Mary travelled to the kitchen. Following that she journeyed to the garden.,Is Mary in the garden?,Yes
+qa11,6,"[1, 2]",Mary travelled to the kitchen. Following that she journeyed to the garden.,Is Mary in the bedroom?,No
+qa11,6,"[1, 2]",Mary went back to the kitchen. Then she went to the garden.,Is Mary in the garden?,Yes
+qa11,6,"[1, 2]",Mary went back to the kitchen. Then she went to the garden.,Is Mary in the kitchen?,No
+qa11,15,"[10, 11]",Mary travelled to the kitchen. Afterwards she journeyed to the hallway.,Is Mary in the hallway?,Yes
+qa11,15,"[10, 11]",Mary travelled to the kitchen. Afterwards she journeyed to the hallway.,Is Mary in the bathroom?,No
+qa11,15,"[13, 14]",Sandra moved to the bathroom. Following that she went back to the garden.,Is Sandra in the garden?,Yes
+qa11,15,"[13, 14]",Sandra moved to the bathroom. Following that she went back to the garden.,Is Sandra in the kitchen?,No
+qa11,12,"[10, 11]",John went to the bathroom. Afterwards he moved to the office.,Is John in the office?,Yes
+qa11,12,"[10, 11]",John went to the bathroom. Afterwards he moved to the office.,Is John in the bathroom?,No
+qa11,3,"[1, 2]",Mary moved to the kitchen. Following that she journeyed to the hallway.,Is Mary in the hallway?,Yes
+qa11,3,"[1, 2]",Mary moved to the kitchen. Following that she journeyed to the hallway.,Is Mary in the office?,No
+qa11,3,"[1, 2]",Mary went to the garden. Then she journeyed to the bedroom.,Is Mary in the bedroom?,Yes
+qa11,3,"[1, 2]",Mary went to the garden. Then she journeyed to the bedroom.,Is Mary in the garden?,No
+qa11,9,"[4, 5]",John went to the office. Afterwards he moved to the garden.,Is John in the garden?,Yes
+qa11,9,"[4, 5]",John went to the office. Afterwards he moved to the garden.,Is John in the bedroom?,No
+qa11,3,"[1, 2]",Sandra journeyed to the bathroom. After that she went to the garden.,Is Sandra in the garden?,Yes
+qa11,3,"[1, 2]",Sandra journeyed to the bathroom. After that she went to the garden.,Is Sandra in the bathroom?,No
+qa11,15,"[13, 14]",Daniel moved to the hallway. After that he moved to the kitchen.,Is Daniel in the kitchen?,Yes
+qa11,15,"[13, 14]",Daniel moved to the hallway. After that he moved to the kitchen.,Is Daniel in the bedroom?,No
+qa11,9,"[7, 8]",Sandra journeyed to the kitchen. Afterwards she went to the garden.,Is Sandra in the garden?,Yes
+qa11,9,"[7, 8]",Sandra journeyed to the kitchen. Afterwards she went to the garden.,Is Sandra in the bathroom?,No
+qa11,15,"[13, 14]",John travelled to the kitchen. Then he travelled to the hallway.,Is John in the hallway?,Yes
+qa11,15,"[13, 14]",John travelled to the kitchen. Then he travelled to the hallway.,Is John in the garden?,No
+qa11,12,"[7, 8]",Mary travelled to the kitchen. After that she went to the bathroom.,Is Mary in the bathroom?,Yes
+qa11,12,"[7, 8]",Mary travelled to the kitchen. After that she went to the bathroom.,Is Mary in the hallway?,No
+qa11,6,"[1, 2]",Sandra went back to the hallway. Following that she went back to the kitchen.,Is Sandra in the kitchen?,Yes
+qa11,6,"[1, 2]",Sandra went back to the hallway. Following that she went back to the kitchen.,Is Sandra in the bedroom?,No
+qa11,3,"[1, 2]",Daniel went to the bathroom. Following that he went back to the kitchen.,Is Daniel in the kitchen?,Yes
+qa11,3,"[1, 2]",Daniel went to the bathroom. Following that he went back to the kitchen.,Is Daniel in the hallway?,No
+qa11,6,"[1, 2]",Daniel went to the bathroom. Following that he went back to the kitchen.,Is Daniel in the kitchen?,Yes
+qa11,6,"[1, 2]",Daniel went to the bathroom. Following that he went back to the kitchen.,Is Daniel in the bathroom?,No
+qa11,6,"[1, 2]",Mary went to the office. Afterwards she went back to the bedroom.,Is Mary in the bedroom?,Yes
+qa11,6,"[1, 2]",Mary went to the office. Afterwards she went back to the bedroom.,Is Mary in the garden?,No
+qa11,15,"[13, 14]",John went to the office. Then he went to the bedroom.,Is John in the bedroom?,Yes
+qa11,15,"[13, 14]",John went to the office. Then he went to the bedroom.,Is John in the hallway?,No
+qa11,15,"[13, 14]",Mary moved to the bathroom. Then she journeyed to the garden.,Is Mary in the garden?,Yes
+qa11,15,"[13, 14]",Mary moved to the bathroom. Then she journeyed to the garden.,Is Mary in the bathroom?,No
+qa11,12,"[10, 11]",John travelled to the hallway. Following that he travelled to the bathroom.,Is John in the bathroom?,Yes
+qa11,12,"[10, 11]",John travelled to the hallway. Following that he travelled to the bathroom.,Is John in the kitchen?,No
+qa11,6,"[1, 2]",Daniel journeyed to the hallway. After that he journeyed to the bedroom.,Is Daniel in the bedroom?,Yes
+qa11,6,"[1, 2]",Daniel journeyed to the hallway. After that he journeyed to the bedroom.,Is Daniel in the hallway?,No
+qa11,9,"[4, 5]",Mary journeyed to the bedroom. Then she moved to the kitchen.,Is Mary in the kitchen?,Yes
+qa11,9,"[4, 5]",Mary journeyed to the bedroom. Then she moved to the kitchen.,Is Mary in the bedroom?,No
+qa11,15,"[13, 14]",Sandra went back to the garden. Following that she went back to the bedroom.,Is Sandra in the bedroom?,Yes
+qa11,15,"[13, 14]",Sandra went back to the garden. Following that she went back to the bedroom.,Is Sandra in the office?,No
+qa11,15,"[13, 14]",Sandra travelled to the kitchen. After that she journeyed to the garden.,Is Sandra in the garden?,Yes
+qa11,15,"[13, 14]",Sandra travelled to the kitchen. After that she journeyed to the garden.,Is Sandra in the kitchen?,No
+qa11,6,"[4, 5]",John journeyed to the hallway. Then he travelled to the garden.,Is John in the garden?,Yes
+qa11,6,"[4, 5]",John journeyed to the hallway. Then he travelled to the garden.,Is John in the bedroom?,No
+qa11,6,"[4, 5]",Mary went back to the kitchen. Then she went back to the office.,Is Mary in the office?,Yes
+qa11,6,"[4, 5]",Mary went back to the kitchen. Then she went back to the office.,Is Mary in the bathroom?,No
+qa11,6,"[4, 5]",Sandra went back to the office. Following that she went to the kitchen.,Is Sandra in the kitchen?,Yes
+qa11,6,"[4, 5]",Sandra went back to the office. Following that she went to the kitchen.,Is Sandra in the bedroom?,No
+qa11,6,"[4, 5]",Daniel journeyed to the bathroom. Afterwards he went back to the kitchen.,Is Daniel in the kitchen?,Yes
+qa11,6,"[4, 5]",Daniel journeyed to the bathroom. Afterwards he went back to the kitchen.,Is Daniel in the hallway?,No
+qa11,3,"[1, 2]",Mary went to the garden. Afterwards she moved to the hallway.,Is Mary in the hallway?,Yes
+qa11,3,"[1, 2]",Mary went to the garden. Afterwards she moved to the hallway.,Is Mary in the garden?,No
+qa11,12,"[7, 8]",John went back to the hallway. Then he moved to the garden.,Is John in the garden?,Yes
+qa11,12,"[7, 8]",John went back to the hallway. Then he moved to the garden.,Is John in the office?,No
+qa11,9,"[4, 5]",Sandra went to the kitchen. After that she journeyed to the hallway.,Is Sandra in the hallway?,Yes
+qa11,9,"[4, 5]",Sandra went to the kitchen. After that she journeyed to the hallway.,Is Sandra in the bathroom?,No
+qa11,9,"[7, 8]",Daniel moved to the hallway. Following that he journeyed to the garden.,Is Daniel in the garden?,Yes
+qa11,9,"[7, 8]",Daniel moved to the hallway. Following that he journeyed to the garden.,Is Daniel in the kitchen?,No
+qa11,3,"[1, 2]",Mary journeyed to the garden. After that she travelled to the kitchen.,Is Mary in the kitchen?,Yes
+qa11,3,"[1, 2]",Mary journeyed to the garden. After that she travelled to the kitchen.,Is Mary in the office?,No
+qa11,6,"[4, 5]",Daniel went back to the office. After that he went to the bathroom.,Is Daniel in the bathroom?,Yes
+qa11,6,"[4, 5]",Daniel went back to the office. After that he went to the bathroom.,Is Daniel in the kitchen?,No
+qa11,6,"[1, 2]",John journeyed to the kitchen. Then he went to the hallway.,Is John in the hallway?,Yes
+qa11,6,"[1, 2]",John journeyed to the kitchen. Then he went to the hallway.,Is John in the office?,No
+qa11,9,"[7, 8]",John travelled to the bathroom. Afterwards he moved to the kitchen.,Is John in the kitchen?,Yes
+qa11,9,"[7, 8]",John travelled to the bathroom. Afterwards he moved to the kitchen.,Is John in the bathroom?,No
+qa11,15,"[13, 14]",John went to the office. Afterwards he went to the bathroom.,Is John in the bathroom?,Yes
+qa11,15,"[13, 14]",John went to the office. Afterwards he went to the bathroom.,Is John in the office?,No
+qa11,12,"[10, 11]",Daniel went back to the kitchen. Following that he went back to the hallway.,Is Daniel in the hallway?,Yes
+qa11,12,"[10, 11]",Daniel went back to the kitchen. Following that he went back to the hallway.,Is Daniel in the bathroom?,No
+qa11,15,"[13, 14]",Daniel went to the kitchen. Afterwards he moved to the hallway.,Is Daniel in the hallway?,Yes
+qa11,15,"[13, 14]",Daniel went to the kitchen. Afterwards he moved to the hallway.,Is Daniel in the garden?,No
+qa11,6,"[4, 5]",Sandra travelled to the garden. Then she journeyed to the bathroom.,Is Sandra in the bathroom?,Yes
+qa11,6,"[4, 5]",Sandra travelled to the garden. Then she journeyed to the bathroom.,Is Sandra in the bedroom?,No
+qa11,9,"[4, 5]",Sandra travelled to the garden. Then she journeyed to the bathroom.,Is Sandra in the bathroom?,Yes
+qa11,9,"[4, 5]",Sandra travelled to the garden. Then she journeyed to the bathroom.,Is Sandra in the bedroom?,No
+qa11,15,"[13, 14]",John travelled to the kitchen. Afterwards he went back to the bedroom.,Is John in the bedroom?,Yes
+qa11,15,"[13, 14]",John travelled to the kitchen. Afterwards he went back to the bedroom.,Is John in the kitchen?,No
+qa11,12,"[7, 8]",Mary moved to the bedroom. After that she travelled to the bathroom.,Is Mary in the bathroom?,Yes
+qa11,12,"[7, 8]",Mary moved to the bedroom. After that she travelled to the bathroom.,Is Mary in the hallway?,No
+qa11,9,"[1, 2]",Daniel moved to the office. Then he moved to the bedroom.,Is Daniel in the bedroom?,Yes
+qa11,9,"[1, 2]",Daniel moved to the office. Then he moved to the bedroom.,Is Daniel in the hallway?,No
+qa11,12,"[7, 8]",Daniel travelled to the kitchen. Following that he went back to the hallway.,Is Daniel in the hallway?,Yes
+qa11,12,"[7, 8]",Daniel travelled to the kitchen. Following that he went back to the hallway.,Is Daniel in the office?,No
+qa11,15,"[13, 14]",Mary went to the kitchen. After that she travelled to the office.,Is Mary in the office?,Yes
+qa11,15,"[13, 14]",Mary went to the kitchen. After that she travelled to the office.,Is Mary in the hallway?,No
+qa11,6,"[1, 2]",John journeyed to the office. After that he moved to the kitchen.,Is John in the kitchen?,Yes
+qa11,6,"[1, 2]",John journeyed to the office. After that he moved to the kitchen.,Is John in the hallway?,No
+qa12,15,[14],Daniel and Sandra journeyed to the hallway.,Is Daniel in the hallway?,Yes
+qa12,15,[14],Daniel and Sandra journeyed to the hallway.,Is Daniel in the kitchen?,No
+qa12,6,[5],Mary and John went back to the garden.,Is Mary in the garden?,Yes
+qa12,6,[5],Mary and John went back to the garden.,Is Mary in the kitchen?,No
+qa12,6,[5],Sandra and Mary journeyed to the kitchen.,Is Sandra in the kitchen?,Yes
+qa12,6,[5],Sandra and Mary journeyed to the kitchen.,Is Sandra in the garden?,No
+qa12,6,[5],John and Daniel went to the bedroom.,Is Daniel in the bedroom?,Yes
+qa12,6,[5],John and Daniel went to the bedroom.,Is Daniel in the kitchen?,No
+qa12,6,[4],Sandra and Daniel journeyed to the bedroom.,Is Daniel in the bedroom?,Yes
+qa12,6,[4],Sandra and Daniel journeyed to the bedroom.,Is Daniel in the bathroom?,No
+qa12,15,[14],Mary and John went to the bedroom.,Is John in the bedroom?,Yes
+qa12,15,[14],Mary and John went to the bedroom.,Is John in the hallway?,No
+qa12,15,[13],Sandra and John went to the office.,Is Sandra in the office?,Yes
+qa12,15,[13],Sandra and John went to the office.,Is Sandra in the hallway?,No
+qa12,12,[10],Daniel and John travelled to the garden.,Is Daniel in the garden?,Yes
+qa12,12,[10],Daniel and John travelled to the garden.,Is Daniel in the kitchen?,No
+qa12,3,[2],Daniel and John travelled to the bathroom.,Is Daniel in the bathroom?,Yes
+qa12,3,[2],Daniel and John travelled to the bathroom.,Is Daniel in the kitchen?,No
+qa12,3,[2],Mary and Sandra moved to the hallway.,Is Mary in the hallway?,Yes
+qa12,3,[2],Mary and Sandra moved to the hallway.,Is Mary in the office?,No
+qa12,9,[8],Mary and Daniel went back to the bathroom.,Is Mary in the bathroom?,Yes
+qa12,9,[8],Mary and Daniel went back to the bathroom.,Is Mary in the hallway?,No
+qa12,3,[2],Mary and Sandra moved to the hallway.,Is Mary in the hallway?,Yes
+qa12,3,[2],Mary and Sandra moved to the hallway.,Is Mary in the garden?,No
+qa12,15,[14],Daniel and John went to the office.,Is Daniel in the office?,Yes
+qa12,15,[14],Daniel and John went to the office.,Is Daniel in the kitchen?,No
+qa12,9,[8],Sandra and Daniel went back to the bedroom.,Is Daniel in the bedroom?,Yes
+qa12,9,[8],Sandra and Daniel went back to the bedroom.,Is Daniel in the bathroom?,No
+qa12,15,[13],Daniel and Mary journeyed to the kitchen.,Is Mary in the kitchen?,Yes
+qa12,15,[13],Daniel and Mary journeyed to the kitchen.,Is Mary in the bedroom?,No
+qa12,12,[11],Mary and Daniel went back to the office.,Is Mary in the office?,Yes
+qa12,12,[11],Mary and Daniel went back to the office.,Is Mary in the bedroom?,No
+qa12,6,[5],Mary and John went back to the bedroom.,Is Mary in the bedroom?,Yes
+qa12,6,[5],Mary and John went back to the bedroom.,Is Mary in the garden?,No
+qa12,3,[2],John and Daniel journeyed to the hallway.,Is John in the hallway?,Yes
+qa12,3,[2],John and Daniel journeyed to the hallway.,Is John in the bedroom?,No
+qa12,6,[5],Sandra and John moved to the kitchen.,Is Sandra in the kitchen?,Yes
+qa12,6,[5],Sandra and John moved to the kitchen.,Is Sandra in the bedroom?,No
+qa12,6,[5],Daniel and Sandra went to the hallway.,Is Sandra in the hallway?,Yes
+qa12,6,[5],Daniel and Sandra went to the hallway.,Is Sandra in the garden?,No
+qa12,15,[14],Daniel and Sandra travelled to the office.,Is Daniel in the office?,Yes
+qa12,15,[14],Daniel and Sandra travelled to the office.,Is Daniel in the bathroom?,No
+qa12,15,[14],John and Daniel went back to the bedroom.,Is Daniel in the bedroom?,Yes
+qa12,15,[14],John and Daniel went back to the bedroom.,Is Daniel in the kitchen?,No
+qa12,12,[11],Daniel and Mary travelled to the hallway.,Is Daniel in the hallway?,Yes
+qa12,12,[11],Daniel and Mary travelled to the hallway.,Is Daniel in the office?,No
+qa12,6,[5],Daniel and John journeyed to the bathroom.,Is Daniel in the bathroom?,Yes
+qa12,6,[5],Daniel and John journeyed to the bathroom.,Is Daniel in the hallway?,No
+qa12,9,[8],Sandra and John journeyed to the bedroom.,Is John in the bedroom?,Yes
+qa12,9,[8],Sandra and John journeyed to the bedroom.,Is John in the kitchen?,No
+qa12,15,[14],Mary and Daniel travelled to the hallway.,Is Daniel in the hallway?,Yes
+qa12,15,[14],Mary and Daniel travelled to the hallway.,Is Daniel in the bedroom?,No
+qa12,15,[14],Mary and John moved to the hallway.,Is John in the hallway?,Yes
+qa12,15,[14],Mary and John moved to the hallway.,Is John in the office?,No
+qa12,6,[4],Mary and Sandra journeyed to the bathroom.,Is Sandra in the bathroom?,Yes
+qa12,6,[4],Mary and Sandra journeyed to the bathroom.,Is Sandra in the office?,No
+qa12,6,[4],Sandra and Mary moved to the bedroom.,Is Mary in the bedroom?,Yes
+qa12,6,[4],Sandra and Mary moved to the bedroom.,Is Mary in the bathroom?,No
+qa12,6,[5],John and Sandra journeyed to the garden.,Is John in the garden?,Yes
+qa12,6,[5],John and Sandra journeyed to the garden.,Is John in the bathroom?,No
+qa12,6,[5],John and Sandra went back to the bathroom.,Is John in the bathroom?,Yes
+qa12,6,[5],John and Sandra went back to the bathroom.,Is John in the hallway?,No
+qa12,3,[2],John and Mary moved to the hallway.,Is John in the hallway?,Yes
+qa12,3,[2],John and Mary moved to the hallway.,Is John in the bathroom?,No
+qa12,12,[11],Daniel and John journeyed to the hallway.,Is John in the hallway?,Yes
+qa12,12,[11],Daniel and John journeyed to the hallway.,Is John in the garden?,No
+qa12,9,[8],Sandra and Daniel went to the bedroom.,Is Sandra in the bedroom?,Yes
+qa12,9,[8],Sandra and Daniel went to the bedroom.,Is Sandra in the kitchen?,No
+qa12,9,[8],Mary and Daniel journeyed to the hallway.,Is Mary in the hallway?,Yes
+qa12,9,[8],Mary and Daniel journeyed to the hallway.,Is Mary in the bathroom?,No
+qa12,3,[2],Sandra and Mary went to the hallway.,Is Mary in the hallway?,Yes
+qa12,3,[2],Sandra and Mary went to the hallway.,Is Mary in the garden?,No
+qa12,6,[4],John and Daniel journeyed to the kitchen.,Is Daniel in the kitchen?,Yes
+qa12,6,[4],John and Daniel journeyed to the kitchen.,Is Daniel in the office?,No
+qa12,6,[5],Daniel and Sandra went to the office.,Is Sandra in the office?,Yes
+qa12,6,[5],Daniel and Sandra went to the office.,Is Sandra in the hallway?,No
+qa12,9,[8],John and Mary journeyed to the bathroom.,Is John in the bathroom?,Yes
+qa12,9,[8],John and Mary journeyed to the bathroom.,Is John in the hallway?,No
+qa12,15,[14],John and Mary moved to the hallway.,Is Mary in the hallway?,Yes
+qa12,15,[14],John and Mary moved to the hallway.,Is Mary in the office?,No
+qa12,12,[10],John and Mary travelled to the bedroom.,Is John in the bedroom?,Yes
+qa12,12,[10],John and Mary travelled to the bedroom.,Is John in the bathroom?,No
+qa12,15,[14],John and Mary moved to the bedroom.,Is Mary in the bedroom?,Yes
+qa12,15,[14],John and Mary moved to the bedroom.,Is Mary in the garden?,No
+qa12,6,[5],John and Daniel journeyed to the garden.,Is Daniel in the garden?,Yes
+qa12,6,[5],John and Daniel journeyed to the garden.,Is Daniel in the bedroom?,No
+qa12,9,[8],Mary and Daniel travelled to the garden.,Is Daniel in the garden?,Yes
+qa12,9,[8],Mary and Daniel travelled to the garden.,Is Daniel in the hallway?,No
+qa12,15,[14],Daniel and John went to the office.,Is Daniel in the office?,Yes
+qa12,15,[14],Daniel and John went to the office.,Is Daniel in the bedroom?,No
+qa12,12,[10],Sandra and John travelled to the office.,Is Sandra in the office?,Yes
+qa12,12,[10],Sandra and John travelled to the office.,Is Sandra in the hallway?,No
+qa12,9,[8],Mary and Sandra went back to the garden.,Is Mary in the garden?,Yes
+qa12,9,[8],Mary and Sandra went back to the garden.,Is Mary in the bathroom?,No
+qa12,12,[8],John and Daniel moved to the bedroom.,Is Daniel in the bedroom?,Yes
+qa12,12,[8],John and Daniel moved to the bedroom.,Is Daniel in the garden?,No
+qa12,15,[14],Daniel and Mary went to the hallway.,Is Daniel in the hallway?,Yes
+qa12,15,[14],Daniel and Mary went to the hallway.,Is Daniel in the bedroom?,No
+qa12,6,[5],Daniel and Sandra travelled to the garden.,Is Sandra in the garden?,Yes
+qa12,6,[5],Daniel and Sandra travelled to the garden.,Is Sandra in the kitchen?,No
+qa13,15,"[13, 14]",Daniel and Sandra journeyed to the hallway. After that they went to the bedroom.,Is Daniel in the bedroom?,Yes
+qa13,15,"[13, 14]",Daniel and Sandra journeyed to the hallway. After that they went to the bedroom.,Is Daniel in the garden?,No
+qa13,6,"[4, 5]",John and Mary went back to the garden. Then they moved to the office.,Is Mary in the office?,Yes
+qa13,6,"[4, 5]",John and Mary went back to the garden. Then they moved to the office.,Is Mary in the hallway?,No
+qa13,6,"[4, 5]",Daniel and John went to the bathroom. After that they went back to the hallway.,Is John in the hallway?,Yes
+qa13,6,"[4, 5]",Daniel and John went to the bathroom. After that they went back to the hallway.,Is John in the bedroom?,No
+qa13,6,"[4, 5]",John and Sandra went back to the bathroom. Afterwards they went back to the office.,Is Sandra in the office?,Yes
+qa13,6,"[4, 5]",John and Sandra went back to the bathroom. Afterwards they went back to the office.,Is Sandra in the kitchen?,No
+qa13,6,"[4, 5]",Mary and Daniel moved to the bedroom. Then they went back to the kitchen.,Is Mary in the kitchen?,Yes
+qa13,6,"[4, 5]",Mary and Daniel moved to the bedroom. Then they went back to the kitchen.,Is Mary in the garden?,No
+qa13,15,"[13, 14]",John and Mary travelled to the garden. Then they moved to the office.,Is John in the office?,Yes
+qa13,15,"[13, 14]",John and Mary travelled to the garden. Then they moved to the office.,Is John in the bathroom?,No
+qa13,15,"[13, 14]",Mary and Daniel went to the bathroom. Afterwards they moved to the bedroom.,Is Daniel in the bedroom?,Yes
+qa13,15,"[13, 14]",Mary and Daniel went to the bathroom. Afterwards they moved to the bedroom.,Is Daniel in the hallway?,No
+qa13,12,"[10, 11]",John and Sandra went to the office. Then they went back to the bathroom.,Is John in the bathroom?,Yes
+qa13,12,"[10, 11]",John and Sandra went to the office. Then they went back to the bathroom.,Is John in the kitchen?,No
+qa13,3,"[1, 2]",Mary and Sandra journeyed to the bedroom. Afterwards they journeyed to the hallway.,Is Mary in the hallway?,Yes
+qa13,3,"[1, 2]",Mary and Sandra journeyed to the bedroom. Afterwards they journeyed to the hallway.,Is Mary in the kitchen?,No
+qa13,3,"[1, 2]",Sandra and Daniel travelled to the garden. After that they moved to the office.,Is Daniel in the office?,Yes
+qa13,3,"[1, 2]",Sandra and Daniel travelled to the garden. After that they moved to the office.,Is Daniel in the hallway?,No
+qa13,9,"[7, 8]",John and Sandra went back to the office. Following that they went to the hallway.,Is John in the hallway?,Yes
+qa13,9,"[7, 8]",John and Sandra went back to the office. Following that they went to the hallway.,Is John in the bathroom?,No
+qa13,3,"[1, 2]",Daniel and John went to the bedroom. Then they travelled to the garden.,Is John in the garden?,Yes
+qa13,3,"[1, 2]",Daniel and John went to the bedroom. Then they travelled to the garden.,Is John in the office?,No
+qa13,15,"[13, 14]",Daniel and Sandra journeyed to the hallway. Following that they went to the garden.,Is Daniel in the garden?,Yes
+qa13,15,"[13, 14]",Daniel and Sandra journeyed to the hallway. Following that they went to the garden.,Is Daniel in the bedroom?,No
+qa13,9,"[7, 8]",Daniel and Mary went back to the kitchen. Following that they went to the bathroom.,Is Mary in the bathroom?,Yes
+qa13,9,"[7, 8]",Daniel and Mary went back to the kitchen. Following that they went to the bathroom.,Is Mary in the kitchen?,No
+qa13,15,"[13, 14]",Sandra and John journeyed to the bathroom. Afterwards they went back to the garden.,Is John in the garden?,Yes
+qa13,15,"[13, 14]",Sandra and John journeyed to the bathroom. Afterwards they went back to the garden.,Is John in the bathroom?,No
+qa13,12,"[10, 11]",Mary and John went back to the office. Afterwards they went back to the garden.,Is Mary in the garden?,Yes
+qa13,12,"[10, 11]",Mary and John went back to the office. Afterwards they went back to the garden.,Is Mary in the bedroom?,No
+qa13,6,"[4, 5]",John and Daniel moved to the garden. Afterwards they went back to the hallway.,Is Daniel in the hallway?,Yes
+qa13,6,"[4, 5]",John and Daniel moved to the garden. Afterwards they went back to the hallway.,Is Daniel in the garden?,No
+qa13,3,"[1, 2]",Daniel and Sandra moved to the bedroom. Then they went back to the office.,Is Sandra in the office?,Yes
+qa13,3,"[1, 2]",Daniel and Sandra moved to the bedroom. Then they went back to the office.,Is Sandra in the bedroom?,No
+qa13,6,"[4, 5]",John and Mary went back to the garden. Then they travelled to the bathroom.,Is Mary in the bathroom?,Yes
+qa13,6,"[4, 5]",John and Mary went back to the garden. Then they travelled to the bathroom.,Is Mary in the kitchen?,No
+qa13,6,"[4, 5]",Sandra and John went back to the office. After that they moved to the hallway.,Is Sandra in the hallway?,Yes
+qa13,6,"[4, 5]",Sandra and John went back to the office. After that they moved to the hallway.,Is Sandra in the garden?,No
+qa13,15,"[13, 14]",Daniel and Mary journeyed to the kitchen. Then they went back to the garden.,Is Daniel in the garden?,Yes
+qa13,15,"[13, 14]",Daniel and Mary journeyed to the kitchen. Then they went back to the garden.,Is Daniel in the bedroom?,No
+qa13,15,"[13, 14]",Mary and Daniel went back to the kitchen. Following that they moved to the hallway.,Is Mary in the hallway?,Yes
+qa13,15,"[13, 14]",Mary and Daniel went back to the kitchen. Following that they moved to the hallway.,Is Mary in the bathroom?,No
+qa13,12,"[10, 11]",John and Mary moved to the kitchen. Following that they journeyed to the garden.,Is John in the garden?,Yes
+qa13,12,"[10, 11]",John and Mary moved to the kitchen. Following that they journeyed to the garden.,Is John in the kitchen?,No
+qa13,6,"[4, 5]",Daniel and Mary went to the garden. Then they went to the hallway.,Is Mary in the hallway?,Yes
+qa13,6,"[4, 5]",Daniel and Mary went to the garden. Then they went to the hallway.,Is Mary in the office?,No
+qa13,9,"[4, 5]",Daniel and Mary journeyed to the office. Following that they went back to the bedroom.,Is Mary in the bedroom?,Yes
+qa13,9,"[4, 5]",Daniel and Mary journeyed to the office. Following that they went back to the bedroom.,Is Mary in the hallway?,No
+qa13,15,"[13, 14]",Sandra and Daniel went to the hallway. Afterwards they moved to the office.,Is Sandra in the office?,Yes
+qa13,15,"[13, 14]",Sandra and Daniel went to the hallway. Afterwards they moved to the office.,Is Sandra in the bedroom?,No
+qa13,15,"[13, 14]",Sandra and John went to the bathroom. Following that they journeyed to the hallway.,Is Sandra in the hallway?,Yes
+qa13,15,"[13, 14]",Sandra and John went to the bathroom. Following that they journeyed to the hallway.,Is Sandra in the office?,No
+qa13,6,"[4, 5]",Mary and Daniel went back to the hallway. Afterwards they moved to the kitchen.,Is Mary in the kitchen?,Yes
+qa13,6,"[4, 5]",Mary and Daniel went back to the hallway. Afterwards they moved to the kitchen.,Is Mary in the bathroom?,No
+qa13,6,"[4, 5]",John and Sandra went to the office. After that they went to the garden.,Is Sandra in the garden?,Yes
+qa13,6,"[4, 5]",John and Sandra went to the office. After that they went to the garden.,Is Sandra in the bathroom?,No
+qa13,6,"[4, 5]",John and Mary travelled to the garden. After that they went to the hallway.,Is John in the hallway?,Yes
+qa13,6,"[4, 5]",John and Mary travelled to the garden. After that they went to the hallway.,Is John in the kitchen?,No
+qa13,6,"[4, 5]",John and Sandra went to the bathroom. Then they went back to the office.,Is Sandra in the office?,Yes
+qa13,6,"[4, 5]",John and Sandra went to the bathroom. Then they went back to the office.,Is Sandra in the garden?,No
+qa13,3,"[1, 2]",Sandra and John journeyed to the office. Then they went to the garden.,Is Sandra in the garden?,Yes
+qa13,3,"[1, 2]",Sandra and John journeyed to the office. Then they went to the garden.,Is Sandra in the bathroom?,No
+qa13,12,"[10, 11]",Sandra and John journeyed to the bedroom. Following that they went to the office.,Is John in the office?,Yes
+qa13,12,"[10, 11]",Sandra and John journeyed to the bedroom. Following that they went to the office.,Is John in the bedroom?,No
+qa13,9,"[7, 8]",Mary and Daniel moved to the kitchen. After that they went to the bedroom.,Is Daniel in the bedroom?,Yes
+qa13,9,"[7, 8]",Mary and Daniel moved to the kitchen. After that they went to the bedroom.,Is Daniel in the hallway?,No
+qa13,9,"[7, 8]",Daniel and Sandra went back to the bedroom. Following that they moved to the bathroom.,Is Daniel in the bathroom?,Yes
+qa13,9,"[7, 8]",Daniel and Sandra went back to the bedroom. Following that they moved to the bathroom.,Is Daniel in the hallway?,No
+qa13,3,"[1, 2]",Mary and Daniel moved to the bedroom. Then they travelled to the hallway.,Is Daniel in the hallway?,Yes
+qa13,3,"[1, 2]",Mary and Daniel moved to the bedroom. Then they travelled to the hallway.,Is Daniel in the office?,No
+qa13,6,"[4, 5]",John and Sandra travelled to the garden. After that they went back to the kitchen.,Is John in the kitchen?,Yes
+qa13,6,"[4, 5]",John and Sandra travelled to the garden. After that they went back to the kitchen.,Is John in the bathroom?,No
+qa13,6,"[4, 5]",Mary and John travelled to the bedroom. Following that they travelled to the kitchen.,Is John in the kitchen?,Yes
+qa13,6,"[4, 5]",Mary and John travelled to the bedroom. Following that they travelled to the kitchen.,Is John in the bathroom?,No
+qa13,9,"[7, 8]",Mary and Sandra travelled to the garden. Then they travelled to the office.,Is Sandra in the office?,Yes
+qa13,9,"[7, 8]",Mary and Sandra travelled to the garden. Then they travelled to the office.,Is Sandra in the garden?,No
+qa13,15,"[13, 14]",John and Sandra went back to the bedroom. After that they travelled to the hallway.,Is Sandra in the hallway?,Yes
+qa13,15,"[13, 14]",John and Sandra went back to the bedroom. After that they travelled to the hallway.,Is Sandra in the bathroom?,No
+qa13,12,"[10, 11]",John and Daniel moved to the garden. Afterwards they travelled to the kitchen.,Is John in the kitchen?,Yes
+qa13,12,"[10, 11]",John and Daniel moved to the garden. Afterwards they travelled to the kitchen.,Is John in the hallway?,No
+qa13,15,"[13, 14]",John and Sandra went to the hallway. Then they went to the bedroom.,Is John in the bedroom?,Yes
+qa13,15,"[13, 14]",John and Sandra went to the hallway. Then they went to the bedroom.,Is John in the bathroom?,No
+qa13,6,"[1, 2]",Sandra and Daniel went back to the garden. Afterwards they moved to the bedroom.,Is Daniel in the bedroom?,Yes
+qa13,6,"[1, 2]",Sandra and Daniel went back to the garden. Afterwards they moved to the bedroom.,Is Daniel in the kitchen?,No
+qa13,9,"[7, 8]",Mary and Sandra moved to the hallway. Following that they went to the bedroom.,Is Mary in the bedroom?,Yes
+qa13,9,"[7, 8]",Mary and Sandra moved to the hallway. Following that they went to the bedroom.,Is Mary in the kitchen?,No
+qa13,15,"[13, 14]",Mary and Sandra moved to the kitchen. Afterwards they journeyed to the office.,Is Sandra in the office?,Yes
+qa13,15,"[13, 14]",Mary and Sandra moved to the kitchen. Afterwards they journeyed to the office.,Is Sandra in the bedroom?,No
+qa13,12,"[10, 11]",Mary and Sandra went back to the kitchen. Following that they went back to the office.,Is Mary in the office?,Yes
+qa13,12,"[10, 11]",Mary and Sandra went back to the kitchen. Following that they went back to the office.,Is Mary in the bathroom?,No
+qa13,9,"[7, 8]",Sandra and John moved to the hallway. Following that they moved to the garden.,Is Sandra in the garden?,Yes
+qa13,9,"[7, 8]",Sandra and John moved to the hallway. Following that they moved to the garden.,Is Sandra in the office?,No
+qa13,12,"[10, 11]",John and Mary moved to the office. After that they journeyed to the bedroom.,Is John in the bedroom?,Yes
+qa13,12,"[10, 11]",John and Mary moved to the office. After that they journeyed to the bedroom.,Is John in the hallway?,No
+qa13,15,"[13, 14]",Sandra and John journeyed to the bathroom. Then they travelled to the hallway.,Is Sandra in the hallway?,Yes
+qa13,15,"[13, 14]",Sandra and John journeyed to the bathroom. Then they travelled to the hallway.,Is Sandra in the garden?,No
+qa13,6,"[4, 5]",Sandra and Mary moved to the hallway. Following that they went back to the kitchen.,Is Mary in the kitchen?,Yes
+qa13,6,"[4, 5]",Sandra and Mary moved to the hallway. Following that they went back to the kitchen.,Is Mary in the bathroom?,No
+qa15,12,"[5, 1]",Winona is a sheep. Sheep are afraid of wolves.,Is winona afraid of a wolf?,Yes
+qa15,12,"[5, 1]",Winona is a sheep. Sheep are afraid of wolves.,Is winona afraid of a cat?,No
+qa15,9,"[4, 2]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a mouse?,Yes
+qa15,9,"[4, 2]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a wolf?,No
+qa15,9,"[8, 3]",Gertrude is a cat. Cats are afraid of wolves.,Is gertrude afraid of a wolf?,Yes
+qa15,9,"[8, 3]",Gertrude is a cat. Cats are afraid of wolves.,Is gertrude afraid of a cat?,No
+qa15,10,"[7, 1]",Gertrude is a mouse. Mice are afraid of wolves.,Is gertrude afraid of a wolf?,Yes
+qa15,10,"[7, 1]",Gertrude is a mouse. Mice are afraid of wolves.,Is gertrude afraid of a sheep?,No
+qa15,9,"[8, 6]",Gertrude is a mouse. Mice are afraid of cats.,Is gertrude afraid of a cat?,Yes
+qa15,9,"[8, 6]",Gertrude is a mouse. Mice are afraid of cats.,Is gertrude afraid of a mouse?,No
+qa15,12,"[3, 1]",Emily is a cat. Cats are afraid of sheep.,Is emily afraid of a sheep?,Yes
+qa15,12,"[3, 1]",Emily is a cat. Cats are afraid of sheep.,Is emily afraid of a wolf?,No
+qa15,11,"[5, 1]",Gertrude is a cat. Cats are afraid of mice.,Is gertrude afraid of a mouse?,Yes
+qa15,11,"[5, 1]",Gertrude is a cat. Cats are afraid of mice.,Is gertrude afraid of a cat?,No
+qa15,11,"[7, 2]",Jessica is a cat. Cats are afraid of wolves.,Is jessica afraid of a wolf?,Yes
+qa15,11,"[7, 2]",Jessica is a cat. Cats are afraid of wolves.,Is jessica afraid of a cat?,No
+qa15,11,"[8, 3]",Jessica is a sheep. Sheep are afraid of mice.,Is jessica afraid of a mouse?,Yes
+qa15,11,"[8, 3]",Jessica is a sheep. Sheep are afraid of mice.,Is jessica afraid of a wolf?,No
+qa15,12,"[8, 4]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a mouse?,Yes
+qa15,12,"[8, 4]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a sheep?,No
+qa15,10,"[2, 1]",Jessica is a sheep. Sheep are afraid of wolves.,Is jessica afraid of a wolf?,Yes
+qa15,10,"[2, 1]",Jessica is a sheep. Sheep are afraid of wolves.,Is jessica afraid of a cat?,No
+qa15,9,"[4, 1]",Emily is a wolf. Wolves are afraid of sheep.,Is emily afraid of a sheep?,Yes
+qa15,9,"[4, 1]",Emily is a wolf. Wolves are afraid of sheep.,Is emily afraid of a wolf?,No
+qa15,12,"[2, 1]",Jessica is a wolf. Wolves are afraid of sheep.,Is jessica afraid of a sheep?,Yes
+qa15,12,"[2, 1]",Jessica is a wolf. Wolves are afraid of sheep.,Is jessica afraid of a mouse?,No
+qa15,9,"[8, 1]",Gertrude is a wolf. Wolves are afraid of cats.,Is gertrude afraid of a cat?,Yes
+qa15,9,"[8, 1]",Gertrude is a wolf. Wolves are afraid of cats.,Is gertrude afraid of a wolf?,No
+qa15,12,"[5, 1]",Emily is a mouse. Mice are afraid of wolves.,Is emily afraid of a wolf?,Yes
+qa15,12,"[5, 1]",Emily is a mouse. Mice are afraid of wolves.,Is emily afraid of a mouse?,No
+qa15,9,"[6, 5]",Jessica is a mouse. Mice are afraid of sheep.,Is jessica afraid of a sheep?,Yes
+qa15,9,"[6, 5]",Jessica is a mouse. Mice are afraid of sheep.,Is jessica afraid of a cat?,No
+qa15,11,"[6, 1]",Winona is a sheep. Sheep are afraid of wolves.,Is winona afraid of a wolf?,Yes
+qa15,11,"[6, 1]",Winona is a sheep. Sheep are afraid of wolves.,Is winona afraid of a mouse?,No
+qa15,11,"[4, 2]",Emily is a mouse. Mice are afraid of wolves.,Is emily afraid of a wolf?,Yes
+qa15,11,"[4, 2]",Emily is a mouse. Mice are afraid of wolves.,Is emily afraid of a sheep?,No
+qa15,12,"[7, 1]",Jessica is a wolf. Wolves are afraid of mice.,Is jessica afraid of a mouse?,Yes
+qa15,12,"[7, 1]",Jessica is a wolf. Wolves are afraid of mice.,Is jessica afraid of a cat?,No
+qa15,12,"[8, 1]",Emily is a mouse. Mice are afraid of wolves.,Is emily afraid of a wolf?,Yes
+qa15,12,"[8, 1]",Emily is a mouse. Mice are afraid of wolves.,Is emily afraid of a mouse?,No
+qa15,12,"[5, 2]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a mouse?,Yes
+qa15,12,"[5, 2]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a sheep?,No
+qa15,12,"[8, 4]",Jessica is a sheep. Sheep are afraid of cats.,Is jessica afraid of a cat?,Yes
+qa15,12,"[8, 4]",Jessica is a sheep. Sheep are afraid of cats.,Is jessica afraid of a sheep?,No
+qa15,10,"[6, 5]",Emily is a wolf. Wolves are afraid of cats.,Is emily afraid of a cat?,Yes
+qa15,10,"[6, 5]",Emily is a wolf. Wolves are afraid of cats.,Is emily afraid of a wolf?,No
+qa15,10,"[5, 3]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a mouse?,Yes
+qa15,10,"[5, 3]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a cat?,No
+qa15,12,"[4, 1]",Jessica is a cat. Cats are afraid of sheep.,Is jessica afraid of a sheep?,Yes
+qa15,12,"[4, 1]",Jessica is a cat. Cats are afraid of sheep.,Is jessica afraid of a wolf?,No
+qa15,10,"[7, 3]",Jessica is a wolf. Wolves are afraid of cats.,Is jessica afraid of a cat?,Yes
+qa15,10,"[7, 3]",Jessica is a wolf. Wolves are afraid of cats.,Is jessica afraid of a mouse?,No
+qa15,9,"[8, 1]",Jessica is a mouse. Mice are afraid of wolves.,Is jessica afraid of a wolf?,Yes
+qa15,9,"[8, 1]",Jessica is a mouse. Mice are afraid of wolves.,Is jessica afraid of a mouse?,No
+qa15,10,"[7, 4]",Emily is a cat. Cats are afraid of wolves.,Is emily afraid of a wolf?,Yes
+qa15,10,"[7, 4]",Emily is a cat. Cats are afraid of wolves.,Is emily afraid of a cat?,No
+qa15,10,"[6, 1]",Jessica is a wolf. Wolves are afraid of cats.,Is jessica afraid of a cat?,Yes
+qa15,10,"[6, 1]",Jessica is a wolf. Wolves are afraid of cats.,Is jessica afraid of a sheep?,No
+qa15,11,"[3, 2]",Jessica is a wolf. Wolves are afraid of sheep.,Is jessica afraid of a sheep?,Yes
+qa15,11,"[3, 2]",Jessica is a wolf. Wolves are afraid of sheep.,Is jessica afraid of a mouse?,No
+qa15,9,"[5, 4]",Jessica is a cat. Cats are afraid of wolves.,Is jessica afraid of a wolf?,Yes
+qa15,9,"[5, 4]",Jessica is a cat. Cats are afraid of wolves.,Is jessica afraid of a mouse?,No
+qa15,9,"[6, 2]",Winona is a cat. Cats are afraid of sheep.,Is winona afraid of a sheep?,Yes
+qa15,9,"[6, 2]",Winona is a cat. Cats are afraid of sheep.,Is winona afraid of a mouse?,No
+qa15,11,"[5, 2]",Gertrude is a sheep. Sheep are afraid of cats.,Is gertrude afraid of a cat?,Yes
+qa15,11,"[5, 2]",Gertrude is a sheep. Sheep are afraid of cats.,Is gertrude afraid of a mouse?,No
+qa15,12,"[4, 3]",Jessica is a sheep. Sheep are afraid of cats.,Is jessica afraid of a cat?,Yes
+qa15,12,"[4, 3]",Jessica is a sheep. Sheep are afraid of cats.,Is jessica afraid of a mouse?,No
+qa15,10,"[3, 1]",Emily is a cat. Cats are afraid of sheep.,Is emily afraid of a sheep?,Yes
+qa15,10,"[3, 1]",Emily is a cat. Cats are afraid of sheep.,Is emily afraid of a cat?,No
+qa15,9,"[8, 3]",Emily is a sheep. Sheep are afraid of wolves.,Is emily afraid of a wolf?,Yes
+qa15,9,"[8, 3]",Emily is a sheep. Sheep are afraid of wolves.,Is emily afraid of a cat?,No
+qa15,10,"[5, 2]",Gertrude is a mouse. Mice are afraid of wolves.,Is gertrude afraid of a wolf?,Yes
+qa15,10,"[5, 2]",Gertrude is a mouse. Mice are afraid of wolves.,Is gertrude afraid of a mouse?,No
+qa15,12,"[4, 1]",Winona is a mouse. Mice are afraid of cats.,Is winona afraid of a cat?,Yes
+qa15,12,"[4, 1]",Winona is a mouse. Mice are afraid of cats.,Is winona afraid of a sheep?,No
+qa15,10,"[4, 1]",Winona is a sheep. Sheep are afraid of wolves.,Is winona afraid of a wolf?,Yes
+qa15,10,"[4, 1]",Winona is a sheep. Sheep are afraid of wolves.,Is winona afraid of a mouse?,No
+qa15,12,"[7, 1]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a mouse?,Yes
+qa15,12,"[7, 1]",Emily is a wolf. Wolves are afraid of mice.,Is emily afraid of a sheep?,No
+qa15,12,"[7, 3]",Jessica is a mouse. Mice are afraid of sheep.,Is jessica afraid of a sheep?,Yes
+qa15,12,"[7, 3]",Jessica is a mouse. Mice are afraid of sheep.,Is jessica afraid of a cat?,No
+qa15,12,"[7, 5]",Gertrude is a cat. Cats are afraid of wolves.,Is gertrude afraid of a wolf?,Yes
+qa15,12,"[7, 5]",Gertrude is a cat. Cats are afraid of wolves.,Is gertrude afraid of a mouse?,No
+qa15,10,"[8, 3]",Winona is a mouse. Mice are afraid of wolves.,Is winona afraid of a wolf?,Yes
+qa15,10,"[8, 3]",Winona is a mouse. Mice are afraid of wolves.,Is winona afraid of a mouse?,No
+qa15,11,"[7, 1]",Jessica is a wolf. Wolves are afraid of cats.,Is jessica afraid of a cat?,Yes
+qa15,11,"[7, 1]",Jessica is a wolf. Wolves are afraid of cats.,Is jessica afraid of a sheep?,No
+qa15,9,"[7, 2]",Jessica is a mouse. Mice are afraid of sheep.,Is jessica afraid of a sheep?,Yes
+qa15,9,"[7, 2]",Jessica is a mouse. Mice are afraid of sheep.,Is jessica afraid of a mouse?,No
+qa15,11,"[5, 1]",Emily is a cat. Cats are afraid of wolves.,Is emily afraid of a wolf?,Yes
+qa15,11,"[5, 1]",Emily is a cat. Cats are afraid of wolves.,Is emily afraid of a sheep?,No
+qa15,12,"[3, 1]",Winona is a sheep. Sheep are afraid of mice.,Is winona afraid of a mouse?,Yes
+qa15,12,"[3, 1]",Winona is a sheep. Sheep are afraid of mice.,Is winona afraid of a wolf?,No
+qa15,10,"[5, 4]",Emily is a mouse. Mice are afraid of cats.,Is emily afraid of a cat?,Yes
+qa15,10,"[5, 4]",Emily is a mouse. Mice are afraid of cats.,Is emily afraid of a wolf?,No
+qa15,11,"[5, 4]",Emily is a mouse. Mice are afraid of cats.,Is emily afraid of a cat?,Yes
+qa15,11,"[5, 4]",Emily is a mouse. Mice are afraid of cats.,Is emily afraid of a mouse?,No
+qa15,11,"[4, 1]",Jessica is a wolf. Wolves are afraid of mice.,Is jessica afraid of a mouse?,Yes
+qa15,11,"[4, 1]",Jessica is a wolf. Wolves are afraid of mice.,Is jessica afraid of a sheep?,No
+qa17,3,"[1, 2]",The pink rectangle is to the left of the triangle. The triangle is to the left of the red square.,Is the pink rectangle to the right of the red square?,No
+qa17,4,"[1, 2]",The pink rectangle is to the left of the triangle. The triangle is to the left of the red square.,Is the pink rectangle to the left of the red square?,Yes
+qa17,4,"[1, 2]",The pink rectangle is to the left of the triangle. The triangle is below the red sphere.,Is the pink rectangle below the red sphere?,Yes
+qa17,7,"[1, 2]",The pink rectangle is to the left of the triangle. The triangle is below the red sphere.,Is the pink rectangle above the red sphere?,No
+qa17,9,"[2, 1]",The triangle is below the red sphere. The pink rectangle is to the left of the triangle.,Is the red sphere below the pink rectangle?,No
+qa17,10,"[1, 2]",The pink rectangle is to the left of the triangle. The triangle is below the red sphere.,Is the pink rectangle below the red sphere?,Yes
+qa17,7,"[2, 1]",The pink rectangle is to the left of the red square. The red square is below the triangle.,Is the pink rectangle above the triangle?,No
+qa17,8,"[2, 1]",The pink rectangle is to the left of the red square. The red square is below the triangle.,Is the pink rectangle below the triangle?,Yes
+qa17,5,"[1, 2]",The pink rectangle is below the red square. The triangle is to the left of the red square.,Is the pink rectangle to the right of the triangle?,Yes
+qa17,4,"[1, 2]",The red sphere is above the yellow square. The red sphere is to the right of the red square.,Is the yellow square above the red square?,No
+qa17,5,"[2, 1]",The red sphere is to the right of the red square. The red sphere is above the yellow square.,Is the red square above the yellow square?,Yes
+qa17,5,"[1, 2]",The blue square is below the yellow square. The red sphere is below the blue square.,Is the yellow square to the right of the red sphere?,No
+qa17,7,"[1, 2]",The blue square is below the yellow square. The red sphere is below the blue square.,Is the yellow square above the red sphere?,Yes
+qa17,9,"[1, 2]",The blue square is to the left of the red sphere. The blue square is below the pink rectangle.,Is the red sphere to the left of the pink rectangle?,No
+qa17,3,"[1, 2]",The triangle is to the left of the red sphere. The pink rectangle is to the right of the red sphere.,Is the triangle to the right of the pink rectangle?,No
+qa17,8,"[1, 2]",The triangle is to the left of the red sphere. The pink rectangle is to the right of the red sphere.,Is the triangle to the left of the pink rectangle?,Yes
+qa17,5,"[2, 1]",The red square is above the pink rectangle. The triangle is above the red square.,Is the pink rectangle below the triangle?,Yes
+qa17,7,"[2, 1]",The red square is above the pink rectangle. The triangle is above the red square.,Is the pink rectangle to the right of the triangle?,No
+qa17,4,"[1, 2]",The red square is below the red sphere. The red sphere is to the left of the pink rectangle.,Is the red square below the pink rectangle?,Yes
+qa17,6,"[2, 1]",The red sphere is to the left of the pink rectangle. The red square is below the red sphere.,Is the pink rectangle to the left of the red square?,No
+qa17,10,"[2, 1]",The red sphere is to the left of the pink rectangle. The red square is below the red sphere.,Is the pink rectangle to the left of the red square?,No
+qa17,3,"[1, 2]",The pink rectangle is to the right of the blue square. The red sphere is below the blue square.,Is the pink rectangle to the right of the red sphere?,Yes
+qa17,6,"[1, 2]",The pink rectangle is to the right of the blue square. The red sphere is below the blue square.,Is the pink rectangle above the red sphere?,Yes
+qa17,9,"[2, 1]",The red sphere is below the blue square. The pink rectangle is to the right of the blue square.,Is the red sphere to the left of the pink rectangle?,Yes
+qa17,10,"[2, 1]",The red sphere is below the blue square. The pink rectangle is to the right of the blue square.,Is the red sphere to the right of the pink rectangle?,No
+qa17,4,"[2, 1]",The yellow square is to the left of the red square. The yellow square is to the right of the red sphere.,Is the red square to the left of the red sphere?,No
+qa17,3,"[1, 2]",The red sphere is below the red square. The red square is to the left of the pink rectangle.,Is the red sphere below the pink rectangle?,Yes
+qa17,9,"[2, 1]",The red square is to the left of the pink rectangle. The red sphere is below the red square.,Is the pink rectangle to the left of the red sphere?,No
+qa17,10,"[1, 2]",The red sphere is below the red square. The red square is to the left of the pink rectangle.,Is the red sphere to the left of the pink rectangle?,Yes
+qa17,7,"[1, 2]",The red square is to the left of the yellow square. The red square is to the right of the red sphere.,Is the yellow square to the left of the red sphere?,No
+qa17,4,"[2, 1]",The red square is below the pink rectangle. The pink rectangle is to the right of the red sphere.,Is the red square below the red sphere?,Yes
+qa17,7,"[1, 2]",The yellow square is below the red sphere. The blue square is to the left of the yellow square.,Is the red sphere below the blue square?,No
+qa17,4,"[2, 1]",The red square is to the left of the red sphere. The blue square is above the red square.,Is the red sphere below the blue square?,Yes
+qa17,6,"[2, 1]",The yellow square is below the triangle. The yellow square is to the right of the blue square.,Is the triangle below the blue square?,No
+qa17,9,"[1, 2]",The red sphere is to the left of the pink rectangle. The red sphere is below the red square.,Is the pink rectangle to the right of the red square?,Yes
+qa17,9,"[2, 1]",The triangle is to the right of the blue square. The triangle is above the red sphere.,Is the blue square above the red sphere?,Yes
+qa17,10,"[2, 1]",The triangle is to the right of the blue square. The triangle is above the red sphere.,Is the blue square to the left of the red sphere?,Yes
+qa17,3,"[2, 1]",The red square is below the red sphere. The red square is to the left of the triangle.,Is the red sphere below the triangle?,No
+qa17,9,"[2, 1]",The red sphere is below the red square. The red sphere is to the right of the blue square.,Is the red square to the right of the blue square?,Yes
+qa17,3,"[1, 2]",The pink rectangle is above the blue square. The yellow square is above the pink rectangle.,Is the blue square below the yellow square?,Yes
+qa17,3,"[2, 1]",The yellow square is to the left of the triangle. The yellow square is to the right of the blue square.,Is the triangle to the left of the blue square?,No
+qa17,5,"[2, 1]",The yellow square is to the left of the triangle. The yellow square is to the right of the blue square.,Is the triangle above the blue square?,No
+qa17,10,"[2, 1]",The yellow square is above the pink rectangle. The yellow square is to the left of the triangle.,Is the pink rectangle below the triangle?,Yes
+qa17,5,"[2, 1]",The triangle is above the yellow square. The triangle is to the right of the pink rectangle.,Is the yellow square to the left of the pink rectangle?,No
+qa17,3,"[1, 2]",The red sphere is above the yellow square. The red sphere is to the left of the red square.,Is the yellow square above the red square?,No
+qa17,6,"[1, 2]",The pink rectangle is to the left of the red sphere. The yellow square is above the pink rectangle.,Is the red sphere above the yellow square?,No
+qa17,6,"[2, 1]",The blue square is to the right of the pink rectangle. The blue square is to the left of the red sphere.,Is the pink rectangle to the left of the red sphere?,Yes
+qa17,6,"[1, 2]",The yellow square is to the right of the red square. The yellow square is below the blue square.,Is the red square above the blue square?,No
+qa17,8,"[2, 1]",The red sphere is to the left of the blue square. The blue square is to the left of the red square.,Is the red sphere to the left of the red square?,Yes
+qa17,9,"[1, 2]",The pink rectangle is below the blue square. The red square is above the blue square.,Is the pink rectangle above the red square?,No
+qa17,6,"[2, 1]",The red square is above the pink rectangle. The red square is to the right of the triangle.,Is the pink rectangle to the right of the triangle?,Yes
+qa17,3,"[2, 1]",The yellow square is below the blue square. The yellow square is to the right of the triangle.,Is the blue square to the right of the triangle?,Yes
+qa17,4,"[2, 1]",The yellow square is below the blue square. The yellow square is to the right of the triangle.,Is the blue square to the left of the triangle?,No
+qa17,5,"[1, 2]",The pink rectangle is above the red sphere. The pink rectangle is to the left of the triangle.,Is the red sphere below the triangle?,Yes
+qa17,3,"[2, 1]",The red sphere is to the left of the yellow square. The yellow square is above the triangle.,Is the red sphere below the triangle?,No
+qa17,4,"[1, 2]",The triangle is to the left of the red square. The red sphere is below the red square.,Is the triangle to the right of the red sphere?,No
+qa17,6,"[1, 2]",The red sphere is to the right of the yellow square. The red sphere is above the red square.,Is the yellow square to the right of the red square?,No
+qa17,3,"[1, 2]",The red square is to the left of the triangle. The triangle is to the left of the blue square.,Is the red square to the right of the blue square?,No
+qa17,4,"[1, 2]",The red square is to the left of the triangle. The triangle is to the left of the blue square.,Is the red square to the left of the blue square?,Yes
+qa17,5,"[2, 1]",The triangle is to the left of the blue square. The red square is to the left of the triangle.,Is the blue square above the red square?,No
+qa17,4,"[1, 2]",The triangle is above the pink rectangle. The triangle is to the right of the yellow square.,Is the pink rectangle below the yellow square?,Yes
+qa17,6,"[2, 1]",The triangle is to the right of the yellow square. The triangle is above the pink rectangle.,Is the yellow square above the pink rectangle?,Yes
+qa17,8,"[1, 2]",The blue square is above the red square. The red square is to the left of the triangle.,Is the blue square to the right of the triangle?,No
+qa17,10,"[1, 2]",The blue square is above the red square. The red square is to the left of the triangle.,Is the blue square above the triangle?,Yes
+qa17,5,"[2, 1]",The blue square is above the red sphere. The red square is to the left of the blue square.,Is the red sphere above the red square?,No
+qa17,6,"[1, 2]",The red square is to the left of the blue square. The blue square is above the red sphere.,Is the red square above the red sphere?,Yes
+qa17,3,"[1, 2]",The pink rectangle is to the left of the red square. The red square is to the left of the blue square.,Is the pink rectangle to the left of the blue square?,Yes
+qa17,5,"[2, 1]",The red sphere is above the pink rectangle. The red sphere is to the right of the yellow square.,Is the pink rectangle above the yellow square?,No
+qa17,5,"[2, 1]",The pink rectangle is to the right of the triangle. The pink rectangle is below the yellow square.,Is the triangle to the left of the yellow square?,Yes
+qa17,9,"[1, 2]",The pink rectangle is below the yellow square. The pink rectangle is to the right of the triangle.,Is the yellow square to the left of the triangle?,No
+qa17,9,"[1, 2]",The triangle is below the red sphere. The red square is to the left of the triangle.,Is the red sphere above the red square?,Yes
+qa17,8,"[2, 1]",The triangle is to the left of the blue square. The blue square is above the pink rectangle.,Is the triangle to the left of the pink rectangle?,Yes
+qa17,5,"[1, 2]",The red square is below the yellow square. The pink rectangle is above the yellow square.,Is the red square below the pink rectangle?,Yes
+qa17,6,"[2, 1]",The pink rectangle is above the yellow square. The red square is below the yellow square.,Is the pink rectangle below the red square?,No
+qa17,8,"[1, 2]",The red square is below the yellow square. The pink rectangle is above the yellow square.,Is the red square to the right of the pink rectangle?,No
+qa17,8,"[1, 2]",The red square is to the left of the pink rectangle. The red square is below the blue square.,Is the pink rectangle to the left of the blue square?,No
+qa17,6,"[2, 1]",The pink rectangle is below the triangle. The triangle is to the left of the red square.,Is the pink rectangle to the left of the red square?,Yes
+qa17,3,"[1, 2]",The yellow square is above the pink rectangle. The triangle is to the right of the pink rectangle.,Is the yellow square to the left of the triangle?,Yes
+qa17,7,"[2, 1]",The triangle is to the right of the pink rectangle. The yellow square is above the pink rectangle.,Is the triangle to the left of the yellow square?,No
+qa17,3,"[2, 1]",The blue square is below the red square. The blue square is above the pink rectangle.,Is the red square above the pink rectangle?,Yes
+qa17,10,"[1, 2]",The blue square is above the pink rectangle. The blue square is below the red square.,Is the pink rectangle above the red square?,No
+qa17,3,"[1, 2]",The triangle is above the red sphere. The blue square is to the left of the triangle.,Is the red sphere to the left of the blue square?,No
+qa17,4,"[2, 1]",The red square is to the right of the red sphere. The red square is to the left of the pink rectangle.,Is the red sphere to the left of the pink rectangle?,Yes
+qa17,10,"[2, 1]",The pink rectangle is to the right of the blue square. The pink rectangle is above the red square.,Is the blue square to the right of the red square?,No
+qa17,4,"[1, 2]",The yellow square is below the pink rectangle. The pink rectangle is below the red square.,Is the yellow square below the red square?,Yes
+qa17,4,"[2, 1]",The triangle is to the left of the red square. The red sphere is to the left of the triangle.,Is the red square above the red sphere?,No
+qa17,6,"[2, 1]",The triangle is to the left of the red square. The red sphere is to the left of the triangle.,Is the red square to the right of the red sphere?,Yes
+qa17,10,"[2, 1]",The triangle is to the left of the red square. The red sphere is to the left of the triangle.,Is the red square to the right of the red sphere?,Yes
+qa17,3,"[1, 2]",The pink rectangle is above the red sphere. The pink rectangle is to the right of the yellow square.,Is the red sphere to the left of the yellow square?,No
+qa17,7,"[1, 2]",The pink rectangle is above the red sphere. The pink rectangle is to the right of the yellow square.,Is the red sphere above the yellow square?,No
+qa17,3,"[1, 2]",The pink rectangle is above the triangle. The triangle is to the right of the blue square.,Is the pink rectangle to the left of the blue square?,No
+qa17,8,"[2, 1]",The triangle is to the right of the blue square. The pink rectangle is above the triangle.,Is the blue square below the pink rectangle?,Yes
+qa17,7,"[1, 2]",The blue square is above the yellow square. The triangle is below the yellow square.,Is the blue square to the right of the triangle?,No
+qa17,7,"[1, 2]",The red square is below the red sphere. The red sphere is below the triangle.,Is the red square below the triangle?,Yes
+qa17,9,"[2, 1]",The red sphere is below the triangle. The red square is below the red sphere.,Is the triangle below the red square?,No
+qa17,8,"[2, 1]",The pink rectangle is above the red sphere. The blue square is above the pink rectangle.,Is the red sphere below the blue square?,Yes
+qa17,8,"[1, 2]",The yellow square is below the red square. The pink rectangle is below the yellow square.,Is the red square to the left of the pink rectangle?,No
+qa17,3,"[1, 2]",The yellow square is to the left of the blue square. The blue square is above the red square.,Is the yellow square to the left of the red square?,Yes
+qa17,7,"[2, 1]",The blue square is above the red square. The yellow square is to the left of the blue square.,Is the red square to the left of the yellow square?,No
+qa17,9,"[1, 2]",The yellow square is to the left of the blue square. The blue square is above the red square.,Is the yellow square above the red square?,Yes
+qa18,11,"[8, 1]",The chocolate fits inside the suitcase. The suitcase fits inside the box.,Does the box fit in the chocolate?,No
+qa18,9,"[1, 2]",The box fits inside the chest. The chocolate fits inside the box.,Is the chest bigger than the chocolate?,Yes
+qa18,10,"[5, 1]",The chocolate fits inside the suitcase. The box is bigger than the suitcase.,Is the chocolate bigger than the box?,No
+qa18,9,"[5, 4]",The box is bigger than the box of chocolates. The suitcase is bigger than the box.,Does the suitcase fit in the box of chocolates?,No
+qa18,7,"[2, 3]",The chest fits inside the box. The chest is bigger than the box of chocolates.,Does the box of chocolates fit in the box?,Yes
+qa18,10,"[2, 3]",The chest fits inside the box. The chest is bigger than the box of chocolates.,Is the box bigger than the box of chocolates?,Yes
+qa18,6,"[4, 1]",The chest is bigger than the suitcase. The box of chocolates fits inside the suitcase.,Is the chest bigger than the box of chocolates?,Yes
+qa18,8,"[1, 2]",The container is bigger than the chocolate. The box is bigger than the container.,Does the box fit in the chocolate?,No
+qa18,6,"[1, 2]",The box fits inside the suitcase. The chest fits inside the box.,Does the chest fit in the suitcase?,Yes
+qa18,8,"[2, 1]",The container is bigger than the chest. The chest is bigger than the box of chocolates.,Does the box of chocolates fit in the container?,Yes
+qa18,7,"[5, 1]",The suitcase fits inside the box. The chocolate fits inside the suitcase.,Does the chocolate fit in the box?,Yes
+qa18,7,"[1, 3]",The box is bigger than the chocolate. The container is bigger than the box.,Does the container fit in the chocolate?,No
+qa18,6,"[4, 1]",The chocolate fits inside the container. The box is bigger than the container.,Is the chocolate bigger than the box?,No
+qa18,8,"[4, 3]",The box is bigger than the chocolate. The container is bigger than the box.,Does the container fit in the chocolate?,No
+qa18,10,"[3, 4]",The container is bigger than the box. The box is bigger than the chocolate.,Does the chocolate fit in the container?,Yes
+qa18,24,"[9, 1]",The chocolate fits inside the box of chocolates. The box is bigger than the box of chocolates.,Does the box fit in the chocolate?,No
+qa18,6,"[5, 4]",The box fits inside the container. The suitcase fits inside the box.,Does the suitcase fit in the container?,Yes
+qa18,10,"[5, 4]",The box fits inside the container. The suitcase fits inside the box.,Does the suitcase fit in the container?,Yes
+qa18,11,"[8, 3]",The box of chocolates fits inside the box. The box of chocolates is bigger than the chocolate.,Is the box bigger than the chocolate?,Yes
+qa18,7,"[2, 3]",The container is bigger than the box of chocolates. The box of chocolates is bigger than the chocolate.,Is the container bigger than the chocolate?,Yes
+qa18,6,"[2, 4]",The box is bigger than the container. The chocolate fits inside the container.,Is the box bigger than the chocolate?,Yes
+qa18,7,"[5, 3]",The box of chocolates is bigger than the chocolate. The box of chocolates fits inside the chest.,Does the chest fit in the chocolate?,No
+qa18,8,"[3, 5]",The box of chocolates fits inside the chest. The box of chocolates is bigger than the chocolate.,Does the chocolate fit in the chest?,Yes
+qa18,9,"[2, 4]",The box is bigger than the container. The chocolate fits inside the container.,Does the chocolate fit in the box?,Yes
+qa18,6,"[1, 2]",The box of chocolates fits inside the chest. The chest fits inside the box.,Does the box fit in the box of chocolates?,No
+qa18,9,"[5, 4]",The box of chocolates fits inside the container. The container fits inside the box.,Is the box of chocolates bigger than the box?,No
+qa18,12,"[5, 10]",The container is bigger than the chocolate. The suitcase is bigger than the container.,Does the suitcase fit in the chocolate?,No
+qa18,13,"[9, 1]",The box is bigger than the box of chocolates. The chest is bigger than the box.,Does the chest fit in the box of chocolates?,No
+qa18,15,"[5, 10]",The container is bigger than the chocolate. The suitcase is bigger than the container.,Does the suitcase fit in the chocolate?,No
+qa18,6,"[4, 1]",The container is bigger than the box. The suitcase is bigger than the container.,Is the box bigger than the suitcase?,No
+qa18,10,"[3, 2]",The container fits inside the box. The chocolate fits inside the container.,Does the chocolate fit in the box?,Yes
+qa18,9,"[2, 1]",The suitcase fits inside the container. The suitcase is bigger than the box of chocolates.,Is the container bigger than the box of chocolates?,Yes
+qa18,7,"[2, 3]",The box of chocolates is bigger than the chocolate. The box is bigger than the box of chocolates.,Is the chocolate bigger than the box?,No
+qa18,8,"[1, 2]",The chest is bigger than the box. The container fits inside the box.,Is the chest bigger than the container?,Yes
+qa18,10,"[2, 1]",The container fits inside the box. The chest is bigger than the box.,Does the chest fit in the container?,No
+qa18,6,"[4, 1]",The chocolate fits inside the box of chocolates. The box of chocolates fits inside the box.,Does the box fit in the chocolate?,No
+qa18,13,"[5, 6]",The chocolate fits inside the container. The chest is bigger than the container.,Does the chest fit in the chocolate?,No
+qa18,8,"[5, 1]",The container is bigger than the chest. The chest is bigger than the suitcase.,Does the suitcase fit in the container?,Yes
+qa18,7,"[3, 1]",The container is bigger than the box. The box of chocolates fits inside the box.,Is the container bigger than the box of chocolates?,Yes
+qa18,10,"[5, 2]",The chest is bigger than the suitcase. The box is bigger than the chest.,Is the suitcase bigger than the box?,No
+qa18,10,"[1, 2]",The box of chocolates fits inside the container. The chocolate fits inside the box of chocolates.,Is the container bigger than the chocolate?,Yes
+qa18,9,"[4, 3]",The chocolate fits inside the chest. The chest fits inside the box.,Does the box fit in the chocolate?,No
+qa18,9,"[2, 5]",The container is bigger than the suitcase. The container fits inside the chest.,Does the chest fit in the suitcase?,No
+qa18,9,"[5, 1]",The box of chocolates fits inside the suitcase. The box of chocolates is bigger than the chocolate.,Does the chocolate fit in the suitcase?,Yes
+qa18,8,"[3, 2]",The box fits inside the chest. The chocolate fits inside the box.,Does the chocolate fit in the chest?,Yes
+qa18,7,"[5, 3]",The box of chocolates is bigger than the chocolate. The container is bigger than the box of chocolates.,Is the chocolate bigger than the container?,No
+qa18,11,"[10, 5]",The container is bigger than the suitcase. The box fits inside the suitcase.,Does the box fit in the container?,Yes
+qa18,7,"[5, 2]",The box is bigger than the chest. The container is bigger than the box.,Is the chest bigger than the container?,No
+qa18,15,"[9, 8]",The container fits inside the chest. The container is bigger than the chocolate.,Is the chest bigger than the chocolate?,Yes
+qa18,8,"[4, 1]",The container fits inside the suitcase. The container is bigger than the box of chocolates.,Is the suitcase bigger than the box of chocolates?,Yes
+qa18,11,"[9, 1]",The box is bigger than the box of chocolates. The chest is bigger than the box.,Is the box of chocolates bigger than the chest?,No
+qa18,7,"[1, 3]",The chocolate fits inside the box. The box fits inside the container.,Is the chocolate bigger than the container?,No
+qa18,13,"[6, 10]",The box of chocolates fits inside the chest. The chocolate fits inside the box of chocolates.,Is the chest bigger than the chocolate?,Yes
+qa18,6,"[1, 4]",The chest fits inside the suitcase. The chest is bigger than the chocolate.,Is the suitcase bigger than the chocolate?,Yes
+qa18,10,"[1, 3]",The box is bigger than the box of chocolates. The container is bigger than the box.,Is the box of chocolates bigger than the container?,No
+qa18,8,"[2, 3]",The box of chocolates is bigger than the chocolate. The box of chocolates fits inside the box.,Is the chocolate bigger than the box?,No
+qa18,7,"[4, 3]",The suitcase fits inside the chest. The suitcase is bigger than the chocolate.,Does the chocolate fit in the chest?,Yes
+qa18,7,"[5, 3]",The suitcase fits inside the chest. The box is bigger than the chest.,Is the suitcase bigger than the box?,No
+qa18,6,"[2, 1]",The box is bigger than the container. The container is bigger than the suitcase.,Does the suitcase fit in the box?,Yes
+qa18,9,"[1, 2]",The container is bigger than the suitcase. The box is bigger than the container.,Is the suitcase bigger than the box?,No
+qa18,12,"[9, 4]",The suitcase is bigger than the chocolate. The suitcase fits inside the box.,Does the box fit in the chocolate?,No
+qa18,13,"[8, 2]",The chocolate fits inside the box of chocolates. The box is bigger than the box of chocolates.,Is the chocolate bigger than the box?,No
+qa18,6,"[2, 1]",The container is bigger than the box. The chocolate fits inside the box.,Does the chocolate fit in the container?,Yes
+qa18,7,"[2, 1]",The container is bigger than the box. The chocolate fits inside the box.,Does the chocolate fit in the container?,Yes
+qa18,10,"[1, 3]",The suitcase is bigger than the chocolate. The chest is bigger than the suitcase.,Is the chocolate bigger than the chest?,No
+qa18,8,"[5, 1]",The suitcase is bigger than the box of chocolates. The suitcase fits inside the chest.,Is the box of chocolates bigger than the chest?,No
+qa18,6,"[4, 1]",The suitcase is bigger than the container. The chocolate fits inside the container.,Is the suitcase bigger than the chocolate?,Yes
+qa18,13,"[9, 1]",The suitcase is bigger than the box of chocolates. The suitcase fits inside the box.,Is the box of chocolates bigger than the box?,No
+qa18,10,"[4, 1]",The suitcase fits inside the chest. The suitcase is bigger than the box.,Does the box fit in the chest?,Yes
+qa18,7,"[1, 5]",The box is bigger than the container. The container is bigger than the box of chocolates.,Does the box of chocolates fit in the box?,Yes
+qa18,8,"[2, 4]",The chocolate fits inside the box of chocolates. The suitcase is bigger than the box of chocolates.,Is the chocolate bigger than the suitcase?,No
+qa18,15,"[7, 2]",The container is bigger than the chest. The chocolate fits inside the chest.,Is the container bigger than the chocolate?,Yes
+qa18,7,"[4, 1]",The box of chocolates fits inside the chest. The suitcase is bigger than the chest.,Does the suitcase fit in the box of chocolates?,No
+qa18,7,"[2, 3]",The chest is bigger than the box. The box is bigger than the container.,Is the chest bigger than the container?,Yes
+qa18,8,"[3, 1]",The chocolate fits inside the chest. The chest fits inside the container.,Does the container fit in the chocolate?,No
+qa18,7,"[2, 1]",The box fits inside the container. The box is bigger than the suitcase.,Is the container bigger than the suitcase?,Yes
+qa18,10,"[5, 1]",The chest fits inside the container. The container fits inside the box.,Does the box fit in the chest?,No
+qa18,6,"[4, 2]",The chest fits inside the suitcase. The chocolate fits inside the chest.,Does the chocolate fit in the suitcase?,Yes
+qa18,8,"[2, 4]",The chocolate fits inside the chest. The chest fits inside the suitcase.,Is the chocolate bigger than the suitcase?,No
+qa18,7,"[3, 1]",The suitcase fits inside the box. The suitcase is bigger than the chocolate.,Does the chocolate fit in the box?,Yes
+qa18,6,"[2, 3]",The chocolate fits inside the box. The chest is bigger than the box.,Does the chest fit in the chocolate?,No
+qa18,6,"[3, 1]",The container fits inside the chest. The suitcase fits inside the container.,Is the chest bigger than the suitcase?,Yes
+qa18,9,"[3, 4]",The chocolate fits inside the chest. The chest fits inside the suitcase.,Does the suitcase fit in the chocolate?,No
+qa18,10,"[3, 4]",The chocolate fits inside the chest. The chest fits inside the suitcase.,Is the chocolate bigger than the suitcase?,No
+qa18,10,"[1, 3]",The chocolate fits inside the box of chocolates. The container is bigger than the box of chocolates.,Is the chocolate bigger than the container?,No
+qa18,8,"[1, 3]",The box of chocolates fits inside the chest. The box of chocolates is bigger than the chocolate.,Does the chocolate fit in the chest?,Yes
+qa18,10,"[2, 1]",The container is bigger than the chest. The box of chocolates fits inside the chest.,Does the box of chocolates fit in the container?,Yes
+qa18,9,"[5, 2]",The chest is bigger than the container. The container is bigger than the box of chocolates.,Does the box of chocolates fit in the chest?,Yes
+qa18,8,"[1, 2]",The box is bigger than the suitcase. The suitcase is bigger than the container.,Is the box bigger than the container?,Yes
+qa18,10,"[4, 3]",The box of chocolates fits inside the container. The chocolate fits inside the box of chocolates.,Does the chocolate fit in the container?,Yes
+qa18,11,"[3, 7]",The chocolate fits inside the suitcase. The suitcase fits inside the container.,Is the chocolate bigger than the container?,No
+qa18,14,"[10, 1]",The chest fits inside the box. The chocolate fits inside the chest.,Is the box bigger than the chocolate?,Yes
+qa18,12,"[8, 3]",The box is bigger than the box of chocolates. The chest is bigger than the box.,Is the box of chocolates bigger than the chest?,No
+qa18,7,"[4, 1]",The suitcase is bigger than the box of chocolates. The container is bigger than the suitcase.,Is the box of chocolates bigger than the container?,No
+qa18,15,"[6, 7]",The box of chocolates fits inside the box. The box of chocolates is bigger than the chocolate.,Is the box bigger than the chocolate?,Yes
+qa18,6,"[3, 1]",The box is bigger than the box of chocolates. The container is bigger than the box.,Is the box of chocolates bigger than the container?,No
+qa18,8,"[4, 1]",The suitcase fits inside the box. The suitcase is bigger than the container.,Is the box bigger than the container?,Yes
+qa18,6,"[3, 1]",The chocolate fits inside the container. The container fits inside the suitcase.,Is the chocolate bigger than the suitcase?,No
+qa18,7,"[3, 1]",The chocolate fits inside the container. The container fits inside the suitcase.,Is the chocolate bigger than the suitcase?,No
+qa18,9,"[1, 3]",The container fits inside the suitcase. The chocolate fits inside the container.,Does the chocolate fit in the suitcase?,Yes
+qa2,31,"[30, 29]",John left the apple there. John went back to the bedroom.,Is the apple in the bedroom?,Yes
+qa2,31,"[30, 29]",John left the apple there. John went back to the bedroom.,Is the apple in the hallway?,No
+qa2,12,"[8, 11]",Mary grabbed the milk there. Mary moved to the hallway.,Is the milk in the hallway?,Yes
+qa2,12,"[8, 11]",Mary grabbed the milk there. Mary moved to the hallway.,Is the milk in the garden?,No
+qa2,12,"[7, 8]",John got the football there. John moved to the bathroom.,Is the football in the bathroom?,Yes
+qa2,12,"[7, 8]",John got the football there. John moved to the bathroom.,Is the football in the garden?,No
+qa2,18,"[13, 8]",John discarded the milk. John journeyed to the office.,Is the milk in the office?,Yes
+qa2,18,"[13, 8]",John discarded the milk. John journeyed to the office.,Is the milk in the bedroom?,No
+qa2,14,"[13, 8]",Sandra left the milk. Sandra travelled to the office.,Is the milk in the office?,Yes
+qa2,14,"[13, 8]",Sandra left the milk. Sandra travelled to the office.,Is the milk in the hallway?,No
+qa2,27,"[21, 26]",Sandra took the football there. Sandra journeyed to the bathroom.,Is the football in the bathroom?,Yes
+qa2,27,"[21, 26]",Sandra took the football there. Sandra journeyed to the bathroom.,Is the football in the kitchen?,No
+qa2,23,"[21, 11]",Daniel dropped the apple. Daniel went back to the bathroom.,Is the apple in the bathroom?,Yes
+qa2,23,"[21, 11]",Daniel dropped the apple. Daniel went back to the bathroom.,Is the apple in the garden?,No
+qa2,14,"[12, 13]",John grabbed the milk there. John went back to the kitchen.,Is the milk in the kitchen?,Yes
+qa2,14,"[12, 13]",John grabbed the milk there. John went back to the kitchen.,Is the milk in the bathroom?,No
+qa2,7,"[5, 3]",Mary dropped the football. Mary journeyed to the kitchen.,Is the football in the kitchen?,Yes
+qa2,7,"[5, 3]",Mary dropped the football. Mary journeyed to the kitchen.,Is the football in the garden?,No
+qa2,9,"[8, 3]",John left the apple. John moved to the bedroom.,Is the apple in the bedroom?,Yes
+qa2,9,"[8, 3]",John left the apple. John moved to the bedroom.,Is the apple in the kitchen?,No
+qa2,11,"[4, 1]",Sandra put down the milk. Sandra moved to the hallway.,Is the milk in the hallway?,Yes
+qa2,11,"[4, 1]",Sandra put down the milk. Sandra moved to the hallway.,Is the milk in the kitchen?,No
+qa2,11,"[9, 2]",Sandra left the football. Sandra went to the bathroom.,Is the football in the bathroom?,Yes
+qa2,11,"[9, 2]",Sandra left the football. Sandra went to the bathroom.,Is the football in the hallway?,No
+qa2,37,"[32, 28]",Mary put down the apple. Mary moved to the bathroom.,Is the apple in the bathroom?,Yes
+qa2,37,"[32, 28]",Mary put down the apple. Mary moved to the bathroom.,Is the apple in the garden?,No
+qa2,11,"[9, 4]",Mary dropped the milk. Mary moved to the kitchen.,Is the milk in the kitchen?,Yes
+qa2,11,"[9, 4]",Mary dropped the milk. Mary moved to the kitchen.,Is the milk in the bedroom?,No
+qa2,31,"[29, 30]",Daniel got the football there. Daniel went back to the kitchen.,Is the football in the kitchen?,Yes
+qa2,31,"[29, 30]",Daniel got the football there. Daniel went back to the kitchen.,Is the football in the office?,No
+qa2,22,"[18, 9]",Daniel discarded the football. Daniel went to the garden.,Is the football in the garden?,Yes
+qa2,22,"[18, 9]",Daniel discarded the football. Daniel went to the garden.,Is the football in the office?,No
+qa2,10,"[5, 6]",Mary got the football there. Mary went back to the garden.,Is the football in the garden?,Yes
+qa2,10,"[5, 6]",Mary got the football there. Mary went back to the garden.,Is the football in the bathroom?,No
+qa2,7,"[4, 6]",Sandra took the football there. Sandra went back to the kitchen.,Is the football in the kitchen?,Yes
+qa2,7,"[4, 6]",Sandra took the football there. Sandra went back to the kitchen.,Is the football in the hallway?,No
+qa2,10,"[9, 2]",Daniel dropped the apple there. Daniel moved to the kitchen.,Is the apple in the kitchen?,Yes
+qa2,10,"[9, 2]",Daniel dropped the apple there. Daniel moved to the kitchen.,Is the apple in the hallway?,No
+qa2,14,"[8, 10]",John got the milk there. John moved to the garden.,Is the milk in the garden?,Yes
+qa2,14,"[8, 10]",John got the milk there. John moved to the garden.,Is the milk in the hallway?,No
+qa2,23,"[18, 12]",Mary put down the milk. Mary went back to the hallway.,Is the milk in the hallway?,Yes
+qa2,23,"[18, 12]",Mary put down the milk. Mary went back to the hallway.,Is the milk in the bedroom?,No
+qa2,43,"[38, 17]",Sandra put down the milk. Sandra travelled to the hallway.,Is the milk in the hallway?,Yes
+qa2,43,"[38, 17]",Sandra put down the milk. Sandra travelled to the hallway.,Is the milk in the garden?,No
+qa2,22,"[21, 8]",John put down the milk there. John went to the office.,Is the milk in the office?,Yes
+qa2,22,"[21, 8]",John put down the milk there. John went to the office.,Is the milk in the hallway?,No
+qa2,22,"[18, 15]",Mary left the apple. Mary moved to the office.,Is the apple in the office?,Yes
+qa2,22,"[18, 15]",Mary left the apple. Mary moved to the office.,Is the apple in the hallway?,No
+qa2,13,"[6, 12]",John took the milk there. John journeyed to the garden.,Is the milk in the garden?,Yes
+qa2,13,"[6, 12]",John took the milk there. John journeyed to the garden.,Is the milk in the bedroom?,No
+qa2,23,"[21, 22]",Mary got the football there. Mary went to the hallway.,Is the football in the hallway?,Yes
+qa2,23,"[21, 22]",Mary got the football there. Mary went to the hallway.,Is the football in the bathroom?,No
+qa2,25,"[18, 17]",John left the milk. John journeyed to the garden.,Is the milk in the garden?,Yes
+qa2,25,"[18, 17]",John left the milk. John journeyed to the garden.,Is the milk in the hallway?,No
+qa2,22,"[20, 18]",Daniel discarded the apple. Daniel moved to the kitchen.,Is the apple in the kitchen?,Yes
+qa2,22,"[20, 18]",Daniel discarded the apple. Daniel moved to the kitchen.,Is the apple in the bedroom?,No
+qa2,14,"[10, 9]",John left the football. John moved to the bedroom.,Is the football in the bedroom?,Yes
+qa2,14,"[10, 9]",John left the football. John moved to the bedroom.,Is the football in the garden?,No
+qa2,12,"[7, 8]",Mary picked up the football there. Mary journeyed to the kitchen.,Is the football in the kitchen?,Yes
+qa2,12,"[7, 8]",Mary picked up the football there. Mary journeyed to the kitchen.,Is the football in the hallway?,No
+qa2,18,"[13, 7]",John discarded the football. John went to the garden.,Is the football in the garden?,Yes
+qa2,18,"[13, 7]",John discarded the football. John went to the garden.,Is the football in the bathroom?,No
+qa2,11,"[10, 1]",Daniel left the football. Daniel moved to the office.,Is the football in the office?,Yes
+qa2,11,"[10, 1]",Daniel left the football. Daniel moved to the office.,Is the football in the hallway?,No
+qa2,28,"[25, 26]",Mary got the milk there. Mary went to the bathroom.,Is the milk in the bathroom?,Yes
+qa2,28,"[25, 26]",Mary got the milk there. Mary went to the bathroom.,Is the milk in the kitchen?,No
+qa2,21,"[20, 7]",John put down the football there. John went back to the garden.,Is the football in the garden?,Yes
+qa2,21,"[20, 7]",John put down the football there. John went back to the garden.,Is the football in the kitchen?,No
+qa2,17,"[16, 6]",Mary dropped the milk. Mary went to the bathroom.,Is the milk in the bathroom?,Yes
+qa2,17,"[16, 6]",Mary dropped the milk. Mary went to the bathroom.,Is the milk in the hallway?,No
+qa2,9,"[6, 8]",Sandra grabbed the apple there. Sandra moved to the garden.,Is the apple in the garden?,Yes
+qa2,9,"[6, 8]",Sandra grabbed the apple there. Sandra moved to the garden.,Is the apple in the office?,No
+qa2,12,"[11, 4]",Daniel discarded the milk. Daniel went to the office.,Is the milk in the office?,Yes
+qa2,12,"[11, 4]",Daniel discarded the milk. Daniel went to the office.,Is the milk in the hallway?,No
+qa2,16,"[15, 14]",Daniel dropped the football. Daniel journeyed to the hallway.,Is the football in the hallway?,Yes
+qa2,16,"[15, 14]",Daniel dropped the football. Daniel journeyed to the hallway.,Is the football in the bathroom?,No
+qa2,15,"[8, 3]",Daniel discarded the milk. Daniel went to the garden.,Is the milk in the garden?,Yes
+qa2,15,"[8, 3]",Daniel discarded the milk. Daniel went to the garden.,Is the milk in the bedroom?,No
+qa2,31,"[29, 26]",Daniel dropped the apple. Daniel journeyed to the bedroom.,Is the apple in the bedroom?,Yes
+qa2,31,"[29, 26]",Daniel dropped the apple. Daniel journeyed to the bedroom.,Is the apple in the office?,No
+qa2,18,"[17, 16]",John left the milk. John journeyed to the bathroom.,Is the milk in the bathroom?,Yes
+qa2,18,"[17, 16]",John left the milk. John journeyed to the bathroom.,Is the milk in the bedroom?,No
+qa2,31,"[30, 16]",Daniel put down the milk there. Daniel moved to the garden.,Is the milk in the garden?,Yes
+qa2,31,"[30, 16]",Daniel put down the milk there. Daniel moved to the garden.,Is the milk in the kitchen?,No
+qa2,10,"[4, 5]",Daniel got the milk there. Daniel journeyed to the bedroom.,Is the milk in the bedroom?,Yes
+qa2,10,"[4, 5]",Daniel got the milk there. Daniel journeyed to the bedroom.,Is the milk in the office?,No
+qa2,15,"[14, 5]",Daniel discarded the milk. Daniel journeyed to the bedroom.,Is the milk in the bedroom?,Yes
+qa2,15,"[14, 5]",Daniel discarded the milk. Daniel journeyed to the bedroom.,Is the milk in the hallway?,No
+qa2,29,"[28, 16]",Daniel left the milk. Daniel travelled to the bathroom.,Is the milk in the bathroom?,Yes
+qa2,29,"[28, 16]",Daniel left the milk. Daniel travelled to the bathroom.,Is the milk in the bedroom?,No
+qa2,26,"[22, 24]",Mary took the football there. Mary went to the bathroom.,Is the football in the bathroom?,Yes
+qa2,26,"[22, 24]",Mary took the football there. Mary went to the bathroom.,Is the football in the kitchen?,No
+qa2,19,"[17, 12]",Sandra left the milk there. Sandra travelled to the kitchen.,Is the milk in the kitchen?,Yes
+qa2,19,"[17, 12]",Sandra left the milk there. Sandra travelled to the kitchen.,Is the milk in the garden?,No
+qa2,24,"[23, 19]",Mary left the apple. Mary travelled to the kitchen.,Is the apple in the kitchen?,Yes
+qa2,24,"[23, 19]",Mary left the apple. Mary travelled to the kitchen.,Is the apple in the office?,No
+qa2,29,"[26, 27]",Mary picked up the apple there. Mary travelled to the office.,Is the apple in the office?,Yes
+qa2,29,"[26, 27]",Mary picked up the apple there. Mary travelled to the office.,Is the apple in the bedroom?,No
+qa2,8,"[6, 4]",John dropped the football. John moved to the kitchen.,Is the football in the kitchen?,Yes
+qa2,8,"[6, 4]",John dropped the football. John moved to the kitchen.,Is the football in the bedroom?,No
+qa4,3,[2],The kitchen is south of the garden.,Is the garden north of the kitchen?,Yes
+qa4,3,[2],The kitchen is south of the garden.,Is the garden north of the garden?,No
+qa4,3,[1],The bedroom is west of the hallway.,Is the hallway east of the bedroom?,Yes
+qa4,3,[1],The bedroom is west of the hallway.,Is the hallway east of the garden?,No
+qa4,3,[1],The bedroom is east of the kitchen.,Is the kitchen west of the bedroom?,Yes
+qa4,3,[1],The bedroom is east of the kitchen.,Is the kitchen west of the kitchen?,No
+qa4,3,[2],The kitchen is south of the hallway.,Is the kitchen south of the hallway?,Yes
+qa4,3,[2],The kitchen is south of the hallway.,Is the bedroom south of the hallway?,No
+qa4,3,[2],The bathroom is north of the bedroom.,Is the bedroom south of the bathroom?,Yes
+qa4,3,[2],The bathroom is north of the bedroom.,Is the bedroom south of the bedroom?,No
+qa4,3,[2],The hallway is west of the kitchen.,Is the hallway west of the kitchen?,Yes
+qa4,3,[2],The hallway is west of the kitchen.,Is the office west of the kitchen?,No
+qa4,3,[2],The bathroom is south of the office.,Is the bathroom south of the office?,Yes
+qa4,3,[2],The bathroom is south of the office.,Is the hallway south of the office?,No
+qa4,3,[1],The garden is south of the hallway.,Is the garden south of the hallway?,Yes
+qa4,3,[1],The garden is south of the hallway.,Is the kitchen south of the hallway?,No
+qa4,3,[2],The office is south of the bedroom.,Is the office south of the bedroom?,Yes
+qa4,3,[2],The office is south of the bedroom.,Is the kitchen south of the bedroom?,No
+qa4,3,[1],The kitchen is east of the bedroom.,Is the kitchen east of the bedroom?,Yes
+qa4,3,[1],The kitchen is east of the bedroom.,Is the hallway east of the bedroom?,No
+qa4,3,[1],The bathroom is east of the garden.,Is the bathroom east of the garden?,Yes
+qa4,3,[1],The bathroom is east of the garden.,Is the hallway east of the garden?,No
+qa4,3,[2],The hallway is north of the garden.,Is the hallway north of the garden?,Yes
+qa4,3,[2],The hallway is north of the garden.,Is the kitchen north of the garden?,No
+qa4,3,[2],The kitchen is west of the bathroom.,Is the bathroom east of the kitchen?,Yes
+qa4,3,[2],The kitchen is west of the bathroom.,Is the bathroom east of the bathroom?,No
+qa4,3,[2],The bathroom is east of the garden.,Is the bathroom east of the garden?,Yes
+qa4,3,[2],The bathroom is east of the garden.,Is the garden east of the garden?,No
+qa4,3,[1],The hallway is west of the garden.,Is the garden east of the hallway?,Yes
+qa4,3,[1],The hallway is west of the garden.,Is the garden east of the kitchen?,No
+qa4,3,[1],The bathroom is east of the garden.,Is the garden west of the bathroom?,Yes
+qa4,3,[1],The bathroom is east of the garden.,Is the garden west of the garden?,No
+qa4,3,[2],The garden is west of the office.,Is the garden west of the office?,Yes
+qa4,3,[2],The garden is west of the office.,Is the bathroom west of the office?,No
+qa4,3,[2],The bathroom is north of the garden.,Is the garden south of the bathroom?,Yes
+qa4,3,[2],The bathroom is north of the garden.,Is the garden south of the hallway?,No
+qa4,3,[2],The bathroom is east of the hallway.,Is the hallway west of the bathroom?,Yes
+qa4,3,[2],The bathroom is east of the hallway.,Is the hallway west of the bedroom?,No
+qa4,3,[2],The hallway is north of the kitchen.,Is the hallway north of the kitchen?,Yes
+qa4,3,[2],The hallway is north of the kitchen.,Is the office north of the kitchen?,No
+qa4,3,[1],The garden is north of the office.,Is the office south of the garden?,Yes
+qa4,3,[1],The garden is north of the office.,Is the office south of the bathroom?,No
+qa4,3,[1],The hallway is north of the bathroom.,Is the bathroom south of the hallway?,Yes
+qa4,3,[1],The hallway is north of the bathroom.,Is the bathroom south of the garden?,No
+qa4,3,[1],The garden is north of the office.,Is the garden north of the office?,Yes
+qa4,3,[1],The garden is north of the office.,Is the hallway north of the office?,No
+qa4,3,[2],The hallway is west of the bathroom.,Is the hallway west of the bathroom?,Yes
+qa4,3,[2],The hallway is west of the bathroom.,Is the garden west of the bathroom?,No
+qa4,3,[2],The bathroom is west of the garden.,Is the bathroom west of the garden?,Yes
+qa4,3,[2],The bathroom is west of the garden.,Is the office west of the garden?,No
+qa4,3,[1],The hallway is south of the bathroom.,Is the hallway south of the bathroom?,Yes
+qa4,3,[1],The hallway is south of the bathroom.,Is the office south of the bathroom?,No
+qa4,3,[2],The hallway is south of the bedroom.,Is the bedroom north of the hallway?,Yes
+qa4,3,[2],The hallway is south of the bedroom.,Is the bedroom north of the kitchen?,No
+qa4,3,[2],The kitchen is north of the bathroom.,Is the bathroom south of the kitchen?,Yes
+qa4,3,[2],The kitchen is north of the bathroom.,Is the bathroom south of the office?,No
+qa4,3,[1],The office is north of the kitchen.,Is the kitchen south of the office?,Yes
+qa4,3,[1],The office is north of the kitchen.,Is the kitchen south of the hallway?,No
+qa4,3,[2],The office is south of the garden.,Is the garden north of the office?,Yes
+qa4,3,[2],The office is south of the garden.,Is the garden north of the hallway?,No
+qa4,3,[1],The bedroom is east of the kitchen.,Is the kitchen west of the bedroom?,Yes
+qa4,3,[1],The bedroom is east of the kitchen.,Is the kitchen west of the bathroom?,No
+qa4,3,[1],The kitchen is west of the garden.,Is the garden east of the kitchen?,Yes
+qa4,3,[1],The kitchen is west of the garden.,Is the garden east of the office?,No
+qa4,3,[1],The garden is north of the bedroom.,Is the bedroom south of the garden?,Yes
+qa4,3,[1],The garden is north of the bedroom.,Is the bedroom south of the bathroom?,No
+qa4,3,[2],The office is west of the bathroom.,Is the office west of the bathroom?,Yes
+qa4,3,[2],The office is west of the bathroom.,Is the bedroom west of the bathroom?,No
+qa4,3,[2],The bedroom is west of the kitchen.,Is the bedroom west of the kitchen?,Yes
+qa4,3,[2],The bedroom is west of the kitchen.,Is the kitchen west of the kitchen?,No
+qa4,3,[1],The hallway is west of the garden.,Is the garden east of the hallway?,Yes
+qa4,3,[1],The hallway is west of the garden.,Is the garden east of the garden?,No
+qa4,3,[1],The bedroom is east of the garden.,Is the garden west of the bedroom?,Yes
+qa4,3,[1],The bedroom is east of the garden.,Is the garden west of the office?,No
+qa4,3,[2],The bathroom is south of the office.,Is the office north of the bathroom?,Yes
+qa4,3,[2],The bathroom is south of the office.,Is the office north of the office?,No
+qa4,3,[1],The bathroom is west of the bedroom.,Is the bedroom east of the bathroom?,Yes
+qa4,3,[1],The bathroom is west of the bedroom.,Is the bedroom east of the office?,No
+qa4,3,[2],The bathroom is west of the office.,Is the office east of the bathroom?,Yes
+qa4,3,[2],The bathroom is west of the office.,Is the office east of the kitchen?,No
+qa4,3,[1],The bathroom is north of the garden.,Is the bathroom north of the garden?,Yes
+qa4,3,[1],The bathroom is north of the garden.,Is the office north of the garden?,No
+qa4,3,[1],The hallway is west of the office.,Is the hallway west of the office?,Yes
+qa4,3,[1],The hallway is west of the office.,Is the bathroom west of the office?,No
+qa4,3,[1],The hallway is west of the kitchen.,Is the hallway west of the kitchen?,Yes
+qa4,3,[1],The hallway is west of the kitchen.,Is the kitchen west of the kitchen?,No
+qa4,3,[2],The office is east of the bathroom.,Is the bathroom west of the office?,Yes
+qa4,3,[2],The office is east of the bathroom.,Is the bathroom west of the bedroom?,No
+qa4,3,[1],The bathroom is west of the kitchen.,Is the kitchen east of the bathroom?,Yes
+qa4,3,[1],The bathroom is west of the kitchen.,Is the kitchen east of the office?,No
+qa4,3,[1],The kitchen is south of the bedroom.,Is the kitchen south of the bedroom?,Yes
+qa4,3,[1],The kitchen is south of the bedroom.,Is the office south of the bedroom?,No
+qa4,3,[2],The bathroom is south of the kitchen.,Is the kitchen north of the bathroom?,Yes
+qa4,3,[2],The bathroom is south of the kitchen.,Is the kitchen north of the kitchen?,No
+qa4,3,[2],The kitchen is north of the hallway.,Is the kitchen north of the hallway?,Yes
+qa4,3,[2],The kitchen is north of the hallway.,Is the bathroom north of the hallway?,No
+qa4,3,[2],The kitchen is west of the hallway.,Is the kitchen west of the hallway?,Yes
+qa4,3,[2],The kitchen is west of the hallway.,Is the bedroom west of the hallway?,No
+qa4,3,[1],The kitchen is north of the garden.,Is the garden south of the kitchen?,Yes
+qa4,3,[1],The kitchen is north of the garden.,Is the garden south of the garden?,No
+qa6,3,[2],John moved to the bedroom.,Is John in the kitchen?,No
+qa6,9,[5],John went to the garden.,Is John in the garden?,Yes
+qa6,15,[10],Daniel travelled to the bathroom.,Is Daniel in the bedroom?,No
+qa6,9,[8],Daniel went to the hallway.,Is Daniel in the hallway?,Yes
+qa6,6,[1],John journeyed to the hallway.,Is John in the hallway?,Yes
+qa6,15,[8],Daniel went back to the garden.,Is Daniel in the bedroom?,No
+qa6,9,[7],Daniel moved to the bathroom.,Is Daniel in the bathroom?,Yes
+qa6,12,[11],Sandra journeyed to the hallway.,Is Sandra in the bedroom?,No
+qa6,15,[13],Sandra went back to the kitchen.,Is Sandra in the kitchen?,Yes
+qa6,9,[8],Sandra moved to the kitchen.,Is Sandra in the office?,No
+qa6,3,[2],John travelled to the kitchen.,Is John in the kitchen?,Yes
+qa6,15,[14],John journeyed to the bathroom.,Is John in the garden?,No
+qa6,9,[8],John went to the bedroom.,Is John in the kitchen?,No
+qa6,6,[1],Daniel travelled to the hallway.,Is Daniel in the hallway?,Yes
+qa6,12,[5],Daniel went back to the office.,Is Daniel in the bedroom?,No
+qa6,15,[8],Mary went back to the garden.,Is Mary in the hallway?,No
+qa6,6,[1],John went back to the hallway.,Is John in the bathroom?,No
+qa6,9,[4],Mary moved to the kitchen.,Is Mary in the office?,No
+qa6,3,[2],Daniel travelled to the garden.,Is Daniel in the kitchen?,No
+qa6,6,[2],Daniel travelled to the garden.,Is Daniel in the garden?,Yes
+qa6,9,[2],Daniel travelled to the garden.,Is Daniel in the bedroom?,No
+qa6,6,[2],John journeyed to the kitchen.,Is John in the hallway?,No
+qa6,6,[5],Sandra moved to the garden.,Is Sandra in the garden?,Yes
+qa6,3,[2],John moved to the hallway.,Is John in the bedroom?,No
+qa6,9,[5],Daniel journeyed to the kitchen.,Is Daniel in the kitchen?,Yes
+qa6,12,[7],John went to the office.,Is John in the office?,Yes
+qa6,12,[10],Sandra went to the kitchen.,Is Sandra in the kitchen?,Yes
+qa6,15,[11],Daniel journeyed to the hallway.,Is Daniel in the hallway?,Yes
+qa6,14,[10],John moved to the office.,Is John in the hallway?,No
+qa6,3,[2],Sandra went back to the kitchen.,Is Sandra in the kitchen?,Yes
+qa6,12,[7],John went back to the office.,Is John in the office?,Yes
+qa6,3,[1],John travelled to the kitchen.,Is John in the kitchen?,Yes
+qa6,12,[10],Mary went back to the hallway.,Is Mary in the kitchen?,No
+qa6,9,[8],Sandra went to the bathroom.,Is Sandra in the office?,No
+qa6,15,[10],Daniel went to the bedroom.,Is Daniel in the bedroom?,Yes
+qa6,15,[10],Mary journeyed to the kitchen.,Is Mary in the kitchen?,Yes
+qa6,15,[11],Sandra moved to the hallway.,Is Sandra in the bedroom?,No
+qa6,3,[2],Sandra went back to the bedroom.,Is Sandra in the bedroom?,Yes
+qa6,6,[2],Sandra went back to the bedroom.,Is Sandra in the kitchen?,No
+qa6,15,[14],John moved to the office.,Is John in the office?,Yes
+qa6,6,[5],Mary journeyed to the office.,Is Mary in the hallway?,No
+qa6,6,[1],Sandra journeyed to the garden.,Is Sandra in the garden?,Yes
+qa6,9,[2],Mary went back to the bedroom.,Is Mary in the bathroom?,No
+qa6,3,[2],John moved to the garden.,Is John in the bedroom?,No
+qa6,12,[10],Sandra went back to the office.,Is Sandra in the bedroom?,No
+qa6,15,[14],Mary travelled to the bathroom.,Is Mary in the bathroom?,Yes
+qa6,12,[10],Daniel journeyed to the office.,Is Daniel in the office?,Yes
+qa6,17,[15],Daniel journeyed to the hallway.,Is Daniel in the garden?,No
+qa6,12,[5],Mary moved to the kitchen.,Is Mary in the garden?,No
+qa6,6,[4],Sandra went to the bedroom.,Is Sandra in the bedroom?,Yes
+qa6,9,[7],Mary travelled to the hallway.,Is Mary in the hallway?,Yes
+qa6,6,[2],John went back to the garden.,Is John in the garden?,Yes
+qa6,15,[11],Mary journeyed to the garden.,Is Mary in the office?,No
+qa6,6,[1],Mary moved to the office.,Is Mary in the office?,Yes
+qa6,6,[4],Sandra went to the bathroom.,Is Sandra in the office?,No
+qa6,3,[1],John went back to the garden.,Is John in the kitchen?,No
+qa6,3,[2],John went to the bedroom.,Is John in the bedroom?,Yes
+qa6,9,[8],John travelled to the bathroom.,Is John in the bathroom?,Yes
+qa6,15,[8],Sandra moved to the bathroom.,Is Sandra in the office?,No
+qa6,3,[2],Sandra travelled to the garden.,Is Sandra in the bedroom?,No
+qa6,12,[10],Mary moved to the kitchen.,Is Mary in the kitchen?,Yes
+qa6,6,[4],John went back to the kitchen.,Is John in the kitchen?,Yes
+qa6,9,[2],Daniel journeyed to the kitchen.,Is Daniel in the garden?,No
+qa6,15,[14],John went back to the kitchen.,Is John in the garden?,No
+qa6,3,[1],Sandra moved to the hallway.,Is Sandra in the hallway?,Yes
+qa6,3,[1],Mary travelled to the kitchen.,Is Mary in the kitchen?,Yes
+qa6,6,[1],Mary went to the bathroom.,Is Mary in the bedroom?,No
+qa6,15,[10],Daniel went to the office.,Is Daniel in the kitchen?,No
+qa6,3,[1],Mary moved to the garden.,Is Mary in the garden?,Yes
+qa6,15,[13],John moved to the kitchen.,Is John in the kitchen?,Yes
+qa6,12,[5],Sandra moved to the hallway.,Is Sandra in the hallway?,Yes
+qa6,15,[10],John travelled to the bedroom.,Is John in the kitchen?,No
+qa6,3,[2],John moved to the bathroom.,Is John in the bedroom?,No
+qa6,15,[11],Mary journeyed to the hallway.,Is Mary in the hallway?,Yes
+qa6,15,[13],Mary went back to the kitchen.,Is Mary in the hallway?,No
+qa6,15,[14],Daniel went back to the hallway.,Is Daniel in the bedroom?,No
+qa6,15,[14],Daniel went back to the office.,Is Daniel in the office?,Yes
+qa6,15,[14],Sandra went back to the bathroom.,Is Sandra in the bathroom?,Yes
+qa6,9,[5],Daniel moved to the hallway.,Is Daniel in the bedroom?,No
+qa6,9,[7],Daniel went back to the kitchen.,Is Daniel in the kitchen?,Yes
+qa6,9,[2],Daniel went back to the office.,Is Daniel in the office?,Yes
+qa6,3,[1],Mary went back to the garden.,Is Mary in the office?,No
+qa6,15,[14],Sandra moved to the kitchen.,Is Sandra in the garden?,No
+qa6,9,[7],Sandra went back to the garden.,Is Sandra in the garden?,Yes
+qa6,9,[5],Sandra went to the garden.,Is Sandra in the kitchen?,No
+qa6,15,[10],Daniel travelled to the bathroom.,Is Daniel in the office?,No
+qa6,9,[2],Sandra went to the hallway.,Is Sandra in the office?,No
+qa6,15,[8],Mary travelled to the hallway.,Is Mary in the hallway?,Yes
+qa6,15,[14],Mary moved to the bathroom.,Is Mary in the bathroom?,Yes
+qa6,9,[5],John went back to the garden.,Is John in the garden?,Yes
+qa6,6,[5],Sandra went to the bedroom.,Is Sandra in the bathroom?,No
+qa6,3,[2],Mary journeyed to the office.,Is Mary in the office?,Yes
+qa6,3,[1],John journeyed to the hallway.,Is John in the office?,No
+qa6,15,[14],Sandra went back to the kitchen.,Is Sandra in the kitchen?,Yes
+qa6,9,[5],Sandra moved to the bathroom.,Is Sandra in the office?,No
+qa6,15,[10],Sandra went back to the garden.,Is Sandra in the garden?,Yes
+qa6,12,[10],John moved to the hallway.,Is John in the hallway?,Yes
+qa6,9,[8],Sandra went back to the garden.,Is Sandra in the kitchen?,No
+qa6,9,[7],Daniel moved to the garden.,Is Daniel in the garden?,Yes
+qa6,6,[5],Daniel journeyed to the hallway.,Is Daniel in the kitchen?,No
+qa9,9,[8],Mary went back to the kitchen.,Is Mary in the garden?,No
+qa9,15,[11],Mary journeyed to the kitchen.,Is Mary in the kitchen?,Yes
+qa9,15,[14],Sandra is no longer in the kitchen.,Is Sandra in the kitchen?,No
+qa9,15,[14],Mary went back to the kitchen.,Is Mary in the kitchen?,Yes
+qa9,9,[7],Sandra is no longer in the hallway.,Is Sandra in the hallway?,No
+qa9,9,[8],Mary is in the bedroom.,Is Mary in the bedroom?,Yes
+qa9,9,[7],Daniel travelled to the office.,Is Daniel in the bathroom?,No
+qa9,15,[13],Mary went back to the bathroom.,Is Mary in the garden?,No
+qa9,6,[5],Mary is in the bathroom.,Is Mary in the bathroom?,Yes
+qa9,6,[5],Sandra is not in the kitchen.,Is Sandra in the kitchen?,No
+qa9,12,[11],John is in the kitchen.,Is John in the kitchen?,Yes
+qa9,15,[13],Sandra is no longer in the kitchen.,Is Sandra in the kitchen?,No
+qa9,15,[13],Sandra journeyed to the bathroom.,Is Sandra in the bathroom?,Yes
+qa9,15,[13],John went back to the bathroom.,Is John in the bathroom?,Yes
+qa9,6,[5],Daniel went back to the bathroom.,Is Daniel in the kitchen?,No
+qa9,9,[7],Mary is in the hallway.,Is Mary in the hallway?,Yes
+qa9,12,[7],Mary is in the hallway.,Is Mary in the garden?,No
+qa9,12,[11],Daniel is no longer in the bathroom.,Is Daniel in the bathroom?,No
+qa9,12,[10],John went back to the garden.,Is John in the garden?,Yes
+qa9,6,[4],Mary travelled to the garden.,Is Mary in the garden?,Yes
+qa9,9,[7],Mary travelled to the office.,Is Mary in the garden?,No
+qa9,15,[14],John went to the bedroom.,Is John in the hallway?,No
+qa9,6,[4],John went to the garden.,Is John in the kitchen?,No
+qa9,3,[2],Daniel is no longer in the bedroom.,Is Daniel in the bedroom?,No
+qa9,15,[8],Mary went back to the kitchen.,Is Mary in the kitchen?,Yes
+qa9,6,[4],Mary moved to the bathroom.,Is Mary in the bathroom?,Yes
+qa9,9,[8],Daniel journeyed to the office.,Is Daniel in the office?,Yes
+qa9,12,[8],Sandra is no longer in the hallway.,Is Sandra in the hallway?,No
+qa9,3,[2],Sandra is in the hallway.,Is Sandra in the hallway?,Yes
+qa9,6,[4],John is no longer in the hallway.,Is John in the hallway?,No
+qa9,9,[7],Sandra went to the garden.,Is Sandra in the garden?,Yes
+qa9,12,[11],Mary is in the bedroom.,Is Mary in the bedroom?,Yes
+qa9,6,[5],John is no longer in the bedroom.,Is John in the bedroom?,No
+qa9,3,[2],John is in the bedroom.,Is John in the bedroom?,Yes
+qa9,3,[2],Daniel travelled to the garden.,Is Daniel in the garden?,Yes
+qa9,15,[11],Sandra is no longer in the bathroom.,Is Sandra in the bathroom?,No
+qa9,15,[13],John went to the office.,Is John in the office?,Yes
+qa9,12,[11],Mary travelled to the bathroom.,Is Mary in the kitchen?,No
+qa9,15,[8],John moved to the bathroom.,Is John in the bedroom?,No
+qa9,6,[2],Sandra moved to the hallway.,Is Sandra in the hallway?,Yes
+qa9,15,[13],Sandra journeyed to the kitchen.,Is Sandra in the kitchen?,Yes
+qa9,6,[1],Daniel is not in the bathroom.,Is Daniel in the bathroom?,No
+qa9,6,[4],Sandra went to the bathroom.,Is Sandra in the bathroom?,Yes
+qa9,6,[1],John is no longer in the bathroom.,Is John in the bathroom?,No
+qa9,9,[8],Mary went back to the bathroom.,Is Mary in the bathroom?,Yes
+qa9,9,[2],Sandra travelled to the kitchen.,Is Sandra in the bedroom?,No
+qa9,9,[5],John travelled to the hallway.,Is John in the hallway?,Yes
+qa9,9,[7],Daniel moved to the office.,Is Daniel in the hallway?,No
+qa9,6,[5],Mary went to the garden.,Is Mary in the garden?,Yes
+qa9,9,[8],John is in the bedroom.,Is John in the bedroom?,Yes
+qa9,6,[2],Daniel journeyed to the hallway.,Is Daniel in the bedroom?,No
+qa9,6,[1],Mary is in the bedroom.,Is Mary in the garden?,No
+qa9,15,[11],Daniel went to the kitchen.,Is Daniel in the kitchen?,Yes
+qa9,15,[14],Sandra went to the hallway.,Is Sandra in the hallway?,Yes
+qa9,9,[8],Daniel is not in the office.,Is Daniel in the office?,No
+qa9,15,[14],Mary is in the garden.,Is Mary in the garden?,Yes
+qa9,9,[7],John went to the garden.,Is John in the office?,No
+qa9,3,[2],Daniel is not in the bathroom.,Is Daniel in the bathroom?,No
+qa9,9,[8],Daniel is not in the bathroom.,Is Daniel in the bathroom?,No
+qa9,3,[1],John went to the bathroom.,Is John in the bathroom?,Yes
+qa9,9,[5],Sandra moved to the hallway.,Is Sandra in the hallway?,Yes
+qa9,6,[2],Daniel is no longer in the hallway.,Is Daniel in the hallway?,No
+qa9,9,[8],Sandra is in the bathroom.,Is Sandra in the bathroom?,Yes
+qa9,15,[13],Sandra went back to the bedroom.,Is Sandra in the bathroom?,No
+qa9,6,[4],Daniel is no longer in the kitchen.,Is Daniel in the kitchen?,No
+qa9,9,[8],Daniel is in the bedroom.,Is Daniel in the bedroom?,Yes
+qa9,15,[14],Mary is not in the kitchen.,Is Mary in the kitchen?,No
+qa9,12,[11],Daniel is in the kitchen.,Is Daniel in the kitchen?,Yes
+qa9,12,[11],Mary is in the bathroom.,Is Mary in the bathroom?,Yes
+qa9,3,[2],John went to the garden.,Is John in the hallway?,No
+qa9,15,[14],Mary went back to the office.,Is Mary in the office?,Yes
+qa9,15,[13],Sandra travelled to the bedroom.,Is Sandra in the garden?,No
+qa9,3,[2],Daniel is in the bathroom.,Is Daniel in the kitchen?,No
+qa9,15,[14],Daniel moved to the bedroom.,Is Daniel in the bedroom?,Yes
+qa9,15,[14],Daniel moved to the office.,Is Daniel in the office?,Yes
+qa9,6,[2],Sandra is in the hallway.,Is Sandra in the hallway?,Yes
+qa9,15,[8],John is not in the kitchen.,Is John in the kitchen?,No
+qa9,9,[4],Daniel is not in the bathroom.,Is Daniel in the bathroom?,No
+qa9,9,[7],Sandra moved to the garden.,Is Sandra in the garden?,Yes
+qa9,9,[7],Mary is in the kitchen.,Is Mary in the bedroom?,No
+qa9,3,[1],Mary went back to the kitchen.,Is Mary in the kitchen?,Yes
+qa9,12,[7],Mary moved to the bathroom.,Is Mary in the bathroom?,Yes
+qa9,3,[2],John moved to the garden.,Is John in the office?,No
+qa9,3,[2],Daniel travelled to the kitchen.,Is Daniel in the kitchen?,Yes
+qa9,6,[5],John is not in the kitchen.,Is John in the kitchen?,No
+qa9,15,[13],John is in the garden.,Is John in the office?,No
+qa9,6,[4],Daniel went to the hallway.,Is Daniel in the hallway?,Yes
+qa9,15,[13],Sandra moved to the office.,Is Sandra in the bedroom?,No
+qa9,6,[5],Sandra travelled to the garden.,Is Sandra in the garden?,Yes
+qa9,6,[1],John is no longer in the bathroom.,Is John in the bathroom?,No
+qa9,3,[1],Mary moved to the office.,Is Mary in the office?,Yes
+qa9,15,[11],Sandra went back to the hallway.,Is Sandra in the office?,No
+qa9,9,[7],Mary went to the hallway.,Is Mary in the hallway?,Yes
+qa9,15,[14],Sandra moved to the kitchen.,Is Sandra in the kitchen?,Yes
+qa9,3,[2],Sandra is not in the garden.,Is Sandra in the garden?,No
+qa9,15,[13],Sandra moved to the hallway.,Is Sandra in the garden?,No
+qa9,3,[2],John is in the hallway.,Is John in the hallway?,Yes
+qa9,3,[2],Sandra is not in the hallway.,Is Sandra in the hallway?,No
+qa9,12,[11],Sandra is in the office.,Is Sandra in the office?,Yes
+qa9,12,[8],Daniel is in the bedroom.,Is Daniel in the garden?,No

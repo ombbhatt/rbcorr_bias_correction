@@ -49,19 +49,6 @@ ARITH_DOMAINS = ["arith"]
 SNLI_DOMAINS = ["snli"]
 MNLI_DOMAINS = ["mnli"]
 
-DATASET_PATHS = {
-    "EWOK": Path("../data/ewokynq-scripts-data/t2q_nodup_nominpairs"),
-    "COMPS": Path("../data/compsynq-scripts-data"),
-    "BABI": Path("../data/babiynq-scripts-data"),
-    "ARITH": Path("../data/arithynq-scripts-data"),
-    "MMLU-STEM": Path("../data/mmlu-scripts-data"),
-    "MMLU-HUMANITIES": Path("../data/mmlu-scripts-data"),
-    "MMLU-SOCIAL_SCI": Path("../data/mmlu-scripts-data"),
-    "MMLU-OTHERS": Path("../data/mmlu-scripts-data"),
-    "SNLI": Path("../data/snli-scripts-data"),
-    "MNLI": Path("../data/mnli-scripts-data")   
-}
-
 DATASET_DOMAINS = {
     "EWOK": EWOK_DOMAINS,
     "COMPS": COMPS_DOMAINS,
@@ -425,9 +412,9 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
             
             # Setup input file based on target dataset
             if target_dataset == "EWOK":
-                input_file = dataset_path / f"processed_t2q_{domain}.csv"
+                input_file = dataset_path / f"ewok-ynq-big.csv"
             elif target_dataset == "COMPS":
-                input_file = dataset_path / f"comps_yn_rand_2prop_2100.csv"
+                input_file = dataset_path / f"comps-ynq-big.csv"
             elif target_dataset == "BABI":
                 input_file = dataset_path / f"babi-ynq-big.csv"
             elif target_dataset == "ARITH":
@@ -436,9 +423,9 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                 mmlu_domain = extract_mmlu_domain(target_dataset)
                 input_file = combine_mmlu_domain(dataset_path, mmlu_domain)
             elif target_dataset == "SNLI":
-                input_file = dataset_path / f"snli_1.0" / "snli_1.0_test_balanced_smaller.csv"
+                input_file = dataset_path / f"snli-nli-balanced.csv"
             elif target_dataset == "MNLI":
-                input_file = dataset_path / f"multinli_1.0" / "multinli_1.0_dev_matched_balanced_genre.csv"
+                input_file = dataset_path / f"mnli-nli-balanced.csv"
 
             # Read file to get count for this domain
             if isinstance(input_file, pd.DataFrame):
@@ -543,12 +530,13 @@ def run_single_configuration(calib_dataset, target_dataset, target_model_name, t
     print(f"{'='*80}")
     
     # Validate datasets exist
-    if calib_dataset not in DATASET_PATHS or target_dataset not in DATASET_PATHS:
+    if calib_dataset not in DATASET_DOMAINS or target_dataset not in DATASET_DOMAINS:
         print(f"Invalid dataset specified")
         return
 
     # Setup target dataset path
-    dataset_path = DATASET_PATHS[target_dataset]
+    # dataset_path = DATASET_PATHS[target_dataset]
+    dataset_path = Path("../data")
 
     # Determine if we're working with MMLU domains
     if is_mmlu_dataset(calib_dataset) or is_mmlu_dataset(target_dataset):
