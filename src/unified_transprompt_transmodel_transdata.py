@@ -2,7 +2,7 @@
 
 import argparse, os, gc, torch, sys
 from pathlib import Path
-from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM, BitsAndBytesConfig, Gemma3ForConditionalGeneration
+from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM, GPT2LMHeadModel, GPT2Tokenizer, BitsAndBytesConfig, Gemma3ForConditionalGeneration
 from torch.cuda import empty_cache
 import pandas as pd
 import threading
@@ -12,7 +12,7 @@ def periodic_cache_clear(interval=300):  # Every 5 minutes
     while True:
         time.sleep(interval)
         torch.cuda.empty_cache()
-        print(f"Cleared GPU cache at {time.strftime('%H:%M:%S')}")
+        (f"Cleared GPU cache at {time.strftime('%H:%M:%S')}")
 
 gc.collect()
 torch.cuda.empty_cache()
@@ -23,6 +23,7 @@ from mcq_BOS_BC_CC import process_dataset_mcq
 from nli_BOC_CC_BC import process_dataset_nli
 DATE = "Sep-16-2025"
 
+gpt2_models = ["gpt2"]
 falcon_models = ["Falcon3-3B-Base", "Falcon3-3B-Instruct", "Falcon3-10B-Base", "Falcon3-10B-Instruct"]
 gemma3_models = ["gemma-3-27b-pt", "gemma-3-27b-it", "gemma-3-12b-pt", "gemma-3-12b-it"]
 # qwen2_models = ["Qwen2.5-14B", "Qwen2.5-14B-Instruct", "Qwen2.5-32B", "Qwen2.5-32B-Instruct"]
@@ -30,6 +31,7 @@ gemma3_models = ["gemma-3-27b-pt", "gemma-3-27b-it", "gemma-3-12b-pt", "gemma-3-
 llama3_models = ["Llama-3.1-8B", "Llama-3.1-8B-Instruct", "Llama-3.1-70B", "Llama-3.1-70B-Instruct"]
 
 MODEL_CONFIGS = {
+    "GPT2": {"models": gpt2_models, "model_class": GPT2LMHeadModel, "tokenizer_class": GPT2Tokenizer, "prefix": ""},
     "Falcon": {"models": falcon_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "tiiuae/"},
     # "Qwen2": {"models": qwen2_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "Qwen/"},
     # "Llama": {"models": llama_models, "model_class": LlamaForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "meta-llama/"},
@@ -104,6 +106,8 @@ def infer_model_family(model_name: str) -> str:
         return "Llama"
     elif model_name.startswith("Llama-3"):
         return "Llama3"
+    elif model_name.startswith("gpt2"):
+        return "GPT2"
     else:
         raise ValueError(f"Cannot infer model family from model name: {model_name}")
 
@@ -191,7 +195,7 @@ def setup_model_and_tokenizer(model_name, model_family):
     
     model_kwargs = {
         "device_map": "auto",
-        "torch_dtype": torch.bfloat16,
+        "torch_dtype": torch.float16,
         "low_cpu_mem_usage": True
     }
     
@@ -293,7 +297,7 @@ def check_corrections_possible(impl, model_name, model_family, domains, output_b
             print(f"Target plain results missing for domain {domain}: {plain_file}")
             return False
     
-    print(f"✅ All target plain results exist for {model_name}")
+    print(f"All target plain results exist for {model_name}")
     
     # For cross-dataset or cross-model or cross-prompt modes, also check calibration data exists
     cross_dataset_mode = (calib_dataset is not None and calib_dataset != target_dataset and "specific" in impl)
@@ -333,7 +337,7 @@ def check_corrections_possible(impl, model_name, model_family, domains, output_b
                         print(f"Calibration data missing for domain {calib_domain}: {calib_path}")
                         return False
             
-            print(f"✅ All calibration data exists")
+            print(f"All calibration data exists")
             return True
             
         except Exception as e:

@@ -1,5 +1,5 @@
 accelerate==0.29.3
-bitsandbytes==0.47.0
+bitsandbytes==0.42.0
 black==23.3.0
 coloredlogs==15.0.1
 datasets==2.19.0
