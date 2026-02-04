@@ -29,7 +29,8 @@ The repository contains four home folders:
    2. This folder also contains outputs of plotting and analysis scripts (in `results/plot_outputs/` and `results/table_outputs/`).
 3. **`src/`:** Contains main implementation of logic to load model --> feed datasets --> extract and store plain inference LogProbs values in CSV files in an `outputs/` folder --> apply a chosen correction method using those plain inference values --> store the corrected LogProbs into another CSV file in `outputs/`.
    1. `src/unified_transprompt_transmodel_transdata.py` serves as the primary script where all options for running some configuration of model, dataset, prompt, and correction method can be specified via CLI flags.
-   2. Given the large number of potential combinations of models, datasets, prompts, and correction methods, we provide shell scripts for running them easily (see `src/run_{method}_shellscripts/`). These automatically run the primary script in a loop across all valid combinations of setup configurations, for the correction method and question type of your choice! **However, please see NOTE-2.**
+   2. 'src/calibration_core.py` contains the implementations of the three LogProbs-based bias correction methods used for analysis (BC, CC, RBCorr aka specific).
+   3. Given the large number of potential combinations of models, datasets, prompts, and correction methods, we provide shell scripts for running them easily (see `src/run_{method}_shellscripts/`). These automatically run the primary script in a loop across all valid combinations of setup configurations, for the correction method and question type of your choice! **However, please see NOTE-2.**
 4. **`scripts/`:** Contains three sub-folders.
    1. `scripts/correction_metrics_processors/` has the scripts which generate the JSON-formatted performance statistics which get saved in the aforementioned `results/` folder (given that the `outputs/` home folder exists and contains the required LogProbs CSV file to read and process).
    2. `scripts/transfer_analyses/` has the scripts to analyse the efficacy of RBCorr correction in 'transfer correction' cases.
@@ -44,13 +45,13 @@ The repository contains four home folders:
 We created custom datasets in the `data/` folder derived from subsets of various existing datasets (more details for each dataset provided in the paper!). These focus on modifying the orginal datasets to enforce class-balance, standard formatting across datasets, and standardized single-token response format based on question-type.
 
 * Yes-No Datasets (2-Choice; `Yes/No`):
-  1. ARITH -- `data/arithynq-scripts-data/arith-ynq-big.csv`
-  2. BABI -- `data/babiynq-scripts-data/babi-ynq-big.csv`
-  3. COMPS -- `data/compsynq-scripts-data/comps_yn_rand_2prop_2100.csv`
-  4. EWOK -- `data/ewokynq-scripts-data/t2q_nodup_nominpairs/processed_t2q_all_domains.csv`
+  1. ARITH -- `data/arith-ynq-big.csv`
+  2. BABI -- `data/babi-ynq-big.csv`
+  3. COMPS -- `data/comps-ynq-big.csv`
+  4. EWOK -- `data/ewok-ynq-big.csv`
 * NLI Datasets (3-choice; `0/1/2`):
-  1. SNLI -- `data/snli-scripts-data/snli_1.0/snli_1.0_test_balanced_smaller.csv`
-  2. MNLI -- `data/mnli-scripts-data/multinli_1.0/multinli_1.0_dev_matched_balanced_genre.csv`
+  1. SNLI -- `data/snli-nli-balanced.csv`
+  2. MNLI -- `data/mnli-nli-balanced.csv`
 * MMLU Datasets (4-choice; `A/B/C/D`):
   1. HUMANITIES -- `data/mmlu-scripts-data/HUMANITIES/*`
   2. OTHERS -- `data/mmlu-scripts-data/OTHERS/*`
