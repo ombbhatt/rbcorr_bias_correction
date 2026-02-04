@@ -1,4 +1,8 @@
-data/mnli-scripts-data/mnli.zip
-data/snli-scripts-data/snli_1.0/snli_1.0_train.jsonl
-data/snli-scripts-data/snli_1.0/snli_1.0_train.txt
+data/mnli-scripts-data/
+data/snli-scripts-data/
+data/arithynq-scripts-data/
+data/babiynq-scripts-data/
+data/compsynq-scripts-data/
+data/ewokynq-scripts-data/
 analysis/
+outputs/
