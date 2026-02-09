@@ -1,0 +1,98 @@
+{
+  "zeroshot": {
+    "ARITH": {
+      "arith": {
+        "Falcon": {
+          "Falcon3-3B-Base": {
+            "raw_tvd": 0.06999999999999998,
+            "raw_model_dist": {
+              "Yes": 0.57,
+              "No": 0.43
+            },
+            "raw_acc": 0.82,
+            "corrected_tvd": 0.5,
+            "corrected_model_dist": {
+              "Yes": 1.0,
+              "No": 0.0
+            },
+            "corrected_acc": 0.5,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.0742452328374597,
+              "cf_no_prob": 0.9257547671625402
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          },
+          "Falcon3-3B-Instruct": {
+            "raw_tvd": 0.03749999999999998,
+            "raw_model_dist": {
+              "Yes": 0.4625,
+              "No": 0.5375
+            },
+            "raw_acc": 0.7875,
+            "corrected_tvd": 0.3108333333333333,
+            "corrected_model_dist": {
+              "Yes": 0.8108333333333333,
+              "No": 0.18916666666666668
+            },
+            "corrected_acc": 0.6841666666666667,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.0615864738332008,
+              "cf_no_prob": 0.9384135261667992
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          },
+          "Falcon3-10B-Base": {
+            "raw_tvd": 0.10833333333333331,
+            "raw_model_dist": {
+              "Yes": 0.6083333333333333,
+              "No": 0.39166666666666666
+            },
+            "raw_acc": 0.8433333333333334,
+            "corrected_tvd": 0.5,
+            "corrected_model_dist": {
+              "Yes": 1.0,
+              "No": 0.0
+            },
+            "corrected_acc": 0.5,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.0074353003675923,
+              "cf_no_prob": 0.9925646996324076
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          },
+          "Falcon3-10B-Instruct": {
+            "raw_tvd": 0.15333333333333332,
+            "raw_model_dist": {
+              "Yes": 0.6533333333333333,
+              "No": 0.3466666666666667
+            },
+            "raw_acc": 0.8266666666666667,
+            "corrected_tvd": 0.5,
+            "corrected_model_dist": {
+              "Yes": 1.0,
+              "No": 0.0
+            },
+            "corrected_acc": 0.5,
+            "cf_bias_estimate": {
+              "cf_yes_prob": 0.0087328805238153,
+              "cf_no_prob": 0.9912671194761848
+            },
+            "ground_truth_dist": {
+              "Yes": 0.5,
+              "No": 0.5
+            }
+          }
+        }
+      }
+    }
+  }
+}
