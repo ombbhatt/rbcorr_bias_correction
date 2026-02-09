@@ -205,16 +205,16 @@ def plot_dataset(ax, qtype_config, dataset):
 
 def create_comparison_plot():
     """Create the full comparison figure."""
-    # Create figure with 4-2-4 layout
-    fig = plt.figure(figsize=(8, 16))
+    # fig = plt.figure(figsize=(8, 16))
+    fig = plt.figure(figsize=(16, 8))
     
-    # Create grid: 3 rows, 4 columns
-    gs = fig.add_gridspec(4, 2, hspace=0.29, wspace=0.27)
+    # Create grid: 2 rows, 4 columns
+    gs = fig.add_gridspec(2, 4, hspace=0.29, wspace=0.27)
     
     # Row 1: YesNo datasets (4 plots)
     yesno_config = DATASETS["yesno"]
     for i, dataset in enumerate(yesno_config["datasets"]):
-        ax = fig.add_subplot(gs[i, 0])
+        ax = fig.add_subplot(gs[0, i])
         plot_dataset(ax, yesno_config, dataset)
     
     # Row 2: NLI datasets (2 plots, centered)
@@ -223,19 +223,19 @@ def create_comparison_plot():
     #     ax = fig.add_subplot(gs[1, i+1])  # Offset by 1 to center
     #     plot_dataset(ax, nli_config, dataset)
     
-    # Row 3: MCQ datasets (4 plots)
+    # Row 2: MCQ datasets (4 plots)
     mcq_config = DATASETS["mcq"]
     for i, dataset in enumerate(mcq_config["datasets"]):
-        ax = fig.add_subplot(gs[i, 1])
+        ax = fig.add_subplot(gs[1, i])
         plot_dataset(ax, mcq_config, dataset)
     
     # Add a single legend at the top of the figure
     handles, labels = fig.axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.92), 
+    fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 0.96), 
                ncol=3, fontsize=11, frameon=True)
     
     plt.suptitle('RBCorr On Multiple Calibration Set Sizes (Zeroshot)', 
-                 fontsize=14, fontweight='bold', y=0.94)
+                 fontsize=14, fontweight='bold', y=0.98)
     
     return fig
 
