@@ -1,6 +1,6 @@
 # RBCorr: Response Bias Correction in Language Models
 
-This repository serves as the codebase for our work on exploring LogProbs-based bias correction in LLMs. You can find the paper here: 
+This repository serves as the codebase for our work on exploring LogProbs-based bias correction in LLMs. You can find the paper here: https://arxiv.org/abs/2602.12445
 
 **Abstract:**
 
