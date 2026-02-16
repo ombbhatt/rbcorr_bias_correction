@@ -29,7 +29,7 @@ The repository contains four home folders:
    2. This folder also contains outputs of plotting and analysis scripts (in `results/plot_outputs/` and `results/table_outputs/`).
 3. **`src/`:** Contains main implementation of logic to load model --> feed datasets --> extract and store plain inference LogProbs values in CSV files in an `outputs/` folder --> apply a chosen correction method using those plain inference values --> store the corrected LogProbs into another CSV file in `outputs/`.
    1. `src/unified_transprompt_transmodel_transdata.py` serves as the primary script where all options for running some configuration of model, dataset, prompt, and correction method can be specified via CLI flags.
-   2. 'src/calibration_core.py` contains the implementations of the three LogProbs-based bias correction methods used for analysis (BC, CC, RBCorr aka specific).
+   2. `src/calibration_core.py` contains the implementations of the three LogProbs-based bias correction methods used for analysis (BC, CC, RBCorr aka specific).
    3. Given the large number of potential combinations of models, datasets, prompts, and correction methods, we provide shell scripts for running them easily (see `src/run_{method}_shellscripts/`). These automatically run the primary script in a loop across all valid combinations of setup configurations, for the correction method and question type of your choice! **However, please see NOTE-2.**
 4. **`scripts/`:** Contains three sub-folders.
    1. `scripts/correction_metrics_processors/` has the scripts which generate the JSON-formatted performance statistics which get saved in the aforementioned `results/` folder (given that the `outputs/` home folder exists and contains the required LogProbs CSV file to read and process).
