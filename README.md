@@ -19,7 +19,6 @@ Language models (LMs) are known to be prone to response biases, which present as
 That's it! You are ready to run inference, perform corrections and run analysis scripts in this codebase.
 
 ---
-
 ## Code Organization
 
 The repository contains four home folders:
@@ -36,9 +35,9 @@ The repository contains four home folders:
    2. `scripts/transfer_analyses/` has the scripts to analyse the efficacy of RBCorr correction in 'transfer correction' cases.
    3. `scripts/misc_analyses_scripts/` has scripts for all other plots and analyses presented in the paper.
 
-**NOTE-2:** Unless you want to re-create the full per-question LogProbs CSV files for our test suite, or run new models or datasets (either of which require compute power and storage), you do NOT need to run this primary script in `src/` at all! The only purpose of these LogProbs CSV files is to serve as the input to the metrics processor scripts (in `scripts/`), in order to ultimately generate the JSON-formatted performance statistics. We already provide all of the JSON files that we generated across our test suite in `results/`!
----
+**NOTE-2:** Unless you want to re-create the full per-question LogProbs CSV files for our test suite, or run new models or datasets (either of which require compute power and storage), you do NOT need to run this primary script in `src/` at all! The only purpose of these LogProbs CSV files is to serve as the input to the metrics processor scripts (in `scripts/`), in order to ultimately generate the JSON-formatted performance statistics. We already provide all of the JSON files that we generated across our test suite in `results/`! 
 
+---
 ## Datasets
 
 We created custom datasets in the `data/` folder derived from subsets of various existing datasets (more details for each dataset provided in the paper!). These focus on modifying the orginal datasets to enforce class-balance, standard formatting across datasets, and standardized single-token response format based on question-type.
