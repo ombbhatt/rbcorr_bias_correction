@@ -1,0 +1,201 @@
+property,prefix,Context,Question,Correct Answer,negative_sample_type
+has feet,an arm,'',Does an arm have feet?,No,random
+can make coffee,leek,'',Can leek make coffee?,No,random
+can be found in the tool box,a television,'',Can a television be found in the tool box?,No,random
+has wire loops,a dolphin,'',Does a dolphin have wire loops?,No,random
+is required for movement,an oven,'',Is an oven required for movement?,No,random
+is taut,a jacket,'',Is a jacket taut?,No,random
+can live long,a parakeet,'',Can a parakeet live long?,No,random
+has thick scales,a bone,'',Does a bone have thick scales?,No,random
+can be used to make bread,pineapple,'',Can pineapple be used to make bread?,No,random
+can beat,an ox,'',Can an ox beat?,No,random
+can stop bullets,a mug,'',Can a mug stop bullets?,No,random
+is worn on head,an emu,'',Is an emu worn on head?,No,random
+can be made of gold,blueberry,'',Can blueberry be made of gold?,No,random
+has bright feathers,an ambulance,'',Does an ambulance have bright feathers?,No,random
+can have striped patterns,a chainsaw,'',Can a chainsaw have striped patterns?,No,random
+can be locked,a spear,'',Can a spear be locked?,No,random
+has slots for five fingers,sultana,'',Does sultana have slots for five fingers?,No,random
+is used for watering,a tarantula,'',Is a tarantula used for watering?,No,random
+can be used to make smoothies,gin,'',Can gin be used to make smoothies?,No,random
+is pressurised,a currant,'',Is a currant pressurised?,No,random
+can dive underwater,a locust,'',Can a locust dive underwater?,No,random
+has hands,an onion,'',Does an onion have hands?,No,random
+has rings,a bullet,'',Does a bullet have rings?,No,random
+is a citrus fruit,peach,'',Is peach a citrus fruit?,No,random
+is used in combat,a daffodil,'',Is a daffodil used in combat?,No,random
+can cling to rocks,a sheep,'',Can a sheep cling to rocks?,No,random
+can be covered in lip gloss,a harpsichord,'',Can a harpsichord be covered in lip gloss?,No,random
+has grooves,a sweater,'',Does a sweater have grooves?,No,random
+can be made of ebony,leek,'',Can leek be made of ebony?,No,random
+has a line in the middle,a blender,'',Does a blender have a line in the middle?,No,random
+is emulsified,a drill,'',Is a drill emulsified?,No,random
+is pickled,a ferry,'',Is a ferry pickled?,No,random
+has claws,a taxi,'',Does a taxi have claws?,No,random
+can have wire mesh,butter,'',Can butter have wire mesh?,No,random
+has a woolen coat,a rose,'',Does a rose have a woolen coat?,No,random
+is shaped like a tree,a dog,'',Is a dog shaped like a tree?,No,random
+has red pulp,a rattle,'',Does a rattle have red pulp?,No,random
+is hard to open,a television,'',Is a television hard to open?,No,random
+does not die when it stings,a hummingbird,'',Does a hummingbird doe not die when it stings?,No,random
+is eaten by elephants,a desk,'',Is a desk eaten by elephants?,No,random
+has a bedroom,a frog,'',Does a frog have a bedroom?,No,random
+uses gas,a drill,'',Does a drill use gas?,No,random
+can wake someone up,a cow,'',Can a cow wake someone up?,No,random
+can drink,jelly,'',Can jelly drink?,No,random
+can have short sleeves,a pony,'',Can a pony have short sleeves?,No,random
+has a drain hole,satsuma,'',Does satsuma have a drain hole?,No,random
+is essential,a harpoon,'',Is a harpoon essential?,No,random
+uses radiation,a canoe,'',Does a canoe use radiation?,No,random
+can cut through forrest vegetation,a goose,'',Can a goose cut through forrest vegetation?,No,random
+can play audio,a canary,'',Can a canary play audio?,No,random
+can hold things together,a bagpipe,'',Can a bagpipe hold things together?,No,random
+is a squash,a birch tree,'',Is a birch tree a squash?,No,random
+contains potassium,pear,'',Does pear contain potassium?,No,random
+can go stale,a ladle,'',Can a ladle go stale?,No,random
+can be grated,a drill,'',Can a drill be grated?,No,random
+is an insect,a balloon,'',Is a balloon an insect?,No,random
+has a base,a clam,'',Does a clam have a base?,No,random
+can spin,a canary,'',Can a canary spin?,No,random
+can be used to eat food,a coat,'',Can a coat be used to eat food?,No,random
+can be found in forests,a strainer,'',Can a strainer be found in forests?,No,random
+can trot,a tongue,'',Can a tongue trot?,No,random
+hatches from a chrysalis,a shawl,'',Does a shawl hatche from a chrysalis?,No,random
+is used to clear leaves,a nightingale,'',Is a nightingale used to clear leaves?,No,random
+can have a hammer shaped head,kiwi,'',Can kiwi have a hammer shaped head?,No,random
+is tropical,a cat,'',Is a cat tropical?,No,random
+can be healed,a scallop,'',Can a scallop be healed?,No,random
+has a flat surface,a violin,'',Does a violin have a flat surface?,No,random
+is shaped like a bulb,a jellyfish,'',Is a jellyfish shaped like a bulb?,No,random
+has a hard shell,a chestnut tree,'',Does a chestnut tree have a hard shell?,No,random
+is white inside,a gorilla,'',Is a gorilla white inside?,No,random
+has pigments,pear,'',Does pear have pigments?,No,random
+can run,a wheelbarrow,'',Can a wheelbarrow run?,No,random
+has a pupil,a harmonica,'',Does a harmonica have a pupil?,No,random
+is used in fall,a buffalo,'',Is a buffalo used in fall?,No,random
+has an eardrum,a spear,'',Does a spear have an eardrum?,No,random
+is an aphrodisiac,mushroom,'',Is mushroom an aphrodisiac?,No,random
+can have a wooden handle,a cockroach,'',Can a cockroach have a wooden handle?,No,random
+has pink flesh,a strainer,'',Does a strainer have pink flesh?,No,random
+is consumed by drinking,a carriage,'',Is a carriage consumed by drinking?,No,random
+can be made of nylon,a grenade,'',Can a grenade be made of nylon?,No,random
+can sieve,broccoli,'',Can broccoli sieve?,No,random
+can be flavored,a camel,'',Can a camel be flavored?,No,random
+is shaped like a shell,jeans,'',Is jeans shaped like a shell?,No,random
+can be slow,a buttercup,'',Can a buttercup be slow?,No,random
+has a prong,an ox,'',Does an ox have a prong?,No,random
+can be found on farms,a shrimp,'',Can a shrimp be found on farms?,No,random
+can be a source of entertainment,an armor,'',Can an armor be a source of entertainment?,No,random
+has a tight surface,a foot,'',Does a foot have a tight surface?,No,random
+makes a bellowing sound,a hammer,'',Does a hammer make a bellowing sound?,No,random
+is a nut,a plate,'',Is a plate a nut?,No,random
+can be used to throw over long distances,an ashtray,'',Can an ashtray be used to throw over long distances?,No,random
+can contain a spring,a chair,'',Can a chair contain a spring?,No,random
+can bounce,a canary,'',Can a canary bounce?,No,random
+has flaky skin,a speedboat,'',Does a speedboat have flaky skin?,No,random
+can stop,a car,'',Can a car stop?,No,random
+is wide in shape,an accordion,'',Is an accordion wide in shape?,No,random
+is kept in falconries,a swan,'',Is a swan kept in falconries?,No,random
+has big ears,a sparrow,'',Does a sparrow have big ears?,No,random
+can hit people,an accordion,'',Can an accordion hit people?,No,random
+contains a calf,castanets,'',Does castanets contain a calf?,No,random
+can be used on eyes,cucumber,'',Can cucumber be used on eyes?,Yes,random
+is a cephalopod,an octopus,'',Is an octopus a cephalopod?,Yes,random
+can contain icing,a donut,'',Can a donut contain icing?,Yes,random
+can be filled,a bathtub,'',Can a bathtub be filled?,Yes,random
+is a symbol of peace,a dove,'',Is a dove a symbol of peace?,Yes,random
+is used to inhale air,a nose,'',Is a nose used to inhale air?,Yes,random
+can quack,a duck,'',Can a duck quack?,Yes,random
+cannot fly,a peacock,'',Does a peacock cannot fly?,Yes,random
+has a yellow center,a daisy,'',Does a daisy have a yellow center?,Yes,random
+has a curly shape,a french horn,'',Does a french horn have a curly shape?,Yes,random
+is a sensory organ,a tongue,'',Is a tongue a sensory organ?,Yes,random
+has large teeth,a lion,'',Does a lion have large teeth?,Yes,random
+is smooth on the outside,tomato,'',Is tomato smooth on the outside?,Yes,random
+is for toddlers,a cradle,'',Is a cradle for toddlers?,Yes,random
+can last a long time,jam,'',Can jam last a long time?,Yes,random
+can be made of canvas material,a deckchair,'',Can a deckchair be made of canvas material?,Yes,random
+is fruity,jelly,'',Is jelly fruity?,Yes,random
+is prickly,pineapple,'',Is pineapple prickly?,Yes,random
+comes from grains,whiskey,'',Does whiskey come from grains?,Yes,random
+is a chair with wheels,a wheelchair,'',Is a wheelchair a chair with wheels?,Yes,random
+is worn on head,a veil,'',Is a veil worn on head?,Yes,random
+is made of fibres,a heart,'',Is a heart made of fibres?,Yes,random
+grows underground,an onion,'',Does an onion grow underground?,Yes,random
+is cold blooded,a minnow,'',Is a minnow cold blooded?,Yes,random
+hunts in packs,a wolf,'',Does a wolf hunt in packs?,Yes,random
+has a long body,a rhino,'',Does a rhino have a long body?,Yes,random
+is used in fish and chips,a cod,'',Is a cod used in fish and chips?,Yes,random
+can be made of satin,a gown,'',Can a gown be made of satin?,Yes,random
+can trot,a pony,'',Can a pony trot?,Yes,random
+has soft wood,a willow tree,'',Does a willow tree have soft wood?,Yes,random
+can chill food,a refrigerator,'',Can a refrigerator chill food?,Yes,random
+can flash,a camera,'',Can a camera flash?,Yes,random
+has edible seeds,cucumber,'',Does cucumber have edible seeds?,Yes,random
+is worn on the lower half of the body,a skirt,'',Is a skirt worn on the lower half of the body?,Yes,random
+is usually taller than wide,a bottle,'',Is a bottle usually taller than wide?,Yes,random
+can be short,a finger,'',Can a finger be short?,Yes,random
+has a nozzle,a hose,'',Does a hose have a nozzle?,Yes,random
+has metal bands,a barrel,'',Does a barrel have metal bands?,Yes,random
+has horns,a goat,'',Does a goat have horns?,Yes,random
+can be found on plants,a cricket,'',Can a cricket be found on plants?,Yes,random
+has long eyelashes,a hippo,'',Does a hippo have long eyelashes?,Yes,random
+is agile,a panther,'',Is a panther agile?,Yes,random
+is a wine,champagne,'',Is champagne a wine?,Yes,random
+can defrost food,an oven,'',Can an oven defrost food?,Yes,random
+is grainy,sugar,'',Is sugar grainy?,Yes,random
+is decorative,an orchid,'',Is an orchid decorative?,Yes,random
+has a pointy end,a knife,'',Does a knife have a pointy end?,Yes,random
+has dog food,a dog,'',Does a dog have dog food?,Yes,random
+is used to serve food,a ladle,'',Is a ladle used to serve food?,Yes,random
+can prance,a horse,'',Can a horse prance?,Yes,random
+can wag its tail,a dog,'',Can a dog wag its tail?,Yes,random
+can be found in the wild,a wren,'',Can a wren be found in the wild?,Yes,random
+is used by carpenters and masons,a chisel,'',Is a chisel used by carpenters and masons?,Yes,random
+can be rowed,a canoe,'',Can a canoe be rowed?,Yes,random
+likes to chase strings,a cat,'',Does a cat like to chase strings?,Yes,random
+requires plumbing,a bathtub,'',Does a bathtub require plumbing?,Yes,random
+provides strong wood,an oak tree,'',Does an oak tree provide strong wood?,Yes,random
+is worn by laborers,gloves,'',Is gloves worn by laborers?,Yes,random
+can be bent,a leg,'',Can a leg be bent?,Yes,random
+has big eyes,a frog,'',Does a frog have big eyes?,Yes,random
+has fibrous skin,peach,'',Does peach have fibrous skin?,Yes,random
+is a pest,a termite,'',Is a termite a pest?,Yes,random
+can be lied on,a sofa,'',Can a sofa be lied on?,Yes,random
+washes fabrics,a washing machine,'',Does a washing machine wash fabrics?,Yes,random
+is a bike,a unicycle,'',Is a unicycle a bike?,Yes,random
+can make a hooting sound,an owl,'',Can an owl make a hooting sound?,Yes,random
+eats rodents and mice,a hawk,'',Does a hawk eat rodents and mice?,Yes,random
+has a dreamy sound,a harp,'',Does a harp have a dreamy sound?,Yes,random
+contains identification,a wallet,'',Does a wallet contain identification?,Yes,random
+has a metal frame,a bus,'',Does a bus have a metal frame?,Yes,random
+has gears,a car,'',Does a car have gears?,Yes,random
+comes in different designs,a football,'',Does a football come in different designs?,Yes,random
+can be used to communicate,a radio,'',Can a radio be used to communicate?,Yes,random
+is taut,a bow,'',Is a bow taut?,Yes,random
+is flown,a rocket,'',Is a rocket flown?,Yes,random
+can support spectacles,an ear,'',Can an ear support spectacles?,Yes,random
+is used in seas,a dinghy,'',Is a dinghy used in seas?,Yes,random
+can be used to eat cereal,a bowl,'',Can a bowl be used to eat cereal?,Yes,random
+uses electricity,a coffee maker,'',Does a coffee maker use electricity?,Yes,random
+resembles the letter Y,a catapult,'',Does a catapult resemble the letter y?,Yes,random
+is brewed,beer,'',Is beer brewed?,Yes,random
+is used to stir,a ladle,'',Is a ladle used to stir?,Yes,random
+can be made of soft fabric,a skirt,'',Can a skirt be made of soft fabric?,Yes,random
+is played in brass bands,a tuba,'',Is a tuba played in brass bands?,Yes,random
+can squawk,a parakeet,'',Can a parakeet squawk?,Yes,random
+can be pulled by a tractor,a plow,'',Can a plow be pulled by a tractor?,Yes,random
+can store jam,a jar,'',Can a jar store jam?,Yes,random
+is required for speaking,a tongue,'',Is a tongue required for speaking?,Yes,random
+has a septum,a nose,'',Does a nose have a septum?,Yes,random
+can be messy to eat,peach,'',Can peach be messy to eat?,Yes,random
+is made of ground grain,flour,'',Is flour made of ground grain?,Yes,random
+is indulgent,ice cream,'',Is ice cream indulgent?,Yes,random
+can be environmentally friendly,a coach,'',Can a coach be environmentally friendly?,Yes,random
+can be worn with a tie,a shirt,'',Can a shirt be worn with a tie?,Yes,random
+is a weed,a daisy,'',Is a daisy a weed?,Yes,random
+can be found on cupboards,a plate,'',Can a plate be found on cupboards?,Yes,random
+can be difficult to digest,corn,'',Can corn be difficult to digest?,Yes,random
+has two wheels,a wheelbarrow,'',Does a wheelbarrow have two wheels?,Yes,random
+is dried,a currant,'',Is a currant dried?,Yes,random
+is a gastropod,a snail,'',Is a snail a gastropod?,Yes,random

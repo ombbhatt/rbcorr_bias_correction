@@ -3,8 +3,18 @@ import os
 from pathlib import Path
 
 # Model configuration
-MODELS = ["Llama-3.1-8B", "Llama-3.1-8B-Instruct"]
-MODEL_FAMILY = "Llama3"
+MODELS = ["Falcon3-3B-Base", "Falcon3-3B-Instruct", "Falcon3-10B-Base", "Falcon3-10B-Instruct",
+          "gemma-3-12b-pt", "gemma-3-12b-it", "gemma-3-27b-pt", "gemma-3-27b-it",
+          "Llama-3.1-8B", "Llama-3.1-8B-Instruct", "Llama-3.1-70B", "Llama-3.1-70B-Instruct"]
+
+def get_model_family(model_name):
+    if 'Falcon3' in model_name:
+        return 'Falcon'
+    elif 'gemma' in model_name:
+        return 'Gemma3'
+    elif 'Llama' in model_name:
+        return 'Llama3'
+
 PROMPT_LEVEL = "fewshot"
 
 # Dataset configurations with their properties
@@ -38,7 +48,8 @@ def extract_specific_stats(results_dir, dataset, model):
     """Extract statistics from specific method."""
     qtype = DATASETS[dataset]['qtype']
     qtype_folder = f"specific_{qtype}_per_median_TVD"
-    filename = f"{PROMPT_LEVEL}_{MODEL_FAMILY}_{dataset}.json"
+    model_family = get_model_family(model)
+    filename = f"{PROMPT_LEVEL}_{model_family}_{dataset}.json"
     filepath = os.path.join(results_dir, qtype_folder, filename)
     
     data = load_json_file(filepath)
@@ -56,7 +67,7 @@ def extract_specific_stats(results_dir, dataset, model):
             dataset_short = dataset.replace("MMLU-", "")
             same_condition = f"{dataset_short}-from{dataset_short}"
         
-        stats = data[PROMPT_LEVEL][per_qtype][same_condition][MODEL_FAMILY][model]["100"]
+        stats = data[PROMPT_LEVEL][per_qtype][same_condition][model_family][model]["100"]
         
         return {
             'raw_acc': stats['raw_acc'],
@@ -72,8 +83,9 @@ def extract_contextcalib_stats(results_dir, dataset, model):
     """Extract statistics from contextcalib method."""
     qtype = DATASETS[dataset]['qtype']
     domain = DATASETS[dataset]['domain']
+    model_family = get_model_family(model)
     qtype_folder = f"contextcalib_{qtype}_per_TVD"
-    filename = f"{PROMPT_LEVEL}_{MODEL_FAMILY}_{dataset}.json"
+    filename = f"{PROMPT_LEVEL}_{model_family}_{dataset}.json"
     filepath = os.path.join(results_dir, qtype_folder, filename)
     
     data = load_json_file(filepath)
@@ -82,7 +94,7 @@ def extract_contextcalib_stats(results_dir, dataset, model):
     
     try:
         # Navigate: promptlevel -> DATASET -> domain -> modelfamily -> model
-        stats = data[PROMPT_LEVEL][dataset][domain][MODEL_FAMILY][model]
+        stats = data[PROMPT_LEVEL][dataset][domain][model_family][model]
         
         return {
             'raw_acc': stats['raw_acc'],
@@ -99,7 +111,8 @@ def extract_batchcalib_stats(results_dir, dataset, model):
     qtype = DATASETS[dataset]['qtype']
     domain = DATASETS[dataset]['domain']
     qtype_folder = f"batchcalib_{qtype}_per_TVD"
-    filename = f"{PROMPT_LEVEL}_{MODEL_FAMILY}_{dataset}.json"
+    model_family = get_model_family(model)
+    filename = f"{PROMPT_LEVEL}_{model_family}_{dataset}.json"
     filepath = os.path.join(results_dir, qtype_folder, filename)
     
     data = load_json_file(filepath)
@@ -108,7 +121,7 @@ def extract_batchcalib_stats(results_dir, dataset, model):
     
     try:
         # Navigate: promptlevel -> DATASET -> domain -> modelfamily -> model -> "100"
-        stats = data[PROMPT_LEVEL][dataset][domain][MODEL_FAMILY][model]["100"]
+        stats = data[PROMPT_LEVEL][dataset][domain][model_family][model]["100"]
         
         return {
             'raw_acc': stats['raw_acc'],
@@ -138,7 +151,8 @@ def format_delta(value, is_percentage=False, decimal_places=2):
     if value is None:
         return "N/A"
     
-    sign = "+" if value > 0 else ""
+    # sign = "+" if value > 0 else ""
+    sign = ""
     
     if is_percentage:
         # Convert to percentage if needed
@@ -148,7 +162,7 @@ def format_delta(value, is_percentage=False, decimal_places=2):
     else:
         return f"{sign}{value:.{decimal_places}f}"
 
-def create_table_data(results_dir, output_file='../../results/table_outputs/methodcompare_table_data.txt'):
+def create_table_data(results_dir, output_file='../../results/table_outputs/methodcompare_table_data_all.txt'):
     """Create table data for all datasets and models."""
     
     output_lines = []
@@ -156,7 +170,7 @@ def create_table_data(results_dir, output_file='../../results/table_outputs/meth
     output_lines.append("TABLE DATA FOR LATEX")
     output_lines.append("=" * 120)
     output_lines.append("")
-    output_lines.append("Format: Dataset | Model | Baseline(Acc|Bias) | CC Δ(Acc|Bias) | BC Δ(Acc|Bias) | Ours Δ(Acc|Bias)")
+    output_lines.append("Format: Dataset | Model | Baseline(Acc|Bias) | CC (Acc|Bias) | BC (Acc|Bias) | Ours (Acc|Bias)")
     output_lines.append("-" * 120)
     output_lines.append("")
     
@@ -167,15 +181,13 @@ def create_table_data(results_dir, output_file='../../results/table_outputs/meth
         output_lines.append("-" * 60)
         
         # Process each model
-        for model in MODELS:
-            model_short = "8B" if model == "Llama-3.1-8B" else "8B-Instruct"
-            
+        for model in MODELS:            
             # Get baseline from any method (they should all have same raw values)
             # We'll use specific method for baseline
             specific_stats = extract_specific_stats(results_dir, dataset_name, model)
             
             if specific_stats is None:
-                output_lines.append(f"{model_short}: Data not found")
+                output_lines.append(f"{model}: Data not found")
                 continue
             
             baseline_acc = specific_stats['raw_acc']
@@ -184,8 +196,8 @@ def create_table_data(results_dir, output_file='../../results/table_outputs/meth
             # Get contextcalib stats
             cc_stats = extract_contextcalib_stats(results_dir, dataset_name, model)
             if cc_stats:
-                cc_delta_acc = cc_stats['corrected_acc'] - baseline_acc
-                cc_delta_tvd = cc_stats['corrected_tvd'] - baseline_tvd
+                cc_delta_acc = cc_stats['corrected_acc']
+                cc_delta_tvd = cc_stats['corrected_tvd']
             else:
                 cc_delta_acc = None
                 cc_delta_tvd = None
@@ -193,18 +205,18 @@ def create_table_data(results_dir, output_file='../../results/table_outputs/meth
             # Get batchcalib stats
             bc_stats = extract_batchcalib_stats(results_dir, dataset_name, model)
             if bc_stats:
-                bc_delta_acc = bc_stats['corrected_acc'] - baseline_acc
-                bc_delta_tvd = bc_stats['corrected_tvd'] - baseline_tvd
+                bc_delta_acc = bc_stats['corrected_acc']
+                bc_delta_tvd = bc_stats['corrected_tvd']
             else:
                 bc_delta_acc = None
                 bc_delta_tvd = None
             
             # Get specific (Ours) stats - already have it
-            ours_delta_acc = specific_stats['median_acc'] - baseline_acc
-            ours_delta_tvd = specific_stats['median_tvd'] - baseline_tvd
+            ours_delta_acc = specific_stats['median_acc']
+            ours_delta_tvd = specific_stats['median_tvd']
             
             # Format output line
-            line = f"{model_short:12} | "
+            line = f"{model:20} | "
             line += f"{format_number(baseline_acc, True, 1):>5} | {format_number(baseline_tvd, False, 3):>5} | "
             line += f"{format_delta(cc_delta_acc, True, 1):>6} | {format_delta(cc_delta_tvd, False, 3):>6} | "
             line += f"{format_delta(bc_delta_acc, True, 1):>6} | {format_delta(bc_delta_tvd, False, 3):>6} | "
@@ -221,9 +233,7 @@ def create_table_data(results_dir, output_file='../../results/table_outputs/meth
     for dataset_name, dataset_info in DATASETS.items():
         display_name = dataset_info['display']
         
-        for model in MODELS:
-            model_short = "8B" if model == "Llama-3.1-8B" else "8B-Instruct"
-            
+        for model in MODELS:            
             specific_stats = extract_specific_stats(results_dir, dataset_name, model)
             if specific_stats is None:
                 continue
@@ -233,32 +243,71 @@ def create_table_data(results_dir, output_file='../../results/table_outputs/meth
             
             cc_stats = extract_contextcalib_stats(results_dir, dataset_name, model)
             if cc_stats:
-                cc_delta_acc = cc_stats['corrected_acc'] - baseline_acc
-                cc_delta_tvd = cc_stats['corrected_tvd'] - baseline_tvd
+                cc_delta_acc = cc_stats['corrected_acc']
+                cc_delta_tvd = cc_stats['corrected_tvd']
             else:
                 cc_delta_acc = None
                 cc_delta_tvd = None
             
             bc_stats = extract_batchcalib_stats(results_dir, dataset_name, model)
             if bc_stats:
-                bc_delta_acc = bc_stats['corrected_acc'] - baseline_acc
-                bc_delta_tvd = bc_stats['corrected_tvd'] - baseline_tvd
+                bc_delta_acc = bc_stats['corrected_acc']
+                bc_delta_tvd = bc_stats['corrected_tvd']
             else:
                 bc_delta_acc = None
                 bc_delta_tvd = None
             
-            ours_delta_acc = specific_stats['median_acc'] - baseline_acc
-            ours_delta_tvd = specific_stats['median_tvd'] - baseline_tvd
+            ours_delta_acc = specific_stats['median_acc']
+            ours_delta_tvd = specific_stats['median_tvd']
             
             # LaTeX row format
-            latex_line = f"{display_name:12} {model_short:12} & "
+            latex_line = f"{display_name:12} {model:20} & "
             latex_line += f"{format_number(baseline_acc, True, 1)} & {format_number(baseline_tvd, False, 3)} & "
             latex_line += f"{format_delta(cc_delta_acc, True, 1)} & {format_delta(cc_delta_tvd, False, 3)} & "
             latex_line += f"{format_delta(bc_delta_acc, True, 1)} & {format_delta(bc_delta_tvd, False, 3)} & "
             latex_line += f"{format_delta(ours_delta_acc, True, 1)} & {format_delta(ours_delta_tvd, False, 3)} \\\\"
             
             output_lines.append(latex_line)
-    
+
+    # save to a csv file with headers: Dataset, Model, Baseline_Acc, Baseline_Bias, CC_Delta_Acc, CC_Delta_Bias, BC_Delta_Acc, BC_Delta_Bias, Ours_Delta_Acc, Ours_Delta_Bias
+    csv_headers = ["Dataset", "Model", "Baseline_Acc", "Baseline_Bias", "CC_Acc", "CC_Bias", "BC_Acc", "BC_Bias", "Ours_Acc", "Ours_Bias"]
+    csv_filepath = output_file.replace(".txt", ".csv")
+    with open(csv_filepath, 'w') as f:
+        f.write(",".join(csv_headers) + "\n")
+        for dataset_name, dataset_info in DATASETS.items():
+            display_name = dataset_info['display']
+            
+            for model in MODELS:            
+                specific_stats = extract_specific_stats(results_dir, dataset_name, model)
+                if specific_stats is None:
+                    continue
+                
+                baseline_acc = specific_stats['raw_acc'] * 100  # convert to percentage
+                baseline_tvd = specific_stats['raw_tvd']
+                
+                cc_stats = extract_contextcalib_stats(results_dir, dataset_name, model)
+                if cc_stats:
+                    cc_delta_acc = cc_stats['corrected_acc'] * 100  # convert to percentage
+                    cc_delta_tvd = cc_stats['corrected_tvd']
+                else:
+                    cc_delta_acc = None
+                    cc_delta_tvd = None
+                
+                bc_stats = extract_batchcalib_stats(results_dir, dataset_name, model)
+                if bc_stats:
+                    bc_delta_acc = bc_stats['corrected_acc'] * 100  # convert to percentage
+                    bc_delta_tvd = bc_stats['corrected_tvd']
+                else:
+                    bc_delta_acc = None
+                    bc_delta_tvd = None
+                
+                ours_delta_acc = specific_stats['median_acc'] * 100  # convert to percentage
+                ours_delta_tvd = specific_stats['median_tvd']
+                
+                csv_line = f"{display_name},{model},{baseline_acc},{baseline_tvd},{cc_delta_acc},{cc_delta_tvd},{bc_delta_acc},{bc_delta_tvd},{ours_delta_acc},{ours_delta_tvd}\n"
+                f.write(csv_line)
+
+
     # Write to file
     with open(output_file, 'w') as f:
         f.write('\n'.join(output_lines))

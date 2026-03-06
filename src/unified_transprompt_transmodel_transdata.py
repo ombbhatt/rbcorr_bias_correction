@@ -21,7 +21,7 @@ torch.cuda.empty_cache()
 from yn_BOS_BC_CC import process_dataset_yesno
 from mcq_BOS_BC_CC import process_dataset_mcq
 from nli_BOC_CC_BC import process_dataset_nli
-DATE = "Sep-16-2025"
+DATE = "Mar-06-2026"
 
 gpt2_models = ["gpt2"]
 falcon_models = ["Falcon3-3B-Base", "Falcon3-3B-Instruct", "Falcon3-10B-Base", "Falcon3-10B-Instruct"]
@@ -130,7 +130,7 @@ def load_calibration_data(calib_dataset, calib_model_name, calib_model_family, c
     if is_mmlu_dataset(calib_dataset):
         # For MMLU domains, load the combined domain data
         mmlu_domain = extract_mmlu_domain(calib_dataset)
-        calib_path = Path(f"../outputs/{DATE}/{calib_prompt}/MMLU/mcqplain/{calib_model_family}/{mmlu_domain}/{calib_model_name}_results.csv")
+        calib_path = Path(f"../../outputs/{DATE}/{calib_prompt}/MMLU/mcqplain/{calib_model_family}/{mmlu_domain}/{calib_model_name}_results.csv")
         if calib_path.exists():
             df = pd.read_csv(calib_path)
             print(f"Loaded {len(df)} calibration samples from {calib_dataset} using {calib_model_name}")
@@ -148,9 +148,9 @@ def load_calibration_data(calib_dataset, calib_model_name, calib_model_family, c
         all_calib_data = []
         for domain in domains:
             if calib_dataset != "SNLI" and calib_dataset != "MNLI":
-                calib_path = Path(f"../outputs/{DATE}/{calib_prompt}/{calib_dataset}/yesnoplain/{calib_model_family}/{domain}/{calib_model_name}_results.csv")
+                calib_path = Path(f"../../outputs/{DATE}/{calib_prompt}/{calib_dataset}/yesnoplain/{calib_model_family}/{domain}/{calib_model_name}_results.csv")
             else:
-                calib_path = Path(f"../outputs/{DATE}/{calib_prompt}/{calib_dataset}/nliplain/{calib_model_family}/{domain}/{calib_model_name}_results.csv")
+                calib_path = Path(f"../../outputs/{DATE}/{calib_prompt}/{calib_dataset}/nliplain/{calib_model_family}/{domain}/{calib_model_name}_results.csv")
             if calib_path.exists():
                 df = pd.read_csv(calib_path)
                 all_calib_data.append(df)
@@ -260,7 +260,7 @@ def get_plain_path(model_family, domain, model_name, impl, target_dataset, targe
     # plain_dataset = target_dataset
     
     # Reconstruct the plain path with normalized dataset name
-    base_outputs = Path("../outputs") / DATE / target_prompt
+    base_outputs = Path("../../outputs") / DATE / target_prompt
     
     if "mcq" in impl:
         return base_outputs / plain_dataset / "mcqplain" / model_family / domain / f"{model_name}_results.csv"
@@ -304,7 +304,7 @@ def check_corrections_possible(impl, model_name, model_family, domains, output_b
             # Try to load calibration data to verify it exists
             if is_mmlu_dataset(actual_calib_dataset):
                 mmlu_domain = extract_mmlu_domain(actual_calib_dataset)
-                calib_path = Path(f"../outputs/{DATE}/{actual_calib_prompt}/MMLU/mcqplain/{actual_calib_model_family}/{mmlu_domain}/{actual_calib_model_name}_results.csv")
+                calib_path = Path(f"../../outputs/{DATE}/{actual_calib_prompt}/MMLU/mcqplain/{actual_calib_model_family}/{mmlu_domain}/{actual_calib_model_name}_results.csv")
                 if not calib_path.exists():
                     print(f"Calibration data missing: {calib_path}")
                     return False
@@ -317,9 +317,9 @@ def check_corrections_possible(impl, model_name, model_family, domains, output_b
                 
                 for calib_domain in calib_domains:
                     if actual_calib_dataset != "SNLI" and actual_calib_dataset != "MNLI":
-                        calib_path = Path(f"../outputs/{DATE}/{actual_calib_prompt}/{actual_calib_dataset}/yesnoplain/{actual_calib_model_family}/{calib_domain}/{actual_calib_model_name}_results.csv")
+                        calib_path = Path(f"../../outputs/{DATE}/{actual_calib_prompt}/{actual_calib_dataset}/yesnoplain/{actual_calib_model_family}/{calib_domain}/{actual_calib_model_name}_results.csv")
                     else:
-                        calib_path = Path(f"../outputs/{DATE}/{actual_calib_prompt}/{actual_calib_dataset}/nliplain/{actual_calib_model_family}/{calib_domain}/{actual_calib_model_name}_results.csv")
+                        calib_path = Path(f"../../outputs/{DATE}/{actual_calib_prompt}/{actual_calib_dataset}/nliplain/{actual_calib_model_family}/{calib_domain}/{actual_calib_model_name}_results.csv")
                     if not calib_path.exists():
                         print(f"Calibration data missing for domain {calib_domain}: {calib_path}")
                         return False
@@ -459,8 +459,8 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                     dataset_suffix = f"_from{calib_dataset}" if cross_dataset_mode else ""
                     prompt_suffix = f"_from{calib_prompt}" if cross_prompt_mode else ""
 
-                    output_base_batchcalib = Path(f"../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}_fixedcounts{dataset_suffix}/{target_model_family}")
-                    output_base_specific = Path(f"../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}_fixedcounts{dataset_suffix}_median/{target_model_family}")
+                    output_base_batchcalib = Path(f"../../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}_fixedcounts{dataset_suffix}/{target_model_family}")
+                    output_base_specific = Path(f"../../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}_fixedcounts{dataset_suffix}_median/{target_model_family}")
 
                     # Build filename with cross-model suffix if applicable
                     model_suffix = f"_from{calib_model_name}" if cross_model_mode else ""
@@ -536,9 +536,12 @@ def run_single_configuration(calib_dataset, target_dataset, target_model_name, t
 
     # Setup target dataset path
     # dataset_path = DATASET_PATHS[target_dataset]
-    dataset_path = Path("../data")
+    if DATE == "Mar-06-2026":
+        dataset_path = Path("../../data/tiny_data")
+    elif DATE == "Sep-16-2025":
+        dataset_path = Path("../data")
 
-    # Determine if we're working with MMLU domains
+    # Determine if we're working with MMLU domainsß
     if is_mmlu_dataset(calib_dataset) or is_mmlu_dataset(target_dataset):
         impl = "mcq" + implementation
         implementation_fn = IMPLEMENTATIONS[impl]
@@ -559,9 +562,9 @@ def run_single_configuration(calib_dataset, target_dataset, target_model_name, t
     prompt_suffix = f"_from{calib_prompt}" if cross_prompt_mode else ""
     
     if 'specific' in implementation:
-        output_base = Path(f"../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}{calib_count}calib{dataset_suffix}/{target_model_family}")
+        output_base = Path(f"../../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}{calib_count}calib{dataset_suffix}/{target_model_family}")
     elif any(x in implementation for x in ['bos', 'contextcalib', 'batchcalib', 'plain']):
-        output_base = Path(f"../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}{dataset_suffix}/{target_model_family}")
+        output_base = Path(f"../../outputs/{DATE}/{target_prompt}{prompt_suffix}/{target_dataset}/{impl}{dataset_suffix}/{target_model_family}")
 
     # Setup target dataset domains
     if target_dataset == "EWOK":

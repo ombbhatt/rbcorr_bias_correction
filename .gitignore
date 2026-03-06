@@ -1,8 +1,8 @@
-data/mnli-scripts-data/
-data/snli-scripts-data/
-data/arithynq-scripts-data/
-data/babiynq-scripts-data/
-data/compsynq-scripts-data/
-data/ewokynq-scripts-data/
+# data/mnli-scripts-data/
+# data/snli-scripts-data/
+# data/arithynq-scripts-data/
+# data/babiynq-scripts-data/
+# data/compsynq-scripts-data/
+# data/ewokynq-scripts-data/
 analysis/
 outputs/

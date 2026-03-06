@@ -1,11 +1,12 @@
 #!/bin/bash
 
 echo "=========================================="
-echo "Running Contextual Calibration for All Configurations"
+echo "Running Plain for All Configurations"
 echo "=========================================="
 echo ""
 
 # Define all models
+GPT2_MODELS=("gpt2")
 FALCON_MODELS=("Falcon3-3B-Base" "Falcon3-3B-Instruct" "Falcon3-10B-Base" "Falcon3-10B-Instruct")
 GEMMA3_MODELS=("gemma-3-27b-pt" "gemma-3-27b-it" "gemma-3-12b-pt" "gemma-3-12b-it")
 LLAMA3_MODELS=("Llama-3.1-8B" "Llama-3.1-8B-Instruct" "Llama-3.1-70B" "Llama-3.1-70B-Instruct")
@@ -13,9 +14,10 @@ LLAMA3_MODELS=("Llama-3.1-8B" "Llama-3.1-8B-Instruct" "Llama-3.1-70B" "Llama-3.1
 
 # Combine all models into one array
 ALL_MODELS=(
-  "${FALCON_MODELS[@]}"
-  "${GEMMA3_MODELS[@]}"
-  "${LLAMA3_MODELS[@]}"
+  "${GPT2_MODELS[@]}"
+  # "${FALCON_MODELS[@]}"
+  # "${GEMMA3_MODELS[@]}"
+  # "${LLAMA3_MODELS[@]}"
 )
 
 DATASETS=("ARITH" "BABI" "COMPS" "EWOK")
@@ -46,7 +48,7 @@ for dataset in "${DATASETS[@]}"; do
       echo ""
       echo "[$current_run/$total_runs] Running: $dataset | $model | $prompt"
       
-      python unified_transprompt_transmodel_transdata.py \
+      python ../unified_transprompt_transmodel_transdata.py \
         --target_dataset "$dataset" \
         --calib_dataset "$dataset" \
         --target_model "$model" \

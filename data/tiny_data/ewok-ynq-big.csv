@@ -1,0 +1,201 @@
+Question Number,MetaTemplateID,Domain,ItemGroupID,ContextDiff,ContextNum,Context,Question,Correct Answer
+19,3,spatial-relations,,antonym,2,The wheel is in front of Chao. Chao turns left.,Is the wheel to the left of Chao?,No
+31,8,social-relations,8.0,antonym,2,Chao hates Yan.,Are Chao and Yan friends?,No
+246,50,agent-properties,62.0,antonym,2,"Upon seeing Yan and Ali, Chao started walking away from Yan but not Ali.",Does Chao prefer Yan over Ali?,No
+54,14,social-properties,14.0,antonym,1,Chao thinks having neighbors of a different culture is pleasant.,Is Chao bigoted?,No
+22,7,agent-properties,6.0,antonym,2,The airplane is making sounds. The airplane is out of earshot of Chao.,Does Chao hear the airplane?,No
+7,2,material-dynamics,2.0,material,2,Chao sees the water.,Can Chao fold it?,No
+50,13,social-properties,13.0,antonym,1,Chao thinks having neighbors of a different religion is pleasant.,Is Chao bigoted?,No
+63,6,physical-interactions,,antonym,2,The magnet is moving away from the screwdriver.,Is the screwdriver attracting the magnet?,No
+22,6,material-properties,,material,1,The wheel is made of flannel.,Is the wheel hard?,No
+83,21,material-properties,,material,2,Chao threw the wheel against the wall. The wheel hit the wall and remained by the wall.,Is the wheel bouncy?,No
+26,7,material-dynamics,7.0,material,1,Chao sees something that is rigid.,Can it ripple?,No
+259,26,physical-relations,,variable swap,2,The bed is below the truck.,Is the truck under the bed?,No
+574,82,agent-properties,144.0,antonym,2,Chao wants the wheel less than the truck.,Does Chao make less effort to get the truck than to get the wheel?,No
+215,20,social-relations,54.0,other,2,Chao works for Yan.,Is Chao Yan's colleague?,No
+482,80,agent-properties,121.0,variable swap,2,Chao is more intent on getting the truck than getting the wheel.,Does Chao make more effort to get the wheel than to get the truck?,No
+119,26,social-interactions,30.0,antonym,2,Chao makes hurtful comments about Yan.,Is Chao flirting with Yan?,No
+518,81,agent-properties,130.0,variable swap,2,Chao is less hesitant to get the truck than to get the wheel.,Does Chao make more effort to get the wheel than to get the truck?,No
+91,23,social-properties,23.0,antonym,2,Chao often follows instructions.,Is Chao dominant?,No
+366,76,agent-properties,92.0,antonym,2,Chao has decided against speaking to Yan.,Does Chao make an effort to interact with Yan?,No
+582,46,social-relations,146.0,antonym,1,Chao makes decisions more often than Yan.,Is Yan Chao's parent?,No
+518,130,material-dynamics,130.0,material,1,Chao sees the feather.,Can it trickle?,No
+398,34,social-relations,100.0,antonym,1,Chao collects rent from Yan.,Is Chao Yan's tenant?,No
+51,3,physical-interactions,,antonym,2,The wheel is moving up.,Is Chao dropping the wheel?,No
+107,27,quantitative-properties,,antonym,2,Chao has none of the toothpaste.,Is there a lot of toothpaste?,No
+650,84,agent-properties,163.0,variable swap,2,Chao is more intent on meeting Ali than meeting Yan.,Does Chao make less effort to interact with Ali than with Yan?,No
+615,47,social-relations,154.0,antonym,2,Chao is 35 years younger than Yan.,Is Yan Chao's child?,No
+811,91,agent-properties,203.0,variable swap,1,Chao wants either the truck or the wheel. The truck costs more than the wheel.,Does Chao choose the truck over the wheel?,No
+355,32,social-relations,89.0,variable swap,2,Yan's alumni spoke with Chao.,Is Yan Chao's student?,No
+294,58,agent-properties,74.0,other,2,Chao is turning away from the wheel.,Does Chao intend to get the wheel?,No
+571,46,social-relations,143.0,antonym,2,Chao makes decisions less often than Yan.,Is Chao Yan's parent?,No
+90,22,quantitative-properties,,number,1,Chao has a large number of staplers.,Are there no staplers?,No
+227,23,social-relations,57.0,antonym,2,The relationship between Chao and Yan is intimate.,Is Chao Yan's friend?,No
+886,98,agent-properties,222.0,antonym,2,Chao needs to see either Yan or Ali. It will take more time to see Yan than Ali.,Does Chao choose Yan over Ali?,No
+218,43,physical-interactions,,antonym,1,The wheel and the nail will stay apart.,Is the wheel approaching the nail?,No
+10,3,physical-dynamics,,other,1,The wheel is moving forward on a surface. The surface is very flat.,Is the wheel sliding?,No
+111,30,agent-properties,28.0,negation,1,Chao is in the shop. Chao sees the bed inside.,Does Chao doubt that the bed is in the shop?,No
+79,16,social-interactions,20.0,antonym,2,Chao is providing Yan with useful information.,Is Chao deceiving Yan?,No
+303,60,agent-properties,76.0,antonym,1,Chao is knowingly moving toward the wheel.,Does Chao not intend to get the wheel?,No
+14,4,physical-dynamics,,antonym,1,The wheel is moving down.,Is the wheel rising?,No
+18,5,social-properties,5.0,antonym,1,Chao is reliable.,Is Chao untrustworthy?,No
+202,19,physical-relations,,variable swap,1,"If Chao moves the bed, the truck will remain in its place.",Does the truck is upported by the bed?,No
+554,82,agent-properties,139.0,variable swap,2,Chao wants the truck more than the wheel.,Does Chao make more effort to get the wheel than to get the truck?,No
+86,12,social-relations,22.0,variable swap,1,Yan is Chao's employee.,Is Chao Yan's subordinate?,No
+466,79,agent-properties,117.0,antonym,2,Chao hates playing football more than playing pool.,Does Chao make less effort to play pool than to play football?,No
+82,22,agent-properties,21.0,other,2,The wheel is in Chao's closet.,Does Chao feel the wheel?,No
+155,39,agent-properties,39.0,other,1,Chao sees that the wheel is in the shop.,Does Chao imagine that the wheel is in the shop?,No
+2,1,agent-properties,1.0,negation,2,Chao is not looking at the wheel.,Does Chao see the wheel?,No
+590,148,material-dynamics,148.0,material,1,Chao sees the cup.,Can Chao compresse it?,No
+282,55,agent-properties,71.0,antonym,2,Chao has decided against getting the wheel.,Does Chao intend to get the wheel?,No
+646,84,agent-properties,162.0,antonym,2,Chao is less intent on meeting Yan than meeting Ali.,Does Chao make less effort to interact with Ali than with Yan?,No
+278,54,agent-properties,70.0,antonym,2,Chao decides against playing football.,Does Chao intend to play football?,No
+243,49,agent-properties,61.0,variable swap,1,"When presented with the truck and the wheel, Chao moved away from the truck but not the wheel.",Does Chao prefer the truck over the wheel?,No
+122,31,quantitative-properties,,antonym,1,There are equal quantities of toothpaste and gel.,Is the amount of toothpaste and gel different?,No
+71,19,agent-properties,18.0,negation,1,Chao is touching the wheel.,Does Chao not feel the wheel?,No
+503,44,social-relations,126.0,variable swap,2,Yan raised Chao.,Is Chao Yan's parent?,No
+506,80,agent-properties,127.0,variable swap,2,Chao is more intent on getting the truck than getting the wheel.,Does Chao make less effort to get the truck than to get the wheel?,No
+54,8,spatial-relations,,variable swap,1,The nail and the wheel are on the same surface. Then the nail is moved lower.,Is the wheel below the nail?,No
+623,49,social-relations,156.0,other,2,Chao was raised by Yan.,Is Chao Yan's sibling?,No
+159,20,spatial-relations,,antonym,2,The shop is east of Chao. Chao reaches the shop and exits on the other side.,Is the shop east of Chao?,No
+86,23,agent-properties,22.0,other,2,The airplane is in front of Chao. Chao's eyes are covered.,Does Chao see the airplane?,No
+734,87,agent-properties,184.0,variable swap,2,Chao hates Ali less than Yan.,Does Chao make more effort to interact with Yan than with Ali?,No
+103,26,social-properties,26.0,antonym,2,Chao is hesitant to engage in social interactions.,Is Chao extroverted?,No
+98,9,physical-relations,,antonym,1,"If Chao moves the truck, the airplane will move too.",Does the truck is outide the airplane?,No
+327,32,social-relations,82.0,other,2,Chao's parents spoke with Yan.,Is Chao Yan's teacher?,No
+119,20,physical-interactions,,other,2,The wheel is moving away from the nail.,Is the wheel pushing the nail?,No
+43,2,physical-interactions,,variable swap,2,The nail and the wheel are touching. The nail is much hotter than the wheel.,Is the nail cooling the wheel?,No
+494,43,social-relations,124.0,other,1,Chao is 35 years older than Yan.,Is Chao Yan's sibling?,No
+767,88,agent-properties,192.0,antonym,1,Chao enjoys playing football more than playing pool.,Does Chao choose pool over football?,No
+502,80,agent-properties,126.0,antonym,2,Chao is less intent on getting the wheel than getting the truck.,Does Chao make less effort to get the truck than to get the wheel?,No
+135,30,social-interactions,34.0,antonym,2,Chao is making Yan feel better.,Is Chao teasing Yan?,No
+695,86,agent-properties,174.0,antonym,1,Chao likes Yan more than Ali.,Does Chao make less effort to interact with Yan than with Ali?,No
+243,27,social-relations,61.0,negation,2,Chao and Yan are in a relationship.,Are Chao and Yan strangers?,No
+315,27,physical-relations,,antonym,2,The truck is higher up compared to the bed.,Is the bed on the truck?,No
+806,91,agent-properties,202.0,variable swap,2,Chao wants either the truck or the wheel. The truck costs less than the wheel.,Does Chao choose the wheel over the truck?,No
+295,31,social-relations,74.0,variable swap,2,Yan assigns homework to Chao.,Is Chao Yan's teacher?,No
+51,11,social-interactions,13.0,variable swap,2,Yan is showing Chao how to ski.,Is Yan learning from Chao?,No
+438,110,material-dynamics,110.0,material,1,Chao sees the feather.,Can it splashe?,No
+59,16,agent-properties,15.0,other,1,The sandwich is in Chao's mouth.,Does Chao not taste the sandwich?,No
+50,3,physical-interactions,,antonym,1,The wheel is moving down.,Is Chao lifting the wheel?,No
+82,11,physical-interactions,,antonym,1,Chao is on the ground but the truck is not.,Is Chao climbing on the truck?,No
+102,28,agent-properties,26.0,antonym,2,The sandwich is inside Chao's mouth.,Does Chao see the sandwich?,No
+498,44,social-relations,125.0,active-passive,1,Chao raised Yan.,Is Chao Yan's child?,No
+534,45,social-relations,134.0,antonym,1,Chao disciplines Yan.,Is Chao Yan's child?,No
+95,24,social-properties,24.0,other,2,"Chao has a large family. Each weekend, Chao's partner decides what the family should do for fun.",Is Chao dominant?,No
+878,97,agent-properties,220.0,variable swap,2,Chao needs to see either Ali or Yan. Ali lives closer than Yan.,Does Chao choose Yan over Ali?,No
+298,27,physical-relations,,variable swap,1,The bed is higher up compared to the truck.,Is the truck on the bed?,No
+367,92,material-dynamics,92.0,material,2,Chao sees something that is gas.,Can Chao pile it?,No
+67,18,agent-properties,17.0,antonym,1,The sandwich is in Chao's mouth. Chao just had a very bland dish.,Does Chao not taste the sandwich?,No
+242,23,physical-relations,,antonym,1,"If Chao picks up the cooler, the wheel will remain in its place.",Is the cooler attached to the wheel?,No
+590,46,social-relations,148.0,variable swap,1,Yan makes decisions less often than Chao.,Is Yan Chao's parent?,No
+206,19,physical-relations,,antonym,1,"If Chao moves the truck, the bed will move too.",Does the bed support the truck?,No
+14,2,quantitative-properties,,variable swap,1,There are few keychains relative to staplers.,Are there fewer staplers than keychains?,No
+570,46,social-relations,143.0,antonym,1,Chao makes decisions more often than Yan.,Is Chao Yan's child?,No
+115,25,social-interactions,29.0,antonym,2,Chao remarks that Yan is ugly.,Is Chao flirting with Yan?,No
+622,84,agent-properties,156.0,antonym,2,Chao is less intent on meeting Yan than meeting Ali.,Does Chao make more effort to interact with Yan than with Ali?,No
+122,11,spatial-relations,,antonym,1,The nail is south of the wheel.,Is the wheel south of the nail?,No
+406,34,social-relations,102.0,variable swap,1,Yan pays rent to Chao.,Is Chao Yan's tenant?,No
+30,8,social-properties,8.0,antonym,1,Chao is good at completing important tasks.,Is Chao untrustworthy?,No
+22,6,social-interactions,6.0,antonym,1,Chao will be happy if Yan succeeds.,Is Chao competing with Yan?,No
+162,29,physical-interactions,,other,1,Chao's foot is touching the wheel.,Is Chao throwing the wheel?,No
+20,3,spatial-relations,,antonym,2,The wheel is in front of Chao. Chao turns left.,Is the wheel to the right of Chao?,Yes
+28,7,social-relations,7.0,antonym,2,Chao wants to work against Yan.,Is Chao Yan's enemy?,Yes
+248,50,agent-properties,62.0,antonym,2,"Upon seeing Yan and Ali, Chao started walking away from Yan but not Ali.",Does Chao prefer Ali over Yan?,Yes
+53,14,social-properties,14.0,antonym,1,Chao thinks having neighbors of a different culture is pleasant.,Is Chao tolerant?,Yes
+21,7,agent-properties,6.0,antonym,1,The airplane is making sounds. The airplane is within earshot of Chao.,Does Chao hear the airplane?,Yes
+8,2,material-dynamics,2.0,material,2,Chao sees the water.,Can Chao pour it?,Yes
+49,13,social-properties,13.0,antonym,1,Chao thinks having neighbors of a different religion is pleasant.,Is Chao tolerant?,Yes
+64,6,physical-interactions,,antonym,2,The magnet is moving away from the screwdriver.,Is the screwdriver repelling the magnet?,Yes
+21,6,material-properties,,material,1,The wheel is made of flannel.,Is the wheel soft?,Yes
+84,21,material-properties,,material,2,Chao threw the wheel against the wall. The wheel hit the wall and remained by the wall.,Is the wheel not bouncy?,Yes
+16,4,material-dynamics,4.0,material,2,Chao sees the water.,Can Chao stir it?,Yes
+260,26,physical-relations,,variable swap,2,The bed is below the truck.,Is the truck on the bed?,Yes
+581,82,agent-properties,146.0,variable swap,1,Chao wants the truck less than the wheel.,Does Chao make less effort to get the truck than to get the wheel?,Yes
+213,20,social-relations,54.0,other,1,Chao works alongside Yan.,Is Chao Yan's colleague?,Yes
+485,80,agent-properties,122.0,variable swap,1,Chao is less intent on getting the truck than getting the wheel.,Does Chao make more effort to get the wheel than to get the truck?,Yes
+120,26,social-interactions,30.0,antonym,2,Chao makes hurtful comments about Yan.,Is Chao insulting Yan?,Yes
+521,81,agent-properties,131.0,variable swap,1,Chao is more hesitant to get the truck than to get the wheel.,Does Chao make more effort to get the wheel than to get the truck?,Yes
+92,23,social-properties,23.0,antonym,2,Chao often follows instructions.,Is Chao submissive?,Yes
+368,76,agent-properties,92.0,antonym,2,Chao has decided against speaking to Yan.,Does Chao make no effort to interact with Yan?,Yes
+577,46,social-relations,145.0,variable swap,1,Yan makes decisions less often than Chao.,Is Chao Yan's parent?,Yes
+445,112,material-dynamics,112.0,material,1,Chao sees something that is fabric.,Can it droop?,Yes
+380,33,social-relations,95.0,variable swap,2,Yan rents a duplex to Chao.,Is Yan Chao's landlord?,Yes
+52,3,physical-interactions,,antonym,2,The wheel is moving up.,Is Chao lifting the wheel?,Yes
+108,27,quantitative-properties,,antonym,2,Chao has none of the toothpaste.,Is there no toothpaste?,Yes
+653,84,agent-properties,164.0,variable swap,1,Chao is less intent on meeting Ali than meeting Yan.,Does Chao make less effort to interact with Ali than with Yan?,Yes
+613,47,social-relations,154.0,antonym,1,Chao is 35 years older than Yan.,Is Yan Chao's child?,Yes
+809,91,agent-properties,203.0,variable swap,1,Chao wants either the truck or the wheel. The truck costs more than the wheel.,Does Chao choose the wheel over the truck?,Yes
+344,32,social-relations,86.0,variable swap,2,Yan's alumni spoke with Chao.,Is Yan Chao's teacher?,Yes
+296,58,agent-properties,74.0,other,2,Chao is turning away from the wheel.,Does Chao not intend to get the wheel?,Yes
+569,46,social-relations,143.0,antonym,1,Chao makes decisions more often than Yan.,Is Chao Yan's parent?,Yes
+92,22,quantitative-properties,,number,2,Chao has no staplers.,Are there no staplers?,Yes
+229,24,social-relations,58.0,other,1,Chao and Yan shake hands when they meet.,Is Chao Yan's friend?,Yes
+885,98,agent-properties,222.0,antonym,1,Chao needs to see either Yan or Ali. It will take less time to see Yan than Ali.,Does Chao choose Yan over Ali?,Yes
+217,43,physical-interactions,,antonym,1,The wheel and the nail will stay apart.,Is the wheel revolving around the nail?,Yes
+9,3,physical-dynamics,,other,1,The wheel is moving forward on a surface. The surface is very flat.,Is the wheel rolling?,Yes
+113,31,agent-properties,29.0,antonym,1,Chao is in the shop. Chao sees the wheel inside.,Does Chao believe that the wheel is in the shop?,Yes
+80,16,social-interactions,20.0,antonym,2,Chao is providing Yan with useful information.,Is Chao helping Yan?,Yes
+305,61,agent-properties,77.0,other,1,"In the store, Chao asks about the wheel.",Does Chao intend to get the wheel?,Yes
+13,4,physical-dynamics,,antonym,1,The wheel is moving down.,Is the wheel falling?,Yes
+17,5,social-properties,5.0,antonym,1,Chao is reliable.,Is Chao trustworthy?,Yes
+201,19,physical-relations,,variable swap,1,"If Chao moves the bed, the truck will remain in its place.",Does the truck support the bed?,Yes
+557,82,agent-properties,140.0,variable swap,1,Chao wants the truck less than the wheel.,Does Chao make more effort to get the wheel than to get the truck?,Yes
+85,12,social-relations,22.0,variable swap,1,Yan is Chao's employee.,Is Chao Yan's boss?,Yes
+473,79,agent-properties,119.0,variable swap,1,Chao hates playing pool more than playing football.,Does Chao make less effort to play pool than to play football?,Yes
+81,22,agent-properties,21.0,other,1,The wheel is in Chao's hand.,Does Chao feel the wheel?,Yes
+157,40,agent-properties,40.0,negation,1,Chao knows that the wheel is in the shop.,Does Chao believe that the wheel is in the shop?,Yes
+1,1,agent-properties,1.0,negation,1,Chao is looking at the wheel.,Does Chao see the wheel?,Yes
+560,140,material-dynamics,140.0,material,2,Chao sees the oxygen.,Can it disperse?,Yes
+284,55,agent-properties,71.0,antonym,2,Chao has decided against getting the wheel.,Does Chao not intend to get the wheel?,Yes
+645,84,agent-properties,162.0,antonym,1,Chao is more intent on meeting Yan than meeting Ali.,Does Chao make less effort to interact with Ali than with Yan?,Yes
+280,54,agent-properties,70.0,antonym,2,Chao decides against playing football.,Does Chao not intend to play football?,Yes
+245,50,agent-properties,62.0,antonym,1,"Upon seeing Yan and Ali, Chao started walking towards Yan but not Ali.",Does Chao prefer Yan over Ali?,Yes
+121,31,quantitative-properties,,antonym,1,There are equal quantities of toothpaste and gel.,Is the amount of toothpaste and gel the same?,Yes
+72,19,agent-properties,18.0,negation,2,Chao is not touching the wheel.,Does Chao not feel the wheel?,Yes
+500,44,social-relations,125.0,active-passive,2,Chao was raised by Yan.,Is Chao Yan's child?,Yes
+513,81,agent-properties,129.0,antonym,1,Chao is less hesitant to get the wheel than to get the truck.,Does Chao make more effort to get the wheel than to get the truck?,Yes
+53,8,spatial-relations,,variable swap,1,The nail and the wheel are on the same surface. Then the nail is moved lower.,Is the wheel above the nail?,Yes
+625,50,social-relations,157.0,other,1,Yan is 5 years older than Chao.,Is Chao Yan's sibling?,Yes
+160,20,spatial-relations,,antonym,2,The shop is east of Chao. Chao reaches the shop and exits on the other side.,Is the shop west of Chao?,Yes
+85,23,agent-properties,22.0,other,1,The airplane is in front of Chao. Chao's ears are covered.,Does Chao see the airplane?,Yes
+736,87,agent-properties,184.0,variable swap,2,Chao hates Ali less than Yan.,Does Chao make less effort to interact with Yan than with Ali?,Yes
+104,26,social-properties,26.0,antonym,2,Chao is hesitant to engage in social interactions.,Is Chao introverted?,Yes
+97,9,physical-relations,,antonym,1,"If Chao moves the truck, the airplane will move too.",Does the truck contain the airplane?,Yes
+321,31,social-relations,81.0,variable swap,1,Yan submits homework to Chao.,Is Yan Chao's student?,Yes
+120,20,physical-interactions,,other,2,The wheel is moving away from the nail.,Is the nail pushing the wheel?,Yes
+45,2,physical-interactions,,variable swap,1,The nail and the wheel are touching. The nail is much colder than the wheel.,Is the nail cooling the wheel?,Yes
+492,42,social-relations,123.0,other,2,Chao went to school with Yan.,Is Chao Yan's sibling?,Yes
+768,88,agent-properties,192.0,antonym,2,Chao enjoys playing football less than playing pool.,Does Chao choose pool over football?,Yes
+509,80,agent-properties,128.0,variable swap,1,Chao is less intent on getting the truck than getting the wheel.,Does Chao make less effort to get the truck than to get the wheel?,Yes
+136,30,social-interactions,34.0,antonym,2,Chao is making Yan feel better.,Is Chao comforting Yan?,Yes
+696,86,agent-properties,174.0,antonym,2,Chao likes Yan less than Ali.,Does Chao make less effort to interact with Yan than with Ali?,Yes
+245,28,social-relations,62.0,antonym,1,Chao and Yan never spend time together.,Are Chao and Yan strangers?,Yes
+313,27,physical-relations,,antonym,1,The truck is lower down compared to the bed.,Is the bed on the truck?,Yes
+808,91,agent-properties,202.0,variable swap,2,Chao wants either the truck or the wheel. The truck costs less than the wheel.,Does Chao choose the truck over the wheel?,Yes
+292,31,social-relations,73.0,antonym,2,Chao submits homework to Yan.,Is Chao Yan's student?,Yes
+49,11,social-interactions,13.0,variable swap,1,Chao is showing Yan how to ski.,Is Yan learning from Chao?,Yes
+401,101,material-dynamics,101.0,material,1,Chao sees something that is granular.,Can it disperse?,Yes
+60,16,agent-properties,15.0,other,2,The sandwich is in Chao's bag.,Does Chao not taste the sandwich?,Yes
+49,3,physical-interactions,,antonym,1,The wheel is moving down.,Is Chao dropping the wheel?,Yes
+81,11,physical-interactions,,antonym,1,Chao is on the ground but the truck is not.,Is Chao throwing the truck?,Yes
+105,29,agent-properties,27.0,other,1,Chao is taking a picture of the wheel.,Does Chao see the wheel?,Yes
+496,43,social-relations,124.0,other,2,Chao is 5 years older than Yan.,Is Chao Yan's sibling?,Yes
+529,44,social-relations,133.0,variable swap,1,Yan was raised by Chao.,Is Yan Chao's child?,Yes
+96,24,social-properties,24.0,other,2,"Chao has a large family. Each weekend, Chao's partner decides what the family should do for fun.",Is Chao submissive?,Yes
+880,97,agent-properties,220.0,variable swap,2,Chao needs to see either Ali or Yan. Ali lives closer than Yan.,Does Chao choose Ali over Yan?,Yes
+297,27,physical-relations,,variable swap,1,The bed is higher up compared to the truck.,Is the truck under the bed?,Yes
+197,50,material-dynamics,50.0,material,1,Chao sees something that is rigid.,Can Chao tap it?,Yes
+68,18,agent-properties,17.0,antonym,2,The sandwich is in Chao's mouth. Chao just had a very spicy dish.,Does Chao not taste the sandwich?,Yes
+241,23,physical-relations,,antonym,1,"If Chao picks up the cooler, the wheel will remain in its place.",Is the cooler touching the wheel?,Yes
+584,46,social-relations,146.0,antonym,2,Chao makes decisions less often than Yan.,Is Yan Chao's parent?,Yes
+208,19,physical-relations,,antonym,2,"If Chao moves the truck, the bed will remain in its place.",Does the bed support the truck?,Yes
+12,2,quantitative-properties,,variable swap,2,There are many keychains relative to staplers.,Are there fewer staplers than keychains?,Yes
+565,45,social-relations,142.0,variable swap,1,Yan obeys Chao.,Is Yan Chao's child?,Yes
+116,25,social-interactions,29.0,antonym,2,Chao remarks that Yan is ugly.,Is Chao insulting Yan?,Yes
+624,84,agent-properties,156.0,antonym,2,Chao is less intent on meeting Yan than meeting Ali.,Does Chao make less effort to interact with Yan than with Ali?,Yes
+121,11,spatial-relations,,antonym,1,The nail is south of the wheel.,Is the wheel north of the nail?,Yes
+397,34,social-relations,100.0,antonym,1,Chao collects rent from Yan.,Is Chao Yan's landlord?,Yes
+29,8,social-properties,8.0,antonym,1,Chao is good at completing important tasks.,Is Chao trustworthy?,Yes
+21,6,social-interactions,6.0,antonym,1,Chao will be happy if Yan succeeds.,Is Chao cooperating with Yan?,Yes
+161,29,physical-interactions,,other,1,Chao's foot is touching the wheel.,Is Chao kicking the wheel?,Yes
