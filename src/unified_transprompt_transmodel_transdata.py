@@ -421,11 +421,14 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                 input_file = dataset_path / f"arith-ynq-big.csv"
             elif is_mmlu_dataset(target_dataset):
                 mmlu_domain = extract_mmlu_domain(target_dataset)
-                input_file = combine_mmlu_domain(dataset_path, mmlu_domain)
+                if DATE == "Sep-16-2025":
+                    input_file = combine_mmlu_domain(dataset_path, mmlu_domain)
+                elif DATE == "Mar-06-2026":
+                    input_file = dataset_path / 'mmlu-scripts-data' / f"{mmlu_domain}" / f"{mmlu_domain}_sampled.csv"
             elif target_dataset == "SNLI":
                 input_file = dataset_path / f"snli-nli-balanced.csv"
             elif target_dataset == "MNLI":
-                input_file = dataset_path / f"mnli-nli-balanced.csv"
+                input_file = dataset_path / f"multinli-nli-balanced.csv"
 
             # Read file to get count for this domain
             if isinstance(input_file, pd.DataFrame):
