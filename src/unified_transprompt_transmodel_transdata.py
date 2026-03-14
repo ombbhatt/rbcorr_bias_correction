@@ -7,6 +7,7 @@ from torch.cuda import empty_cache
 import pandas as pd
 import threading
 import time
+from accelerate import dispatch_model, infer_auto_device_map
 
 def periodic_cache_clear(interval=300):  # Every 5 minutes
     while True:
@@ -35,7 +36,7 @@ MODEL_CONFIGS = {
     "Falcon": {"models": falcon_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "tiiuae/"},
     # "Qwen2": {"models": qwen2_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "Qwen/"},
     # "Llama": {"models": llama_models, "model_class": LlamaForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "meta-llama/"},
-    "Llama3": {"models": llama3_models, "model_class": LlamaForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "meta-llama/"},
+    "Llama3": {"models": llama3_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "meta-llama/"},
     "Gemma3": {"models": gemma3_models, "model_class": Gemma3ForConditionalGeneration, "tokenizer_class": AutoTokenizer, "prefix": "google/"},   
 }
 
@@ -181,17 +182,27 @@ def setup_model_and_tokenizer(model_name, model_family):
     full_model_name = f"{config['prefix']}{model_name}"
     
     model_kwargs = {
-        "device_map": "auto",
-        "torch_dtype": torch.float16,
+        "device_map": "cpu",
+        "torch_dtype": torch.bfloat16,
         "low_cpu_mem_usage": True
     }
+
+    quantization_config = BitsAndBytesConfig(load_in_4bit=True)
     
     print(f"Loading model {full_model_name}...")
     model = config['model_class'].from_pretrained(
             full_model_name, **model_kwargs, 
             token=config.get('token'), 
-            **({"load_in_4bit" : True} if "70B" in full_model_name else {})
+            **({"quantization_config": quantization_config} if "70B" in full_model_name else {})
         )
+    
+    # move model to gpu via dispatch
+    device_map = infer_auto_device_map(
+            model,
+            max_memory={0: "46GiB", 1: "30GiB", 2: "30GiB", 3: "30GiB"},
+            no_split_module_classes=["TransformerBlock", "LlamaDecoderLayer"],
+        )
+    model = dispatch_model(model, device_map=device_map)
             
     print("Loading tokenizer...")
     tokenizer = config['tokenizer_class'].from_pretrained(
@@ -442,7 +453,8 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                 if "specific" in impl and not (cross_dataset_mode or cross_model_mode or cross_prompt_mode):
                     calib_counts = [20, 50, 100, 500, 1000] # 0 signals to use full dataset
                 elif "specific" in impl and (cross_dataset_mode or cross_model_mode or cross_prompt_mode):
-                    calib_counts = [500] # only one size for cross-condition
+                    # calib_counts = [500] # only one size for cross-condition
+                    calib_counts = [40]
                 elif "batchcalib" in impl:
                     calib_counts = [20, 50, 100, 500, 1000]  # batch sizes to try
 

@@ -205,56 +205,78 @@ def do_bos_correction(plain_df, bos_values, config):
     return new_df
 
 
-def get_calibration_indices(dataset_name, calib_count, total_questions, calib_run, eval_df, calib_df, config):
-    """Generate calibration and evaluation indices with class balancing"""
-    np.random.seed(calib_run)
+# def get_calibration_indices(dataset_name, calib_count, total_questions, calib_run, eval_df, calib_df, config):
+#     """Generate calibration and evaluation indices with class balancing"""
+#     np.random.seed(calib_run)
     
-    # Special case for EWOK with grouped questions (only for same-dataset)
-    if dataset_name == "EWOK" and calib_df is None:
-        group_starts = list(range(0, total_questions - 3, 4))
-        calib_groups_needed = max(1, round(calib_count / 4))
-        selected_groups = np.random.choice(group_starts, size=calib_groups_needed, replace=True)
-        calib_indices = []
-        for group_start in selected_groups:
-            calib_indices.extend(range(group_start, min(group_start + 4, total_questions)))
-    else:
-        # Class-balanced sampling
-        calibration_source = calib_df if calib_df is not None else eval_df
+#     # Special case for EWOK with grouped questions (only for same-dataset)
+#     if dataset_name == "EWOK" and calib_df is None:
+#         group_starts = list(range(0, total_questions - 3, 4))
+#         calib_groups_needed = max(1, round(calib_count / 4))
+#         selected_groups = np.random.choice(group_starts, size=calib_groups_needed, replace=True)
+#         calib_indices = []
+#         for group_start in selected_groups:
+#             calib_indices.extend(range(group_start, min(group_start + 4, total_questions)))
+#     else:
+#         # Class-balanced sampling
+#         calibration_source = calib_df if calib_df is not None else eval_df
         
-        # Get indices for each answer option
-        option_indices = []
-        for option in config.options:
-            if config.name == 'nli' and calib_df is not None:
-                # For NLI cross-transfer, answer is int
-                indices = calibration_source[calibration_source[config.answer_col] == int(option)].index.tolist()
-            elif config.name == 'nli':
-                # For NLI same-dataset, answer is int
-                indices = calibration_source[calibration_source[config.answer_col] == int(option)].index.tolist()
-            else:
-                indices = calibration_source[calibration_source[config.answer_col] == option].index.tolist()
-            option_indices.append(indices)
+#         # Get indices for each answer option
+#         option_indices = []
+#         for option in config.options:
+#             if config.name == 'nli' and calib_df is not None:
+#                 # For NLI cross-transfer, answer is int
+#                 indices = calibration_source[calibration_source[config.answer_col] == int(option)].index.tolist()
+#             elif config.name == 'nli':
+#                 # For NLI same-dataset, answer is int
+#                 indices = calibration_source[calibration_source[config.answer_col] == int(option)].index.tolist()
+#             else:
+#                 indices = calibration_source[calibration_source[config.answer_col] == option].index.tolist()
+#             option_indices.append(indices)
         
-        # Calculate samples needed per class
-        questions_per_class = calib_count // config.num_options
-        remainder = calib_count % config.num_options
+#         # Calculate samples needed per class
+#         questions_per_class = calib_count // config.num_options
+#         remainder = calib_count % config.num_options
         
-        class_counts = [questions_per_class] * config.num_options
-        for i in range(remainder):
-            class_counts[(calib_run + i) % config.num_options] += 1
+#         class_counts = [questions_per_class] * config.num_options
+#         for i in range(remainder):
+#             class_counts[(calib_run + i) % config.num_options] += 1
         
-        # Sample with replacement
-        calib_indices = []
-        for i, indices in enumerate(option_indices):
-            if class_counts[i] > 0 and len(indices) > 0:
-                selected = np.random.choice(indices, size=class_counts[i], replace=True)
-                calib_indices.extend(selected)
+#         # Sample with replacement
+#         calib_indices = []
+#         for i, indices in enumerate(option_indices):
+#             if class_counts[i] > 0 and len(indices) > 0:
+#                 selected = np.random.choice(indices, size=class_counts[i], replace=True)
+#                 calib_indices.extend(selected)
     
-    # Determine evaluation indices
-    if calib_df is not None:
-        eval_indices = list(range(total_questions))
-    else:
-        eval_indices = [i for i in range(total_questions) if i not in set(calib_indices)]
+#     # Determine evaluation indices
+#     if calib_df is not None:
+#         eval_indices = list(range(total_questions))
+#     else:
+#         eval_indices = [i for i in range(total_questions) if i not in set(calib_indices)]
     
+#     return calib_indices, eval_indices
+
+def get_calibration_indices(dataset_name, calib_count, total_questions, calib_run, eval_df, calib_df, config, k=5, seed=42):
+    samples_per_class = calib_count // config.num_options
+
+    calib_indices = []
+    for i, option in enumerate(config.options):
+        if config.name == 'nli':
+            indices = eval_df[eval_df[config.answer_col] == int(option)].index.tolist()
+        else:
+            indices = eval_df[eval_df[config.answer_col] == option].index.tolist()
+
+        # Unique but deterministic seed per class
+        rng = np.random.default_rng(seed + i)
+        shuffled = rng.permutation(indices)
+
+        fold_start = calib_run * samples_per_class
+        fold_end   = fold_start + samples_per_class
+        calib_indices.extend(shuffled[fold_start:fold_end].tolist())
+
+    eval_indices = [i for i in range(total_questions) if i not in set(calib_indices)]
+
     return calib_indices, eval_indices
 
 
@@ -267,7 +289,7 @@ def calculate_calibration_means(calibration_source, calib_indices, cross_domain_
             values = [calibration_source.iloc[idx][config.logprob_cols[i]] for idx in calib_indices]
         else:
             values = [calibration_source.iloc[idx][raw_col][0] for idx in calib_indices]
-        calib_means.append(np.median(values))
+        calib_means.append(np.mean(values))
     
     return calib_means
 
@@ -318,9 +340,9 @@ def do_specific_correction(plain_df, dataset_name, calib_count, calib_data, conf
     
     new_df = initialize_dataframe(plain_df, "specific", config)
     
-    for calib_run in range(100):
-        if calib_run % 20 == 0:
-            print(f"Calibration run {calib_run + 1}/100")
+    for calib_run in range(5):
+        if calib_run % 1 == 0:
+            print(f"Calibration run {calib_run + 1}/5")
         
         calib_indices, eval_indices = get_calibration_indices(
             dataset_name, calib_count, total_questions, calib_run, new_df, calib_data, config

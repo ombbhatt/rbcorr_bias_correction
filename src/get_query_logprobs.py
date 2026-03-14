@@ -49,7 +49,7 @@ def calculate_logprobs_batch_yesno(contexts, questions, tokenizer, model, datase
             elif prompt == "zeroshot":       # <--- query == context_free_input for yesno when we calculate precomputed contextcalib vals
                 query = query + variant
 
-            print(query)
+            # print(query)
 
             input_ids = tokenizer([query], return_tensors="pt", padding=True, truncation=True)
             logprob = get_query_logprobs(model, input_ids['input_ids'])[0]
@@ -113,7 +113,7 @@ def calculate_logprobs_batch_mcq(df, tokenizer, model, dataset=None, prompt=None
             elif prompt == "zeroshot":
                 query = f"{og_query}\nResponse:{variant}"
 
-            print(query)
+            # print(query)
 
             input_ids = tokenizer([query], return_tensors="pt", padding=True, truncation=True)
             logprob = get_query_logprobs(model, input_ids['input_ids'])[0]
