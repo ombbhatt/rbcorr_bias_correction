@@ -5,9 +5,9 @@ import numpy as np
 from pathlib import Path
 
 # Configuration
-RESULTS_DIR = Path("../../results")
+RESULTS_DIR = Path("../../results/Mar-14-2026")
 PROMPT_LEVEL = "zeroshot"
-CALIB_SIZES = [10, 20, 50, 100, 500, 1000]
+CALIB_SIZES = [20, 40, 80, 120]
 
 # Model families and models
 MODELS = {
@@ -20,22 +20,22 @@ MODELS = {
 DATASETS = {
     "yesno": {
         "datasets": ["ARITH", "BABI", "COMPS", "EWOK"],
-        "specific_dir": "specific_yesno_per_median_TVD",
-        "batchcalib_dir": "batchcalib_yesno_per_TVD",
+        "specific_dir": "rb_yn",
+        "batchcalib_dir": "bc_yn",
         "qtype": "YESNO",
         "domains": {"ARITH": "arith", "BABI": "babi", "COMPS": "comps", "EWOK": "all_domains"}
     },
     "nli": {
         "datasets": ["MNLI", "SNLI"],
-        "specific_dir": "specific_nli_per_median_TVD",
-        "batchcalib_dir": "batchcalib_nli_per_TVD",
+        "specific_dir": "rb_nli",
+        "batchcalib_dir": "bc_nli",
         "qtype": "NLI",
         "domains": {"MNLI": "mnli", "SNLI": "snli"}
     },
     "mcq": {
         "datasets": ["MMLU-HUMANITIES", "MMLU-OTHERS", "MMLU-SOCIAL_SCI", "MMLU-STEM"],
-        "specific_dir": "specific_mcq_per_median_TVD",
-        "batchcalib_dir": "batchcalib_mcq_per_TVD",
+        "specific_dir": "rb_mcq",
+        "batchcalib_dir": "bc_mcq",
         "qtype": "MMLU",
         "domains": {
             "MMLU-HUMANITIES": "HUMANITIES",
@@ -75,45 +75,14 @@ def load_specific_data(qtype_config, dataset, model_family, model_name, calib_si
         calib_data = model_data[str(calib_size)]
         
         return {
-            "median_acc": calib_data["median_acc"],
-            "q25_acc": calib_data["q25_acc"],
-            "q75_acc": calib_data["q75_acc"]
-        }
-    except (KeyError, TypeError):
-        return None
-
-def load_batchcalib_data(qtype_config, dataset, model_family, model_name, calib_size):
-    """Load data from batchcalib method JSON files."""
-    filename = f"{PROMPT_LEVEL}_{model_family}_{dataset}.json"
-    filepath = RESULTS_DIR / qtype_config["batchcalib_dir"] / filename
-    
-    if not filepath.exists():
-        return None
-    
-    with open(filepath, 'r') as f:
-        data = json.load(f)
-    
-    try:
-        # Navigate the JSON structure
-        prompt_data = data[PROMPT_LEVEL]
-        dataset_data = prompt_data[dataset]
-        domain = qtype_config["domains"][dataset]
-        domain_data = dataset_data[domain]
-        family_data = domain_data[model_family]
-        model_data = family_data[model_name]
-        calib_data = model_data[str(calib_size)]
-        
-        return {
-            "corrected_acc": calib_data["corrected_acc"],
-            "raw_acc": calib_data["raw_acc"]
+            "acc": calib_data["acc"],
         }
     except (KeyError, TypeError):
         return None
 
 def collect_data_for_dataset(qtype_config, dataset):
     """Collect all data for a specific dataset across all models and calib sizes."""
-    specific_data = {size: {"median_acc": [], "q25_acc": [], "q75_acc": []} for size in CALIB_SIZES}
-    batchcalib_data = {size: {"corrected_acc": [], "raw_acc": []} for size in CALIB_SIZES}
+    specific_data = {size: {"acc": []} for size in CALIB_SIZES}
     
     # Iterate through all models
     for model_family, model_list in MODELS.items():
@@ -122,64 +91,34 @@ def collect_data_for_dataset(qtype_config, dataset):
                 # Load specific data
                 spec_result = load_specific_data(qtype_config, dataset, model_family, model_name, calib_size)
                 if spec_result:
-                    specific_data[calib_size]["median_acc"].append(spec_result["median_acc"])
-                    specific_data[calib_size]["q25_acc"].append(spec_result["q25_acc"])
-                    specific_data[calib_size]["q75_acc"].append(spec_result["q75_acc"])
-                
-                # Load batchcalib data
-                batch_result = load_batchcalib_data(qtype_config, dataset, model_family, model_name, calib_size)
-                if batch_result:
-                    batchcalib_data[calib_size]["corrected_acc"].append(batch_result["corrected_acc"])
-                    batchcalib_data[calib_size]["raw_acc"].append(batch_result["raw_acc"])
+                    specific_data[calib_size]["acc"].append(spec_result["acc"])            
     
     # Calculate averages
     specific_avg = {}
     for size in CALIB_SIZES:
-        if specific_data[size]["median_acc"]:
+        if specific_data[size]["acc"]:
             specific_avg[size] = {
-                "median_acc": np.mean(specific_data[size]["median_acc"]),
-                "q25_acc": np.mean(specific_data[size]["q25_acc"]),
-                "q75_acc": np.mean(specific_data[size]["q75_acc"])
+                "acc": np.mean(specific_data[size]["acc"])
             }
-    
-    batchcalib_avg = {}
-    raw_accs = []
-    for size in CALIB_SIZES:
-        if batchcalib_data[size]["corrected_acc"]:
-            batchcalib_avg[size] = {
-                "corrected_acc": np.mean(batchcalib_data[size]["corrected_acc"])
-            }
-            raw_accs.extend(batchcalib_data[size]["raw_acc"])
     
     baseline_acc = np.mean(raw_accs) if raw_accs else None
     
-    return specific_avg, batchcalib_avg, baseline_acc
+    return specific_avg, baseline_acc
 
 def plot_dataset(ax, qtype_config, dataset):
     """Plot data for a single dataset."""
-    specific_avg, batchcalib_avg, baseline_acc = collect_data_for_dataset(qtype_config, dataset)
+    specific_avg, baseline_acc = collect_data_for_dataset(qtype_config, dataset)
     
     # Prepare data for plotting
     x_vals = CALIB_SIZES
     
     # Specific method data
     specific_x = [size for size in CALIB_SIZES if size in specific_avg]
-    specific_y = [specific_avg[size]["median_acc"] for size in specific_x]
-    specific_q25 = [specific_avg[size]["q25_acc"] for size in specific_x]
-    specific_q75 = [specific_avg[size]["q75_acc"] for size in specific_x]
-    
-    # Batchcalib method data
-    batch_x = [size for size in CALIB_SIZES if size in batchcalib_avg]
-    batch_y = [batchcalib_avg[size]["corrected_acc"] for size in batch_x]
+    specific_y = [specific_avg[size]["acc"] for size in specific_x]
     
     # Plot specific method (blue)
     if specific_x:
         ax.plot(specific_x, specific_y, 'b-', linewidth=2, label='RBCorr Method')
-        ax.fill_between(specific_x, specific_q25, specific_q75, color='lightblue', alpha=0.3)
-    
-    # Plot batchcalib method (red)
-    # if batch_x:
-    #     ax.plot(batch_x, batch_y, 'r-', linewidth=2, label='BC method')
     
     # Plot baseline (grey dashed)
     if baseline_acc is not None:
@@ -189,9 +128,6 @@ def plot_dataset(ax, qtype_config, dataset):
     ax.set_xscale('log')
     ax.set_xticks(CALIB_SIZES)
     ax.set_xticklabels([str(x) for x in CALIB_SIZES])
-
-    # Draw a dotted vertical line at calib size 100
-    ax.axvline(x=100, color='black', linestyle=':', linewidth=1)
 
     # Rotate y-ax
     ax.tick_params(axis='y', labelrotation=45)
@@ -216,12 +152,7 @@ def create_comparison_plot():
     for i, dataset in enumerate(yesno_config["datasets"]):
         ax = fig.add_subplot(gs[0, i])
         plot_dataset(ax, yesno_config, dataset)
-    
-    # Row 2: NLI datasets (2 plots, centered)
-    # nli_config = DATASETS["nli"]
-    # for i, dataset in enumerate(nli_config["datasets"]):
-    #     ax = fig.add_subplot(gs[1, i+1])  # Offset by 1 to center
-    #     plot_dataset(ax, nli_config, dataset)
+
     
     # Row 2: MCQ datasets (4 plots)
     mcq_config = DATASETS["mcq"]
@@ -244,7 +175,7 @@ if __name__ == "__main__":
     fig = create_comparison_plot()
     
     # Save the figure
-    output_path = Path("../../results/plot_outputs/specific_calibsize_lineplot.png")
+    output_path = Path("../../results/rb_calibration_zeroshot.png")
     fig.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"Figure saved to: {output_path}")
     

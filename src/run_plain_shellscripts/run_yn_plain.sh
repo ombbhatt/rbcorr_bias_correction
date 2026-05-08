@@ -9,22 +9,23 @@ echo ""
 GPT2_MODELS=("gpt2")
 FALCON_MODELS=("Falcon3-3B-Base" "Falcon3-3B-Instruct" "Falcon3-10B-Base" "Falcon3-10B-Instruct")
 GEMMA3_MODELS=("gemma-3-27b-pt" "gemma-3-27b-it" "gemma-3-12b-pt" "gemma-3-12b-it")
-# LLAMA3_MODELS=("Llama-3.1-70B" "Llama-3.1-70B-Instruct" "Llama-3.1-8B" "Llama-3.1-8B-Instruct")
-LLAMA3_MODELS=("Llama-3.1-70B-Instruct")
+# GEMMA3_MODELS=("gemma-3-27b-pt" "gemma-3-27b-it")
+LLAMA3_MODELS=("Llama-3.1-8B" "Llama-3.1-8B-Instruct")
+# LLAMA3_MODELS=("Llama-3.1-70B-Instruct")
 
 # Combine all models into one array
 ALL_MODELS=(
   # "${GPT2_MODELS[@]}"
+  "${FALCON_MODELS[@]}"
   "${LLAMA3_MODELS[@]}"
-  # "${FALCON_MODELS[@]}"
-  # "${GEMMA3_MODELS[@]}"
+  "${GEMMA3_MODELS[@]}"
 )
 
-# DATASETS=("ARITH" "BABI" "COMPS" "EWOK")
-DATASETS=("COMPS")
+DATASETS=("ARITH" "BABI" "COMPS" "EWOK")
+# DATASETS=("COMPS")
 
-# PROMPTS=("zeroshot" "instronly" "fewshot")
-PROMPTS=("fewshot")
+PROMPTS=("zeroshot" "instronly" "fewshot")
+# PROMPTS=("fewshot")
 
 # Counter for tracking progress
 total_runs=$((${#ALL_MODELS[@]} * (${#DATASETS[@]}) * ${#PROMPTS[@]}))

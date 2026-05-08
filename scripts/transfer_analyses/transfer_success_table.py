@@ -5,7 +5,7 @@ from pathlib import Path
 from collections import defaultdict
 
 # Define the base directory
-BASE_DIR = Path("../../results")
+BASE_DIR = Path("../../results/Mar-17-2026")
 
 # Define all configurations
 YESNO_DATASETS = ["ARITH", "BABI", "COMPS", "EWOK"]
@@ -25,10 +25,25 @@ MODEL_FAMILIES = {
 PROMPT_LEVELS = ["zeroshot", "instronly", "fewshot"]
 
 QTYPE_MAPPING = {
-    "yesno": ("YESNO", YESNO_DATASETS, "specific_yesno_per_median_TVD"),
-    "nli": ("NLI", NLI_DATASETS, "specific_nli_per_median_TVD"),
-    "mcq": ("MMLU", MCQ_DATASETS, "specific_mcq_per_median_TVD")
+    "yesno": ("YESNO", YESNO_DATASETS, "rb_yn"),
+    "nli": ("NLI", NLI_DATASETS, "rb_nli"),
+    "mcq": ("MCQ", MCQ_DATASETS, "rb_mcq")
 }
+
+EPSILON = 1e-6
+
+def classify_sc(sc_val):
+    if sc_val > EPSILON:
+        return "beneficial"
+    elif sc_val < -EPSILON:
+        return "harmful"
+    else:
+        return "neutral"
+
+def is_preserved(transfer_val, sc_val, threshold=0.8):
+    if abs(sc_val) <= EPSILON:
+        return True  # neutral baseline — trivially preserved
+    return transfer_val >= threshold * sc_val
 
 def load_json_file(filepath):
     """Load a JSON file and return its contents."""
@@ -37,19 +52,19 @@ def load_json_file(filepath):
     with open(filepath, 'r') as f:
         return json.load(f)
 
-def extract_metrics(data, prompt_level, qtype_key, config_key, model_family, model_name, calib_size="500"):
+def extract_metrics(data, prompt_level, qtype_key, config_key, model_family, model_name, calib_size="240"):
     """
     Extract raw and median metrics from nested JSON structure.
     
-    Returns: (raw_acc, raw_tvd, median_acc, median_tvd) or None if not found
+    Returns: (raw_acc, raw_tvd, acc, tvd) or None if not found
     """
     try:
-        nested = data[prompt_level][f"PER_{qtype_key}"][config_key][model_family][model_name][calib_size]
+        nested = data[prompt_level][qtype_key][config_key][model_family][model_name][calib_size]
         return (
             nested["raw_acc"],
             nested["raw_tvd"],
-            nested["median_acc"],
-            nested["median_tvd"]
+            nested["acc"],
+            nested["tvd"]
         )
     except:
         # print exception for debugging
@@ -137,6 +152,14 @@ def analyze_cross_dataset():
     """Analyze cross-dataset transfer efficacy."""
     pairs = get_cross_dataset_pairs()
     total_count = len(pairs)
+    # successful_count = 0
+    # successful_acc_changes = []
+    # successful_tvd_changes = []
+    # all_acc_changes = []
+    # all_tvd_changes = []
+    # failed_bias_only = 0
+    # failed_acc_only = 0
+    # failed_both = 0
     successful_count = 0
     successful_acc_changes = []
     successful_tvd_changes = []
@@ -145,6 +168,13 @@ def analyze_cross_dataset():
     failed_bias_only = 0
     failed_acc_only = 0
     failed_both = 0
+
+    # Breakdown by same-condition classification
+    sc_acc_counts   = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    sc_tvd_counts   = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    succ_given_sc_acc = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    succ_given_sc_tvd = {"beneficial": 0, "harmful": 0, "neutral": 0}
+
 
     missing_data_count = 0
     missing_pairs = []
@@ -164,12 +194,7 @@ def analyze_cross_dataset():
             continue
         
         # Get transfer results
-        if "MMLU-" in source_dataset or "MMLU-" in target_dataset:
-            source_dataset1 = source_dataset.replace("MMLU-", "")
-            target_dataset1 = target_dataset.replace("MMLU-", "")
-            transfer_config_key = f"{target_dataset1}-from{source_dataset1}"
-        else:
-            transfer_config_key = f"{target_dataset}-from{source_dataset}"
+        transfer_config_key = f"{target_dataset}-from{source_dataset}"
         transfer_metrics = extract_metrics(data, prompt, qtype_key, transfer_config_key, family_name, model)
         
         if transfer_metrics is None:
@@ -198,19 +223,8 @@ def analyze_cross_dataset():
             raise ValueError(f"Source data file not found: {source_filepath}")
         if target_data is None:
             raise ValueError(f"Target data file not found: {target_filepath}")
-        
-        # same_condition_key = get_same_condition_key(source_dataset)
-        # if "MMLU-" in source_dataset:
-        #     source_dataset1 = source_dataset.replace("MMLU-", "")
-        #     same_condition_key = get_same_condition_key(source_dataset1)
-        # same_condition_metrics = extract_metrics(source_data, prompt, qtype_key, same_condition_key, family_name, model)
 
         same_condition_key = get_same_condition_key(target_dataset)
-        if "MMLU-" in target_dataset:
-            target_dataset1 = target_dataset.replace("MMLU-", "")
-            same_condition_key = get_same_condition_key(target_dataset1)
-        else:
-            same_condition_key = get_same_condition_key(target_dataset)
         same_condition_metrics = extract_metrics(target_data, prompt, qtype_key, same_condition_key, family_name, model)
         
         if same_condition_metrics is None:
@@ -223,20 +237,49 @@ def analyze_cross_dataset():
         sc_bias_reduction = sc_raw_tvd - sc_median_tvd
         
         # Check success criteria
-        bias_preserved = transfer_bias_reduction >= 0.8 * sc_bias_reduction
-        acc_preserved = transfer_acc_gain >= 0.8 * sc_acc_gain
+        # bias_preserved = transfer_bias_reduction >= 0.8 * sc_bias_reduction
+        # acc_preserved = transfer_acc_gain >= 0.8 * sc_acc_gain
         
+        # if bias_preserved and acc_preserved:
+        #     successful_count += 1
+        #     successful_acc_changes.append(transfer_acc_gain)
+        #     successful_tvd_changes.append(transfer_bias_reduction)
+        # else:
+        #     # Track failure reasons
+        #     if not bias_preserved and not acc_preserved:
+        #         failed_both += 1
+        #     elif not bias_preserved:
+        #         failed_bias_only += 1
+        #     else:  # not acc_preserved
+        #         failed_acc_only += 1
+
+        # Check success criteria
+        acc_class = classify_sc(sc_acc_gain)
+        tvd_class = classify_sc(sc_bias_reduction)
+
+        acc_preserved  = is_preserved(transfer_acc_gain, sc_acc_gain)
+        bias_preserved = is_preserved(transfer_bias_reduction, sc_bias_reduction)
+
+        # Track sc classification counts
+        sc_acc_counts[acc_class] += 1
+        sc_tvd_counts[tvd_class] += 1
+
+        # Track per-class success
+        if acc_preserved:
+            succ_given_sc_acc[acc_class] += 1
+        if bias_preserved:
+            succ_given_sc_tvd[tvd_class] += 1
+
         if bias_preserved and acc_preserved:
             successful_count += 1
             successful_acc_changes.append(transfer_acc_gain)
             successful_tvd_changes.append(transfer_bias_reduction)
         else:
-            # Track failure reasons
             if not bias_preserved and not acc_preserved:
                 failed_both += 1
             elif not bias_preserved:
                 failed_bias_only += 1
-            else:  # not acc_preserved
+            else:
                 failed_acc_only += 1
     
     avg_acc_succ = np.mean(successful_acc_changes) if successful_acc_changes else 0.0
@@ -244,24 +287,59 @@ def analyze_cross_dataset():
     avg_acc_all = np.mean(all_acc_changes) if all_acc_changes else 0.0
     avg_tvd_all = np.mean(all_tvd_changes) if all_tvd_changes else 0.0
     
+    # return {
+    #     "total_pairs": total_count,
+    #     "successful_pairs": successful_count,
+    #     "failed_bias_only": failed_bias_only,
+    #     "failed_acc_only": failed_acc_only,
+    #     "failed_both": failed_both,
+    #     "missing_data": missing_data_count,
+    #     "missing_pairs_list": missing_pairs,
+    #     "avg_succ_acc_change": avg_acc_succ,
+    #     "avg_succ_tvd_change": avg_tvd_succ,
+    #     "avg_all_acc_change": avg_acc_all,
+    #     "avg_all_tvd_change": avg_tvd_all
+    # }
+
     return {
-        "total_pairs": total_count,
-        "successful_pairs": successful_count,
-        "failed_bias_only": failed_bias_only,
-        "failed_acc_only": failed_acc_only,
-        "failed_both": failed_both,
-        "missing_data": missing_data_count,
-        "missing_pairs_list": missing_pairs,
-        "avg_succ_acc_change": avg_acc_succ,
-        "avg_succ_tvd_change": avg_tvd_succ,
-        "avg_all_acc_change": avg_acc_all,
-        "avg_all_tvd_change": avg_tvd_all
+        "total_pairs":             total_count,
+        "successful_pairs":        successful_count,
+        "failed_bias_only":        failed_bias_only,
+        "failed_acc_only":         failed_acc_only,
+        "failed_both":             failed_both,
+        "missing_data":            missing_data_count,
+        "missing_pairs_list":      missing_pairs,
+        "avg_succ_acc_change":     avg_acc_succ,
+        "avg_succ_tvd_change":     avg_tvd_succ,
+        "avg_all_acc_change":      avg_acc_all,
+        "avg_all_tvd_change":      avg_tvd_all,
+        # Same-condition classification breakdowns
+        "sc_acc_beneficial":       sc_acc_counts["beneficial"],
+        "sc_acc_harmful":          sc_acc_counts["harmful"],
+        "sc_acc_neutral":          sc_acc_counts["neutral"],
+        "sc_tvd_beneficial":       sc_tvd_counts["beneficial"],
+        "sc_tvd_harmful":          sc_tvd_counts["harmful"],
+        "sc_tvd_neutral":          sc_tvd_counts["neutral"],
+        "succ_acc_given_beneficial": succ_given_sc_acc["beneficial"],
+        "succ_acc_given_harmful":    succ_given_sc_acc["harmful"],
+        "succ_acc_given_neutral":    succ_given_sc_acc["neutral"],
+        "succ_tvd_given_beneficial": succ_given_sc_tvd["beneficial"],
+        "succ_tvd_given_harmful":    succ_given_sc_tvd["harmful"],
+        "succ_tvd_given_neutral":    succ_given_sc_tvd["neutral"],
     }
 
 def analyze_cross_model():
     """Analyze cross-model transfer efficacy."""
     pairs = get_cross_model_pairs()
     total_count = len(pairs)
+    # successful_count = 0
+    # successful_acc_changes = []
+    # successful_tvd_changes = []
+    # all_acc_changes = []
+    # all_tvd_changes = []
+    # failed_bias_only = 0
+    # failed_acc_only = 0
+    # failed_both = 0
     successful_count = 0
     successful_acc_changes = []
     successful_tvd_changes = []
@@ -270,6 +348,13 @@ def analyze_cross_model():
     failed_bias_only = 0
     failed_acc_only = 0
     failed_both = 0
+
+    # Breakdown by same-condition classification
+    sc_acc_counts   = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    sc_tvd_counts   = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    succ_given_sc_acc = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    succ_given_sc_tvd = {"beneficial": 0, "harmful": 0, "neutral": 0}
+
 
     missing_data_count = 0
     missing_pairs = []
@@ -289,11 +374,7 @@ def analyze_cross_model():
             continue
         
         # Get transfer results
-        if qtype == "mcq":
-            dataset1 = dataset.replace("MMLU-", "")
-            transfer_config_key = f"{dataset1}-from{dataset1}_{target_model}_from{source_model}"
-        else:
-            transfer_config_key = f"{dataset}-from{dataset}_{target_model}_from{source_model}"
+        transfer_config_key = f"{dataset}-from{dataset}_{target_model}_from{source_model}"
         transfer_metrics = extract_metrics(data, prompt, qtype_key, transfer_config_key, family_name, target_model)
         
         if transfer_metrics is None:
@@ -309,11 +390,7 @@ def analyze_cross_model():
         all_tvd_changes.append(transfer_bias_reduction)
 
         # Get same-condition results for source model
-        if qtype == "mcq":
-            dataset1 = dataset.replace("MMLU-", "")
-            same_condition_key = get_same_condition_key(dataset1)
-        else:
-            same_condition_key = get_same_condition_key(dataset)
+        same_condition_key = get_same_condition_key(dataset)
         # same_condition_metrics = extract_metrics(data, prompt, qtype_key, same_condition_key, family_name, source_model)
 
         # Get same-condition results for target model
@@ -327,20 +404,49 @@ def analyze_cross_model():
         sc_bias_reduction = sc_raw_tvd - sc_median_tvd
         
         # Check success criteria
-        bias_preserved = transfer_bias_reduction >= 0.8 * sc_bias_reduction
-        acc_preserved = transfer_acc_gain >= 0.8 * sc_acc_gain
+        # bias_preserved = transfer_bias_reduction >= 0.8 * sc_bias_reduction
+        # acc_preserved = transfer_acc_gain >= 0.8 * sc_acc_gain
         
+        # if bias_preserved and acc_preserved:
+        #     successful_count += 1
+        #     successful_acc_changes.append(transfer_acc_gain)
+        #     successful_tvd_changes.append(transfer_bias_reduction)
+        # else:
+        #     # Track failure reasons
+        #     if not bias_preserved and not acc_preserved:
+        #         failed_both += 1
+        #     elif not bias_preserved:
+        #         failed_bias_only += 1
+        #     else:  # not acc_preserved
+        #         failed_acc_only += 1
+
+        # Check success criteria
+        acc_class = classify_sc(sc_acc_gain)
+        tvd_class = classify_sc(sc_bias_reduction)
+
+        acc_preserved  = is_preserved(transfer_acc_gain, sc_acc_gain)
+        bias_preserved = is_preserved(transfer_bias_reduction, sc_bias_reduction)
+
+        # Track sc classification counts
+        sc_acc_counts[acc_class] += 1
+        sc_tvd_counts[tvd_class] += 1
+
+        # Track per-class success
+        if acc_preserved:
+            succ_given_sc_acc[acc_class] += 1
+        if bias_preserved:
+            succ_given_sc_tvd[tvd_class] += 1
+
         if bias_preserved and acc_preserved:
             successful_count += 1
             successful_acc_changes.append(transfer_acc_gain)
             successful_tvd_changes.append(transfer_bias_reduction)
         else:
-            # Track failure reasons
             if not bias_preserved and not acc_preserved:
                 failed_both += 1
             elif not bias_preserved:
                 failed_bias_only += 1
-            else:  # not acc_preserved
+            else:
                 failed_acc_only += 1
 
     avg_acc_succ = np.mean(successful_acc_changes) if successful_acc_changes else 0.0
@@ -348,24 +454,59 @@ def analyze_cross_model():
     avg_acc_all = np.mean(all_acc_changes) if all_acc_changes else 0.0
     avg_tvd_all = np.mean(all_tvd_changes) if all_tvd_changes else 0.0
 
+    # return {
+    #     "total_pairs": total_count,
+    #     "successful_pairs": successful_count,
+    #     "failed_bias_only": failed_bias_only,
+    #     "failed_acc_only": failed_acc_only,
+    #     "failed_both": failed_both,
+    #     "missing_data": missing_data_count,
+    #     "missing_pairs_list": missing_pairs,
+    #     "avg_succ_acc_change": avg_acc_succ,
+    #     "avg_succ_tvd_change": avg_tvd_succ,
+    #     "avg_all_acc_change": avg_acc_all,
+    #     "avg_all_tvd_change": avg_tvd_all
+    # }
+
     return {
-        "total_pairs": total_count,
-        "successful_pairs": successful_count,
-        "failed_bias_only": failed_bias_only,
-        "failed_acc_only": failed_acc_only,
-        "failed_both": failed_both,
-        "missing_data": missing_data_count,
-        "missing_pairs_list": missing_pairs,
-        "avg_succ_acc_change": avg_acc_succ,
-        "avg_succ_tvd_change": avg_tvd_succ,
-        "avg_all_acc_change": avg_acc_all,
-        "avg_all_tvd_change": avg_tvd_all
+        "total_pairs":             total_count,
+        "successful_pairs":        successful_count,
+        "failed_bias_only":        failed_bias_only,
+        "failed_acc_only":         failed_acc_only,
+        "failed_both":             failed_both,
+        "missing_data":            missing_data_count,
+        "missing_pairs_list":      missing_pairs,
+        "avg_succ_acc_change":     avg_acc_succ,
+        "avg_succ_tvd_change":     avg_tvd_succ,
+        "avg_all_acc_change":      avg_acc_all,
+        "avg_all_tvd_change":      avg_tvd_all,
+        # Same-condition classification breakdowns
+        "sc_acc_beneficial":       sc_acc_counts["beneficial"],
+        "sc_acc_harmful":          sc_acc_counts["harmful"],
+        "sc_acc_neutral":          sc_acc_counts["neutral"],
+        "sc_tvd_beneficial":       sc_tvd_counts["beneficial"],
+        "sc_tvd_harmful":          sc_tvd_counts["harmful"],
+        "sc_tvd_neutral":          sc_tvd_counts["neutral"],
+        "succ_acc_given_beneficial": succ_given_sc_acc["beneficial"],
+        "succ_acc_given_harmful":    succ_given_sc_acc["harmful"],
+        "succ_acc_given_neutral":    succ_given_sc_acc["neutral"],
+        "succ_tvd_given_beneficial": succ_given_sc_tvd["beneficial"],
+        "succ_tvd_given_harmful":    succ_given_sc_tvd["harmful"],
+        "succ_tvd_given_neutral":    succ_given_sc_tvd["neutral"],
     }
 
 def analyze_cross_prompt():
     """Analyze cross-prompt transfer efficacy."""
     pairs = get_cross_prompt_pairs()
     total_count = len(pairs)
+    # successful_count = 0
+    # successful_acc_changes = []
+    # successful_tvd_changes = []
+    # all_acc_changes = []
+    # all_tvd_changes = []
+    # failed_bias_only = 0
+    # failed_acc_only = 0
+    # failed_both = 0
     successful_count = 0
     successful_acc_changes = []
     successful_tvd_changes = []
@@ -374,6 +515,12 @@ def analyze_cross_prompt():
     failed_bias_only = 0
     failed_acc_only = 0
     failed_both = 0
+
+    # Breakdown by same-condition classification
+    sc_acc_counts   = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    sc_tvd_counts   = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    succ_given_sc_acc = {"beneficial": 0, "harmful": 0, "neutral": 0}
+    succ_given_sc_tvd = {"beneficial": 0, "harmful": 0, "neutral": 0}
 
     missing_data_count = 0
     missing_pairs = []
@@ -393,11 +540,7 @@ def analyze_cross_prompt():
             continue
         
         # Get transfer results
-        if qtype == "mcq":
-            dataset1 = dataset.replace("MMLU-", "")
-            transfer_config_key = f"{dataset1}-from{dataset1}_{target_prompt}_from{source_prompt}"
-        else:
-            transfer_config_key = f"{dataset}-from{dataset}_{target_prompt}_from{source_prompt}"
+        transfer_config_key = f"{dataset}-from{dataset}_{target_prompt}_from{source_prompt}"
         transfer_metrics = extract_metrics(data, target_prompt, qtype_key, transfer_config_key, family_name, model)
         
         if transfer_metrics is None:
@@ -428,13 +571,7 @@ def analyze_cross_prompt():
             raise ValueError(f"Target data file not found: {target_filepath}")
         
         same_condition_key = get_same_condition_key(dataset)
-        if qtype == "mcq":
-            dataset1 = dataset.replace("MMLU-", "")
-            same_condition_key = get_same_condition_key(dataset1)
         same_condition_metrics = extract_metrics(target_data, target_prompt, qtype_key, same_condition_key, family_name, model)
-
-        # same_condition_key = get_same_condition_key(dataset)
-        # same_condition_metrics = extract_metrics(source_data, target_prompt, qtype_key, same_condition_key, family_name, model)
         
         if same_condition_metrics is None:
             missing_data_count += 1
@@ -446,20 +583,49 @@ def analyze_cross_prompt():
         sc_bias_reduction = sc_raw_tvd - sc_median_tvd
         
         # Check success criteria
-        bias_preserved = transfer_bias_reduction >= 0.8 * sc_bias_reduction
-        acc_preserved = transfer_acc_gain >= 0.8 * sc_acc_gain
+        # bias_preserved = transfer_bias_reduction >= 0.8 * sc_bias_reduction
+        # acc_preserved = transfer_acc_gain >= 0.8 * sc_acc_gain
+
+        # if bias_preserved and acc_preserved:
+        #     successful_count += 1
+        #     successful_acc_changes.append(transfer_acc_gain)
+        #     successful_tvd_changes.append(transfer_bias_reduction)
+        # else:
+        #     # Track failure reasons
+        #     if not bias_preserved and not acc_preserved:
+        #         failed_both += 1
+        #     elif not bias_preserved:
+        #         failed_bias_only += 1
+        #     else:  # not acc_preserved
+        #         failed_acc_only += 1
+
+        # Check success criteria
+        acc_class = classify_sc(sc_acc_gain)
+        tvd_class = classify_sc(sc_bias_reduction)
+
+        acc_preserved  = is_preserved(transfer_acc_gain, sc_acc_gain)
+        bias_preserved = is_preserved(transfer_bias_reduction, sc_bias_reduction)
+
+        # Track sc classification counts
+        sc_acc_counts[acc_class] += 1
+        sc_tvd_counts[tvd_class] += 1
+
+        # Track per-class success
+        if acc_preserved:
+            succ_given_sc_acc[acc_class] += 1
+        if bias_preserved:
+            succ_given_sc_tvd[tvd_class] += 1
 
         if bias_preserved and acc_preserved:
             successful_count += 1
             successful_acc_changes.append(transfer_acc_gain)
             successful_tvd_changes.append(transfer_bias_reduction)
         else:
-            # Track failure reasons
             if not bias_preserved and not acc_preserved:
                 failed_both += 1
             elif not bias_preserved:
                 failed_bias_only += 1
-            else:  # not acc_preserved
+            else:
                 failed_acc_only += 1
     
     avg_acc_succ = np.mean(successful_acc_changes) if successful_acc_changes else 0.0
@@ -467,18 +633,45 @@ def analyze_cross_prompt():
     avg_acc_all = np.mean(all_acc_changes) if all_acc_changes else 0.0
     avg_tvd_all = np.mean(all_tvd_changes) if all_tvd_changes else 0.0
 
+    # return {
+    #     "total_pairs": total_count,
+    #     "successful_pairs": successful_count,
+    #     "failed_bias_only": failed_bias_only,
+    #     "failed_acc_only": failed_acc_only,
+    #     "failed_both": failed_both,
+    #     "missing_data": missing_data_count,
+    #     "missing_pairs_list": missing_pairs,
+    #     "avg_succ_acc_change": avg_acc_succ,
+    #     "avg_succ_tvd_change": avg_tvd_succ,
+    #     "avg_all_acc_change": avg_acc_all,
+    #     "avg_all_tvd_change": avg_tvd_all
+    # }
+
     return {
-        "total_pairs": total_count,
-        "successful_pairs": successful_count,
-        "failed_bias_only": failed_bias_only,
-        "failed_acc_only": failed_acc_only,
-        "failed_both": failed_both,
-        "missing_data": missing_data_count,
-        "missing_pairs_list": missing_pairs,
-        "avg_succ_acc_change": avg_acc_succ,
-        "avg_succ_tvd_change": avg_tvd_succ,
-        "avg_all_acc_change": avg_acc_all,
-        "avg_all_tvd_change": avg_tvd_all
+    "total_pairs":             total_count,
+    "successful_pairs":        successful_count,
+    "failed_bias_only":        failed_bias_only,
+    "failed_acc_only":         failed_acc_only,
+    "failed_both":             failed_both,
+    "missing_data":            missing_data_count,
+    "missing_pairs_list":      missing_pairs,
+    "avg_succ_acc_change":     avg_acc_succ,
+    "avg_succ_tvd_change":     avg_tvd_succ,
+    "avg_all_acc_change":      avg_acc_all,
+    "avg_all_tvd_change":      avg_tvd_all,
+    # Same-condition classification breakdowns
+    "sc_acc_beneficial":       sc_acc_counts["beneficial"],
+    "sc_acc_harmful":          sc_acc_counts["harmful"],
+    "sc_acc_neutral":          sc_acc_counts["neutral"],
+    "sc_tvd_beneficial":       sc_tvd_counts["beneficial"],
+    "sc_tvd_harmful":          sc_tvd_counts["harmful"],
+    "sc_tvd_neutral":          sc_tvd_counts["neutral"],
+    "succ_acc_given_beneficial": succ_given_sc_acc["beneficial"],
+    "succ_acc_given_harmful":    succ_given_sc_acc["harmful"],
+    "succ_acc_given_neutral":    succ_given_sc_acc["neutral"],
+    "succ_tvd_given_beneficial": succ_given_sc_tvd["beneficial"],
+    "succ_tvd_given_harmful":    succ_given_sc_tvd["harmful"],
+    "succ_tvd_given_neutral":    succ_given_sc_tvd["neutral"],
     }
 
 def main():
@@ -497,7 +690,8 @@ def main():
     
     # Cross-Dataset pairs
     cd_pairs = get_cross_dataset_pairs()
-    with open(Path.home() / "scratch/yes-bias-in-llms" / "cross_dataset_pairs.txt", 'w') as f:
+    # with open(Path.home() / "scratch/yes-bias-in-llms" / "cross_dataset_pairs.txt", 'w') as f:
+    with open(Path('../../results/Mar-17-2026/cross_dataset_pairs.txt'), 'w') as f:
         f.write(f"Total Cross-Dataset Pairs: {len(cd_pairs)}\n")
         f.write("="*80 + "\n\n")
         for qtype, src_ds, tgt_ds, family, model, prompt in cd_pairs:
@@ -505,7 +699,7 @@ def main():
     
     # Cross-Model pairs
     cm_pairs = get_cross_model_pairs()
-    with open(Path.home() / "scratch/yes-bias-in-llms" / "cross_model_pairs.txt", 'w') as f:
+    with open(Path('../../results/Mar-17-2026/cross_model_pairs.txt'), 'w') as f:
         f.write(f"Total Cross-Model Pairs: {len(cm_pairs)}\n")
         f.write("="*80 + "\n\n")
         for qtype, ds, src_mdl, tgt_mdl, family, prompt in cm_pairs:
@@ -513,7 +707,7 @@ def main():
     
     # Cross-Prompt pairs
     cp_pairs = get_cross_prompt_pairs()
-    with open(Path.home() / "scratch/yes-bias-in-llms" / "cross_prompt_pairs.txt", 'w') as f:
+    with open(Path('../../results/Mar-17-2026/cross_prompt_pairs.txt'), 'w') as f:
         f.write(f"Total Cross-Prompt Pairs: {len(cp_pairs)}\n")
         f.write("="*80 + "\n\n")
         for qtype, ds, family, model, src_pr, tgt_pr in cp_pairs:
@@ -522,19 +716,19 @@ def main():
     print("Pair lists saved to cross_dataset_pairs.txt, cross_model_pairs.txt, cross_prompt_pairs.txt")
 
     # Write missing pairs to files
-    with open(Path.home() / "scratch/yes-bias-in-llms" / "missing_cross_dataset_pairs.txt", 'w') as f:
+    with open(Path('../../results/Mar-17-2026/missing_cross_dataset_pairs.txt'), 'w') as f:
         f.write(f"Missing Cross-Dataset Pairs: {cross_dataset_results['missing_data']}\n")
         f.write("="*80 + "\n\n")
         for pair_info in cross_dataset_results['missing_pairs_list']:
             f.write(f"{pair_info}\n")
 
-    with open(Path.home() / "scratch/yes-bias-in-llms" / "missing_cross_model_pairs.txt", 'w') as f:
+    with open(Path('../../results/Mar-17-2026/missing_cross_model_pairs.txt'), 'w') as f:
         f.write(f"Missing Cross-Model Pairs: {cross_model_results['missing_data']}\n")
         f.write("="*80 + "\n\n")
         for pair_info in cross_model_results['missing_pairs_list']:
             f.write(f"{pair_info}\n")
 
-    with open(Path.home() / "scratch/yes-bias-in-llms" / "missing_cross_prompt_pairs.txt", 'w') as f:
+    with open(Path('../../results/Mar-17-2026/missing_cross_prompt_pairs.txt'), 'w') as f:
         f.write(f"Missing Cross-Prompt Pairs: {cross_prompt_results['missing_data']}\n")
         f.write("="*80 + "\n\n")
         for pair_info in cross_prompt_results['missing_pairs_list']:
@@ -586,7 +780,7 @@ def main():
     print("\n" + "="*80)
     
     # Save to CSV
-    output_file = Path("../../results/table_outputs/transfer_success_table.csv")
+    output_file = Path("../../results/Mar-17-2026/table_outputs/transfer_success_table.csv")
     with open(output_file, 'w') as f:
         f.write("Transfer_Type,Total_Pairs,Successful_Pairs,Success_Rate, Failed_Bias_Only, Failed_Accuracy_Only, Failed_Both, Avg_Acc_Change,Avg_TVD_Change\n")
         f.write(f"Cross-Dataset,{cross_dataset_results['total_pairs']},{cross_dataset_results['successful_pairs']},"

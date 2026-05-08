@@ -22,7 +22,7 @@ torch.cuda.empty_cache()
 from yn_BOS_BC_CC import process_dataset_yesno
 from mcq_BOS_BC_CC import process_dataset_mcq
 from nli_BOC_CC_BC import process_dataset_nli
-DATE = "Mar-06-2026"
+DATE = "Mar-14-2026"
 
 gpt2_models = ["gpt2"]
 falcon_models = ["Falcon3-3B-Base", "Falcon3-3B-Instruct", "Falcon3-10B-Base", "Falcon3-10B-Instruct"]
@@ -30,13 +30,13 @@ gemma3_models = ["gemma-3-27b-pt", "gemma-3-27b-it", "gemma-3-12b-pt", "gemma-3-
 # qwen2_models = ["Qwen2.5-14B", "Qwen2.5-14B-Instruct", "Qwen2.5-32B", "Qwen2.5-32B-Instruct"]
 # llama_models = ["Llama-2-7b-hf", "Llama-2-7b-chat-hf", "Llama-2-13b-hf", "Llama-2-13b-chat-hf"]
 llama3_models = ["Llama-3.1-8B", "Llama-3.1-8B-Instruct", "Llama-3.1-70B", "Llama-3.1-70B-Instruct"]
+# llama3_models = ["Meta-Llama-3.1-70B-bnb-4bit", "Meta-Llama-3.1-70B-Instruct-bnb-4bit"]
 
 MODEL_CONFIGS = {
     "GPT2": {"models": gpt2_models, "model_class": GPT2LMHeadModel, "tokenizer_class": GPT2Tokenizer, "prefix": ""},
     "Falcon": {"models": falcon_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "tiiuae/"},
-    # "Qwen2": {"models": qwen2_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "Qwen/"},
-    # "Llama": {"models": llama_models, "model_class": LlamaForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "meta-llama/"},
     "Llama3": {"models": llama3_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "meta-llama/"},
+    # "Llama3": {"models": llama3_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "unsloth/"},
     "Gemma3": {"models": gemma3_models, "model_class": Gemma3ForConditionalGeneration, "tokenizer_class": AutoTokenizer, "prefix": "google/"},   
 }
 
@@ -88,11 +88,7 @@ def infer_model_family(model_name: str) -> str:
         return "Falcon"
     elif model_name.startswith("gemma-3"):
         return "Gemma3"
-    elif model_name.startswith("Qwen2.5"):
-        return "Qwen2"
-    elif model_name.startswith("Llama-2"):
-        return "Llama"
-    elif model_name.startswith("Llama-3"):
+    elif model_name.startswith("Meta-Llama-3") or model_name.startswith("Llama-3"):
         return "Llama3"
     elif model_name.startswith("gpt2"):
         return "GPT2"
@@ -182,27 +178,39 @@ def setup_model_and_tokenizer(model_name, model_family):
     full_model_name = f"{config['prefix']}{model_name}"
     
     model_kwargs = {
-        "device_map": "cpu",
+        # "device_map": "cpu" if "27b" in full_model_name else "auto",
+        "device_map": "auto",
         "torch_dtype": torch.bfloat16,
-        "low_cpu_mem_usage": True
+        "low_cpu_mem_usage": True,
+        # "max_memory": {0: "38GiB", 1: "24GiB", 2: "16GiB"}
+        # "offload_state_dict": True
     }
 
     quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+    # quantization_config = BitsAndBytesConfig(
+    # load_in_4bit=True,
+    # bnb_4bit_compute_dtype=torch.bfloat16,
+    # bnb_4bit_use_double_quant=True,
+    # llm_int8_enable_fp32_cpu_offload=True  # forces quant computation off GPU
+    # )
     
     print(f"Loading model {full_model_name}...")
+    print(f"Model kwargs: {model_kwargs}")
     model = config['model_class'].from_pretrained(
             full_model_name, **model_kwargs, 
             token=config.get('token'), 
-            **({"quantization_config": quantization_config} if "70B" in full_model_name else {})
+            **({"quantization_config": quantization_config} if ("27b" in full_model_name) else {})
         )
     
     # move model to gpu via dispatch
-    device_map = infer_auto_device_map(
-            model,
-            max_memory={0: "46GiB", 1: "30GiB", 2: "30GiB", 3: "30GiB"},
-            no_split_module_classes=["TransformerBlock", "LlamaDecoderLayer"],
-        )
-    model = dispatch_model(model, device_map=device_map)
+    if model_kwargs["device_map"] == "cpu":
+        # device_map = infer_auto_device_map(
+        #         model,
+        #         max_memory={0: "0GiB", 1: "46GiB", 2: "0GiB", 3: "0GiB"},
+        #     )
+        # # model = dispatch_model(model, device_map=device_map)
+        # model = dispatch_model(model, device_map="sequential")  # Use sequential dispatch to avoid GPU out of memory issues
+        model = model.to("cuda")
             
     print("Loading tokenizer...")
     tokenizer = config['tokenizer_class'].from_pretrained(
@@ -434,7 +442,7 @@ def process_model_across_domains(impl, target_model_name, target_model_family, i
                 mmlu_domain = extract_mmlu_domain(target_dataset)
                 if DATE == "Sep-16-2025":
                     input_file = combine_mmlu_domain(dataset_path, mmlu_domain)
-                elif DATE == "Mar-06-2026":
+                else:
                     input_file = dataset_path / 'mmlu-scripts-data' / f"{mmlu_domain}" / f"{mmlu_domain}_sampled.csv"
             elif target_dataset == "SNLI":
                 input_file = dataset_path / f"snli-nli-balanced.csv"
@@ -553,6 +561,8 @@ def run_single_configuration(calib_dataset, target_dataset, target_model_name, t
     # dataset_path = DATASET_PATHS[target_dataset]
     if DATE == "Mar-06-2026":
         dataset_path = Path("../../data/tiny_data")
+    elif DATE == "Mar-14-2026":
+        dataset_path = Path("../../data/big_data")
     elif DATE == "Sep-16-2025":
         dataset_path = Path("../data")
 
@@ -683,4 +693,6 @@ def main():
         sys.exit(1)
 
 if __name__ == "__main__":
+    gc.collect()
+    torch.cuda.empty_cache()
     main()
