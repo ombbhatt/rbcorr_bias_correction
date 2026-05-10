@@ -7,7 +7,7 @@ import sys
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM, Gemma3ForConditionalGeneration
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
-from src.get_query_logprobs import calculate_logprobs_batch_mcq
+from src.plain_inference import calculate_logprobs_batch_mcq
 
 # Model configurations
 falcon_models = ["Falcon3-3B-Base", "Falcon3-3B-Instruct", "Falcon3-10B-Base", "Falcon3-10B-Instruct"]

@@ -8,8 +8,8 @@ import os
 from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM, Gemma3ForConditionalGeneration
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../'))
-from src.get_query_logprobs import calculate_logprobs_batch_yesno
-from src.dataset_prompts import get_dataset_prompts
+from src.plain_inference import calculate_logprobs_batch_yesno
+from src.plain_inference import get_dataset_prompts
 
 # Model configurations
 falcon_models = ["Falcon3-3B-Base", "Falcon3-3B-Instruct", "Falcon3-10B-Base", "Falcon3-10B-Instruct"]
@@ -20,7 +20,7 @@ gemma3_models = ["gemma-3-12b-pt", "gemma-3-12b-it", "gemma-3-27b-pt", "gemma-3-
 
 MODEL_CONFIGS = {
     "Llama3": {"models": llama3_models, "model_class": LlamaForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "meta-llama/"},
-    # "Falcon": {"models": falcon_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "tiiuae/"},
+    "Falcon": {"models": falcon_models, "model_class": AutoModelForCausalLM, "tokenizer_class": AutoTokenizer, "prefix": "tiiuae/"},
     "Gemma3": {"models": gemma3_models, "model_class": Gemma3ForConditionalGeneration, "tokenizer_class": AutoTokenizer, "prefix": "google/"},
 }
 

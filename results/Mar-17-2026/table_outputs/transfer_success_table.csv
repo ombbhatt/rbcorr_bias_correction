@@ -1,4 +1,0 @@
-Transfer_Type,Total_Pairs,Successful_Pairs,Success_Rate, Failed_Bias_Only, Failed_Accuracy_Only, Failed_Both, Avg_Acc_Change,Avg_TVD_Change
-Cross-Dataset,912,285,31.25,177,87,363,0.030918,0.094550,0.008295,0.029317
-Cross-Model,1008,167,16.57,154,71,616,0.016447,0.049671,-0.010794,-0.014936
-Cross-Prompt,624,97,15.54,115,45,367,0.011624,0.043677,-0.006302,-0.008300

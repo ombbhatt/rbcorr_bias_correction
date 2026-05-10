@@ -1,9 +1,0 @@
-{
-  "zeroshot": {
-    "SNLI": {
-      "snli": {
-        "Falcon": {}
-      }
-    }
-  }
-}

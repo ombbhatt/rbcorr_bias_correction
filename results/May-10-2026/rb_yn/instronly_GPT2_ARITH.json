@@ -1,0 +1,234 @@
+{
+  "instronly": {
+    "YESNO": {
+      "ARITH-fromARITH": {
+        "GPT2": {
+          "gpt2-medium": {
+            "60": {
+              "acc": 0.5016666666666667,
+              "tvd": 0.03666666666666665,
+              "rsd": 0.0730897009966777,
+              "model_dist": "{'Yes': 0.4633333333333333, 'No': 0.5366666666666666}",
+              "mean_acc": 0.5012280701754387,
+              "median_acc": 0.5,
+              "std_acc": 0.0017189401703741655,
+              "best_run_acc": 0.5043859649122807,
+              "worst_run_acc": 0.5,
+              "mean_tvd": 0.0380701754385965,
+              "median_tvd": 0.038596491228070184,
+              "std_tvd": 0.0010526315789473716,
+              "mean_rsd": 0.07594906999941325,
+              "median_rsd": 0.07692307692307694,
+              "std_rsd": 0.001902608829242446,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          },
+          "gpt2-large": {
+            "60": {
+              "acc": 0.4666666666666667,
+              "tvd": 0.06166666666666665,
+              "rsd": 0.1321428571428571,
+              "model_dist": "{'Yes': 0.43833333333333335, 'No': 0.5616666666666666}",
+              "mean_acc": 0.4694736842105264,
+              "median_acc": 0.4692982456140351,
+              "std_acc": 0.003008145298154774,
+              "best_run_acc": 0.47368421052631576,
+              "worst_run_acc": 0.46578947368421053,
+              "mean_tvd": 0.07473684210526314,
+              "median_tvd": 0.06666666666666665,
+              "std_tvd": 0.011734730882940811,
+              "mean_rsd": 0.15925414527317044,
+              "median_rsd": 0.1412639405204461,
+              "std_rsd": 0.02538878454813965,
+              "raw_acc": 0.49083333333333334,
+              "raw_tvd": 0.4525,
+              "raw_rsd": 0.9219015280135824,
+              "raw_model_dist": "{'Yes': 0.9525, 'No': 0.0475}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "ARITH-fromBABI": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5016666666666667,
+              "tvd": 0.03666666666666665,
+              "rsd": 0.0730897009966777,
+              "model_dist": "{'Yes': 0.4633333333333333, 'No': 0.5366666666666666}",
+              "mean_acc": 0.5016666666666667,
+              "median_acc": 0.5016666666666667,
+              "std_acc": 0.0,
+              "best_run_acc": 0.5016666666666667,
+              "worst_run_acc": 0.5016666666666667,
+              "mean_tvd": 0.03666666666666665,
+              "median_tvd": 0.03666666666666665,
+              "std_tvd": 0.0,
+              "mean_rsd": 0.0730897009966777,
+              "median_rsd": 0.0730897009966777,
+              "std_rsd": 0.0,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "ARITH-fromCOMPS": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5075,
+              "tvd": 0.2025,
+              "rsd": 0.39901477832512317,
+              "model_dist": "{'Yes': 0.7025, 'No': 0.2975}",
+              "mean_acc": 0.5075,
+              "median_acc": 0.5075,
+              "std_acc": 0.0,
+              "best_run_acc": 0.5075,
+              "worst_run_acc": 0.5075,
+              "mean_tvd": 0.20250000000000004,
+              "median_tvd": 0.2025,
+              "std_tvd": 2.7755575615628914e-17,
+              "mean_rsd": 0.39901477832512317,
+              "median_rsd": 0.39901477832512317,
+              "std_rsd": 0.0,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "ARITH-fromEWOK": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5075,
+              "tvd": 0.2025,
+              "rsd": 0.39901477832512317,
+              "model_dist": "{'Yes': 0.7025, 'No': 0.2975}",
+              "mean_acc": 0.5055,
+              "median_acc": 0.5075,
+              "std_acc": 0.0025055493963954557,
+              "best_run_acc": 0.5075,
+              "worst_run_acc": 0.5016666666666667,
+              "mean_tvd": 0.1335,
+              "median_tvd": 0.2025,
+              "std_tvd": 0.08461251549137266,
+              "mean_rsd": 0.26329833037321737,
+              "median_rsd": 0.39901477832512317,
+              "std_rsd": 0.16643284472848802,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "ARITH-fromARITH_instronly_fromfewshot": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5,
+              "tvd": 0.5,
+              "rsd": 1.0,
+              "model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "mean_acc": 0.5,
+              "median_acc": 0.5,
+              "std_acc": 0.0,
+              "best_run_acc": 0.5,
+              "worst_run_acc": 0.5,
+              "mean_tvd": 0.5,
+              "median_tvd": 0.5,
+              "std_tvd": 0.0,
+              "mean_rsd": 1.0,
+              "median_rsd": 1.0,
+              "std_rsd": 0.0,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "ARITH-fromARITH_gpt2-medium_fromgpt2-large": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.49333333333333335,
+              "tvd": 0.475,
+              "rsd": 0.9628378378378378,
+              "model_dist": "{'Yes': 0.975, 'No': 0.025}",
+              "mean_acc": 0.497,
+              "median_acc": 0.49666666666666665,
+              "std_acc": 0.0008498365855988018,
+              "best_run_acc": 0.49833333333333335,
+              "worst_run_acc": 0.49583333333333335,
+              "mean_tvd": 0.48066666666666674,
+              "median_tvd": 0.4866666666666667,
+              "std_tvd": 0.014136241839093351,
+              "mean_rsd": 0.9671027350203298,
+              "median_rsd": 0.9798657718120806,
+              "std_rsd": 0.02728065939851244,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "ARITH-fromARITH_gpt2-large_fromgpt2-medium": {
+        "GPT2": {
+          "gpt2-large": {
+            "240": {
+              "acc": 0.5008333333333334,
+              "tvd": 0.49916666666666665,
+              "rsd": 0.9966722129783694,
+              "model_dist": "{'Yes': 0.0008333333333333334, 'No': 0.9991666666666666}",
+              "mean_acc": 0.5006666666666667,
+              "median_acc": 0.5008333333333334,
+              "std_acc": 0.000333333333333341,
+              "best_run_acc": 0.5008333333333334,
+              "worst_run_acc": 0.5,
+              "mean_tvd": 0.49866666666666665,
+              "median_tvd": 0.49916666666666665,
+              "std_tvd": 0.0009999999999999786,
+              "mean_rsd": 0.9960044370493621,
+              "median_rsd": 0.9966722129783694,
+              "std_rsd": 0.0013355518580144387,
+              "raw_acc": 0.49083333333333334,
+              "raw_tvd": 0.4525,
+              "raw_rsd": 0.9219015280135824,
+              "raw_model_dist": "{'Yes': 0.9525, 'No': 0.0475}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -30,3 +30,9 @@ processed_metrics_v5/
 processed_metrics_v8/
 src-old/*
 results_pre-eacl/*
+
+old-data/
+old-outputs/
+old-results/
+old-scripts/
+old/src/

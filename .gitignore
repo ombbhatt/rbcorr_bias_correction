@@ -6,3 +6,9 @@
 # data/ewokynq-scripts-data/
 analysis/
 outputs/
+
+old-data/
+old-outputs/
+old-results/
+old-scripts/
+old-src/

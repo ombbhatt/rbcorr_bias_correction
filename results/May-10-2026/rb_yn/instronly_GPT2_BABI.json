@@ -1,0 +1,234 @@
+{
+  "instronly": {
+    "YESNO": {
+      "BABI-fromBABI": {
+        "GPT2": {
+          "gpt2-medium": {
+            "60": {
+              "acc": 0.5358333333333334,
+              "tvd": 0.004166666666666652,
+              "rsd": 0.007776049766718582,
+              "model_dist": "{'Yes': 0.5041666666666667, 'No': 0.49583333333333335}",
+              "mean_acc": 0.5357894736842105,
+              "median_acc": 0.5368421052631579,
+              "std_acc": 0.00170094030084784,
+              "best_run_acc": 0.537719298245614,
+              "worst_run_acc": 0.5333333333333333,
+              "mean_tvd": 0.004210526315789487,
+              "median_tvd": 0.0035087719298245723,
+              "std_tvd": 0.0025664454102329545,
+              "mean_rsd": 0.00786358136444677,
+              "median_rsd": 0.006535947712418321,
+              "std_rsd": 0.004816640147785189,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          },
+          "gpt2-large": {
+            "60": {
+              "acc": 0.5266666666666666,
+              "tvd": 0.0050000000000000044,
+              "rsd": 0.009493670886075958,
+              "model_dist": "{'Yes': 0.505, 'No': 0.495}",
+              "mean_acc": 0.5191228070175438,
+              "median_acc": 0.5245614035087719,
+              "std_acc": 0.010677280038388018,
+              "best_run_acc": 0.5263157894736842,
+              "worst_run_acc": 0.4982456140350877,
+              "mean_tvd": 0.02824561403508773,
+              "median_tvd": 0.01052631578947369,
+              "std_tvd": 0.038606059420068096,
+              "mean_rsd": 0.05599258764227697,
+              "median_rsd": 0.020066889632106975,
+              "std_rsd": 0.07781831692272058,
+              "raw_acc": 0.5108333333333334,
+              "raw_tvd": 0.4675,
+              "raw_rsd": 0.9151712887438825,
+              "raw_model_dist": "{'Yes': 0.9675, 'No': 0.0325}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "BABI-fromARITH": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5358333333333334,
+              "tvd": 0.004166666666666652,
+              "rsd": 0.007776049766718582,
+              "model_dist": "{'Yes': 0.5041666666666667, 'No': 0.49583333333333335}",
+              "mean_acc": 0.5358333333333334,
+              "median_acc": 0.5358333333333334,
+              "std_acc": 0.0,
+              "best_run_acc": 0.5358333333333334,
+              "worst_run_acc": 0.5358333333333334,
+              "mean_tvd": 0.004166666666666652,
+              "median_tvd": 0.004166666666666652,
+              "std_tvd": 0.0,
+              "mean_rsd": 0.007776049766718582,
+              "median_rsd": 0.007776049766718582,
+              "std_rsd": 0.0,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "BABI-fromCOMPS": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5266666666666666,
+              "tvd": 0.29833333333333334,
+              "rsd": 0.5664556962025316,
+              "model_dist": "{'Yes': 0.7983333333333333, 'No': 0.20166666666666666}",
+              "mean_acc": 0.5266666666666666,
+              "median_acc": 0.5266666666666666,
+              "std_acc": 0.0,
+              "best_run_acc": 0.5266666666666666,
+              "worst_run_acc": 0.5266666666666666,
+              "mean_tvd": 0.29833333333333334,
+              "median_tvd": 0.29833333333333334,
+              "std_tvd": 0.0,
+              "mean_rsd": 0.5664556962025316,
+              "median_rsd": 0.5664556962025316,
+              "std_rsd": 0.0,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "BABI-fromEWOK": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5266666666666666,
+              "tvd": 0.29833333333333334,
+              "rsd": 0.5664556962025316,
+              "model_dist": "{'Yes': 0.7983333333333333, 'No': 0.20166666666666666}",
+              "mean_acc": 0.5343333333333332,
+              "median_acc": 0.5266666666666666,
+              "std_acc": 0.010767750203475429,
+              "best_run_acc": 0.5541666666666667,
+              "worst_run_acc": 0.5266666666666666,
+              "mean_tvd": 0.194,
+              "median_tvd": 0.29833333333333334,
+              "std_tvd": 0.12934170935076503,
+              "mean_rsd": 0.36700636637221545,
+              "median_rsd": 0.5664556962025316,
+              "std_rsd": 0.24691845889970238,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "BABI-fromBABI_instronly_fromfewshot": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5,
+              "tvd": 0.4983333333333333,
+              "rsd": 0.9966666666666666,
+              "model_dist": "{'Yes': 0.9983333333333333, 'No': 0.0016666666666666668}",
+              "mean_acc": 0.5,
+              "median_acc": 0.5,
+              "std_acc": 0.0,
+              "best_run_acc": 0.5,
+              "worst_run_acc": 0.5,
+              "mean_tvd": 0.49833333333333324,
+              "median_tvd": 0.4983333333333333,
+              "std_tvd": 5.551115123125783e-17,
+              "mean_rsd": 0.9966666666666665,
+              "median_rsd": 0.9966666666666666,
+              "std_rsd": 1.1102230246251565e-16,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "BABI-fromBABI_gpt2-medium_fromgpt2-large": {
+        "GPT2": {
+          "gpt2-medium": {
+            "240": {
+              "acc": 0.5225,
+              "tvd": 0.3025,
+              "rsd": 0.5789473684210527,
+              "model_dist": "{'Yes': 0.8025, 'No': 0.1975}",
+              "mean_acc": 0.5213333333333333,
+              "median_acc": 0.5266666666666666,
+              "std_acc": 0.009092121131323898,
+              "best_run_acc": 0.5266666666666666,
+              "worst_run_acc": 0.5033333333333333,
+              "mean_tvd": 0.34500000000000003,
+              "median_tvd": 0.29833333333333334,
+              "std_tvd": 0.0756380268853644,
+              "mean_rsd": 0.6645623281699098,
+              "median_rsd": 0.5664556962025316,
+              "std_rsd": 0.16056824581769266,
+              "raw_acc": 0.5,
+              "raw_tvd": 0.5,
+              "raw_rsd": 1.0,
+              "raw_model_dist": "{'Yes': 1.0, 'No': 0.0}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      },
+      "BABI-fromBABI_gpt2-large_fromgpt2-medium": {
+        "GPT2": {
+          "gpt2-large": {
+            "240": {
+              "acc": 0.5083333333333333,
+              "tvd": 0.38,
+              "rsd": 0.7475409836065574,
+              "model_dist": "{'Yes': 0.12, 'No': 0.88}",
+              "mean_acc": 0.5083333333333333,
+              "median_acc": 0.5083333333333333,
+              "std_acc": 0.0,
+              "best_run_acc": 0.5083333333333333,
+              "worst_run_acc": 0.5083333333333333,
+              "mean_tvd": 0.38,
+              "median_tvd": 0.38,
+              "std_tvd": 0.0,
+              "mean_rsd": 0.7475409836065574,
+              "median_rsd": 0.7475409836065574,
+              "std_rsd": 0.0,
+              "raw_acc": 0.5108333333333334,
+              "raw_tvd": 0.4675,
+              "raw_rsd": 0.9151712887438825,
+              "raw_model_dist": "{'Yes': 0.9675, 'No': 0.0325}",
+              "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
+              "num_calib_sets": 5
+            }
+          }
+        }
+      }
+    }
+  }
+}
