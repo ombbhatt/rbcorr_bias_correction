@@ -106,10 +106,6 @@ The JSON files in `results/` follow a standard nested structure to organize the 
 ```
 * Starting from the outermost level, the first and second-level keys are self-explanatory -- they describe the prompt format and the question type of the configuration that we are currently seeing the results for. 
 * The third-level key defines the dataset and all information about transfer correction in cases where transfer correction has been processed.
-    1. Notice how it says `"ARITH-fromARITH"`; this is to indicate potential cross-dataset RBCorr correction. Since we are looking at `fewshot_Falcon_ARITH.json`, we will only see cross-dataset keys of the format `"ARITH-from{other_yesno_dataset}"`.
-    2. This key will also flag whether the nested result is for a cross-model correction. When it is a same-model correction, as above, the third-level key will not contain any model name. When it is a cross-model correction, the key will be suffixed with the target and source model names, e.g., `"ARITH-fromARITH_Falcon3-10B-Instruct_fromFalcon3-10B-Base"`. This means that the target configuration used `Falcon3-10B-Instruct` to generate LogProbs values. Since we are looking at `fewshot_Falcon_ARITH.json`, we will only see cross-model keys of the format `"ARITH-fromARITH_{FalconModelA}_from{FalconModelB}"`.
-    3. This key will also flag whether the nested result is for a cross-prompt correction. When it is a same-prompt correction, as above, the third-level key will not contain any prompt. When it is a cross-prompt correction, the key will be suffixed with the target and source prompt formats, e.g., `"ARITH-fromARITH_fewshot_frominstronly"`. This means that the target configuration used `fewshot` formatted inputs to generate LogProbs values.
-    4. We will never see a third-level key with more than one kind of transfer occurring. For example, we will never see both cross-dataset and cross-model enabled, which would theoretically yield a key that looks like `"ARITH-fromBABI_Falcon3-10B-Instruct_fromFalcon3-10B-Base`"
 * The fourth-level key denotes the model family. This could be `Falcon`, `Gemma3`, or `Llama3`.
 * The fifth-level key denotes the specific model within the model family. Here, we see `Falcon3-3B-Base`. Note that in the case of cross-model correction, this denotes the target configuration model. If we see a third-level key that looks like `"ARITH-fromARITH_{FalconModelA}_from{FalconModelB}"`, then the fifth-level key will strictly be `"{FalconModelA}"`.
 * The final sixth-level key denotes the calibration set size that was used when running the RBCorr correction. For all same-condition (i.e. non-transfer) RBCorr configurations, we run the correction and store results using a calibration set size of `60`. We run RBCorr correction `2` times using randomly-sampled calibration sets of that size and report the aggregate results, for a robust idea of the performance effects of applying the correction. The transfer correction cases do the same, but using a calibration set size of `180`.
@@ -147,6 +143,6 @@ In general, we want to see a higher or equal median accuracy and lower median tv
 
 ## Takeaway Findings
 
-
-
-Scatterplots showing per-model bias (TVD; $\downarrow$ is better) and accuracy (\%; $\uparrow$ is better) before ($\bullet$) vs. after ($\times$) applying RBCorr correction. We show results on one dataset per each question-type; the bottom-right plot shows results averaged across all ten datasets.
+<img width="1111" height="899" alt="Screenshot 2026-05-10 at 10 51 52 PM" src="https://github.com/user-attachments/assets/c5ced2a9-33a4-4c82-8c61-4628c749eb68" />
+<br>
+<img width="1111" height="545" alt="Screenshot 2026-05-10 at 10 52 36 PM" src="https://github.com/user-attachments/assets/fe6ec69d-48c6-425d-83f7-d45dbc9aa4a3" />
