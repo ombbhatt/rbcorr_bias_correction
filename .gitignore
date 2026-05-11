@@ -13,3 +13,6 @@ old-results/
 old-scripts/
 old-src/
 src/data/
+
+gitignore.txt
+.DS_Store

@@ -42,8 +42,8 @@ LOGPROB_COLS = {
 ROOT_IN   = "../outputs/May-10-2026"
 ROOT_OUT  = "../outputs/May-10-2026"
 
-TOTAL         = 1200
-SEED          = 75
+TOTAL         = 1200    # total items in each dataset 
+SEED          = 75      # random seed for consistent fold generation across runs
 # CALIB_SIZES   = [24, 60, 120, 180, 240]   # must each divide evenly into 2,3,4 for yesno,nli,mcq respectively
 CALIB_SIZES  = [60]
 # CALIB_SIZES   = [80, 120, 200, 300]

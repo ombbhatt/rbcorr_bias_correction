@@ -330,7 +330,8 @@ def main():
     parser.add_argument("--target_dataset", "-td", required=True,
                         choices=list(DATASET_DOMAINS.keys()))
     parser.add_argument("--target_model",   "-tm", required=True,
-                        help="Model name (e.g. Llama-3.1-8B). Family is inferred automatically.")
+                        help="Model name (e.g. Llama-3.1-8B). Family is inferred automatically.",
+                        choices=[m for cfg in MODEL_CONFIGS.values() for m in cfg['models']])
     parser.add_argument("--target_prompt",  "-tp", required=True,
                         choices=["fewshot", "zeroshot", "instronly"])
     parser.add_argument("--batch_size", type=int, default=16)

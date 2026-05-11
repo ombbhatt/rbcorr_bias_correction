@@ -47,9 +47,8 @@ CF_COLS = {
 }
 
 ROOT_IN  = "../outputs/Mar-23-2026"
-ROOT_OUT = "../outputs/Mar-23-2026"   # corrected folders sit alongside plain ones under the same root
+ROOT_OUT = "../outputs/Mar-23-2026" 
 
-# Paths to pre-computed content-free probabilities CSVs, one per task type
 CF_CSV_PATHS = {
     "yesno": "../data/precompute_cc_logprobs/contextfree_probs_yesno.csv",
     "nli":   "../data/precompute_cc_logprobs/contextfree_probs_nli.csv",
@@ -98,13 +97,13 @@ def cc_correct(df, task, cf_probs):
     raw_lp   = df[lp_cols].values.astype(float)   # (n, n_options)
 
     # Step 1: logprobs → probs
-    raw_probs = np.exp(raw_lp)                     # (n, n_options)
+    raw_probs = np.exp(raw_lp)                  
 
     # Step 2: divide by content-free probs (broadcast across rows)
-    corrected_probs = raw_probs / cf_probs[np.newaxis, :]   # (n, n_options)
+    corrected_probs = raw_probs / cf_probs[np.newaxis, :]   
 
     # Step 3: back to log space
-    corrected_lp = np.log(corrected_probs)         # (n, n_options)
+    corrected_lp = np.log(corrected_probs)      
 
     # Build output dataframe
     out = df.copy()
