@@ -140,6 +140,6 @@ In general, we want to see a higher or equal median accuracy and lower median tv
 
 ## Takeaway Findings
 
-<img width="1111" height="899" alt="Screenshot 2026-05-10 at 10 51 52 PM" src="https://github.com/user-attachments/assets/c5ced2a9-33a4-4c82-8c61-4628c749eb68" />
+<img width="776" height="627" alt="Screenshot 2026-05-13 at 5 48 54 AM" src="https://github.com/user-attachments/assets/0dce04ed-b65d-4e74-b264-c2dad90d4c99" />
 <br>
-<img width="1111" height="545" alt="Screenshot 2026-05-10 at 10 52 36 PM" src="https://github.com/user-attachments/assets/fe6ec69d-48c6-425d-83f7-d45dbc9aa4a3" />
+<img width="776" height="376" alt="Screenshot 2026-05-13 at 5 49 16 AM" src="https://github.com/user-attachments/assets/5b78e3ae-e92e-4afd-861a-e15e71255bf7" />
