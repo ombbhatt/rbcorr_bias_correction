@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e  # exit on first error
 
-SCRIPT="rbcorr-transfer-tinyversion.py"
+SCRIPT="rbcorr_transfer_impl.py"
 
 # ── Model / dataset / prompt definitions ────────────────────────────────────
 
@@ -60,7 +60,7 @@ for family_models in "FALCON_MODELS[@]" "LLAMA3_MODELS[@]" "GEMMA3_MODELS[@]"; d
             done
         done
 
-        mcq
+        # mcq
         for prompt in "${ALL_PROMPTS[@]}"; do
             for src in "${MCQ_DATASETS[@]}"; do
                 for tgt in "${MCQ_DATASETS[@]}"; do

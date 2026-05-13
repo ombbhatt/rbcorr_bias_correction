@@ -105,7 +105,7 @@ The JSON files in `results/` follow a standard nested structure to organize the 
 * The third-level key defines the dataset and all information about transfer correction in cases where transfer correction has been processed.
 * The fourth-level key denotes the model family. This could be `Falcon`, `Gemma3`, or `Llama3`.
 * The fifth-level key denotes the specific model within the model family. Here, we see `Falcon3-3B-Base`. Note that in the case of cross-model correction, this denotes the target configuration model. If we see a third-level key that looks like `"ARITH-fromARITH_{FalconModelA}_from{FalconModelB}"`, then the fifth-level key will strictly be `"{FalconModelA}"`.
-* The final sixth-level key denotes the calibration set size that was used when running the RBCorr correction. For all same-condition (i.e. non-transfer) RBCorr configurations, we run the correction and store results using a calibration set size of `60`. We run RBCorr correction `2` times using randomly-sampled calibration sets of that size and report the aggregate results, for a robust idea of the performance effects of applying the correction. The transfer correction cases do the same, but using a calibration set size of `180`.
+* The final sixth-level key denotes the calibration set size that was used when running the RBCorr correction. For all same-condition (i.e. non-transfer) RBCorr configurations, we run the correction and store results using a calibration set size of `60`. We run RBCorr correction `5` times using randomly-sampled calibration sets of that size and report the aggregate results, for a robust idea of the performance effects of applying the correction. The transfer correction cases do the same, but using a calibration set size of `240`.
 
 ### Reported Metrics
 The sixth-level key entails a block of values that looks like this:
@@ -130,9 +130,9 @@ The sixth-level key entails a block of values that looks like this:
   "raw_rsd": 0.09683604985618409,
   "raw_model_dist": "{'Yes': 0.5841666666666666, 'No': 0.41583333333333333}",
   "ground_truth_dist": "{'Yes': 0.5, 'No': 0.5}",
-  "num_calib_sets": 2
+  "num_calib_sets": 20
 ```
-Since we run 2 RBCorr correction for each calibration set size using randomly-sampled calibration sets, we are able to report both single-run and aggregate results on accuracy and bias. The values containing `acc` denote accuracy and the ones containing  `tvd` denote bias value, both ranging from 0-1. For TVD, 0 indicates identical distribution to the ground-truth (which is always uniform distribution), i.e., complete elimination of bias. Across the 100 runs, we report the single best and worst accuracy and tvd values, as well as the mean, median, 25th and 75th percentile values across all runs. We also report the response distribution of the model for the available answer choices before applying any correction (`raw_model_dist`) and after applying RBCorr (other `model_dist` values above). 
+Since we run 20 RBCorr correction for each calibration set size using randomly-sampled calibration sets, we are able to report both single-run and aggregate results on accuracy and bias. The values containing `acc` denote accuracy and the ones containing  `tvd` denote bias value, both ranging from 0-1. For TVD, 0 indicates identical distribution to the ground-truth (which is always uniform distribution), i.e., complete elimination of bias. Across the runs, we report the single best and worst accuracy and tvd values, as well as the mean, median, 25th and 75th percentile values across all runs. We also report the response distribution of the model for the available answer choices before applying any correction (`raw_model_dist`) and after applying RBCorr (other `model_dist` values above). 
 
 In general, we want to see a higher or equal median accuracy and lower median tvd compared to the `raw` counterparts to confirm that RBCorr was able to reliably decrease bias while preserving or increasing accuracy.
 

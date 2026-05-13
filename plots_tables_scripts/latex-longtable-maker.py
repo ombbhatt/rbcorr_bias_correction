@@ -153,3 +153,6 @@ if __name__ == "__main__":
     import sys
     path = sys.argv[1] if len(sys.argv) > 1 else "results.csv"
     print(build_table(path))
+    # save to file if desired:
+    with open("latex_table.tex", "w") as f:
+        f.write(build_table(path))

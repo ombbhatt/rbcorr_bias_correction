@@ -29,8 +29,9 @@ MODEL_FAMILIES = {
     "Gemma3": ["gemma-3-27b-pt",  "gemma-3-27b-it",  "gemma-3-12b-pt", "gemma-3-12b-it"],
 }
 
-# PROMPT_LEVELS = ["zeroshot", "instronly", "fewshot"]
-PROMPT_LEVELS = ["instronly", "fewshot"]
+PROMPT_LEVELS = ["zeroshot", "instronly", "fewshot"]
+# PROMPT_LEVELS = ["instronly", "fewshot"]
+# PROMPT_LEVELS = ["zeroshot"]
 NO_ZEROSHOT   = {"SNLI", "MNLI"}
 
 LOGPROB_COLS = {
@@ -39,8 +40,8 @@ LOGPROB_COLS = {
     "mcq":   ["oa_logprob", "ob_logprob", "oc_logprob", "od_logprob"],
 }
 
-ROOT_IN   = "../outputs/May-10-2026"
-ROOT_OUT  = "../outputs/May-10-2026"
+ROOT_IN   = "../outputs/Mar-23-2026"
+ROOT_OUT  = "../outputs/Mar-23-2026"
 
 TOTAL         = 1200    # total items in each dataset 
 SEED          = 75      # random seed for consistent fold generation across runs
@@ -50,9 +51,9 @@ CALIB_SIZES  = [60]
 
 # ── K-fold class-balanced index generation ──────────────────────────────────
 
-# FIXED_K = TOTAL // min(CALIB_SIZES)   # 1200 // 24 = 50, need atleast 50 to give a chance to 24 to cover all items in dataset
+FIXED_K = TOTAL // min(CALIB_SIZES)   # 1200 // 24 = 50, need atleast 50 to give a chance to 24 to cover all items in dataset
 # FIXED_K = 15 # effective access to only 120 items in the entire correction process.
-FIXED_K = 5
+# FIXED_K = 5
 
 def get_calibration_indices(df, answer_col, options, calib_count, calib_run, seed=SEED):
     """

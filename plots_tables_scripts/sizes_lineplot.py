@@ -29,13 +29,16 @@ TASK_META = {
     "mcq": {"datasets": ["MMLU-HUMANITIES",
                          "MMLU-SOCIAL_SCI"],
             "type_key": "MCQ"},
+    # "mcq": {"datasets": ["MMLU-STEM",
+    #                      "MMLU-OTHERS"],
+    #         "type_key": "MCQ"},
 }
 
 # CAL_SIZES    = [20, 40, 80, 120]
 # CAL_SIZES    = [80, 120, 200, 300]
 CAL_SIZES    = [24, 60, 120, 180, 240]
 CAL_KEYS     = [str(s) for s in CAL_SIZES]
-PROMPT_LEVEL = "fewshot"
+PROMPT_LEVEL = "instronly"
 SIGMA        = 2.0    # ±2σ variability band
 
 # ── helper ────────────────────────────────────────────────────────────────────
@@ -131,9 +134,13 @@ def plot_one(ax, cal_means, cal_upper, cal_lower, baseline, title):
     ax.plot(xs, means, color=BLUE_LINE, linewidth=2.2, zorder=3)
     ax.axhline(baseline, color=GRAY_DASH, linewidth=1.4, linestyle="--", zorder=2)
     ax.axvline(VLINE_X,  color="black",   linewidth=0.9, linestyle=":",  zorder=2)
-
-    y_min = min(lowers.min(), baseline)
-    y_max = max(uppers.max(), baseline)
+    print(f"  [debug] {title} → baseline={baseline:.3f}, means={means}, lowers={lowers}, uppers={uppers}")
+    # remove nans from means/lowers/uppers for y-axis scaling:
+    valid_means  = means[~np.isnan(means)]
+    valid_lowers = lowers[~np.isnan(lowers)]
+    valid_uppers = uppers[~np.isnan(uppers)]
+    y_min = min(valid_lowers.min(), baseline)
+    y_max = max(valid_uppers.max(), baseline)
     pad   = (y_max - y_min) * 0.2
     ax.set_ylim(y_min - pad, y_max + pad)
 

@@ -5,7 +5,7 @@ import numpy as np
 from scipy import stats
 
 # ── Load data ──────────────────────────────────────────────────────────────────
-df = pd.read_csv("../results/comparison_mar23_instronly_n60.csv")
+df = pd.read_csv("../results/comparison_mar23_instronly_n60-N60K20.csv")
 
 # ── Model color/style map ──────────────────────────────────────────────────────
 MODEL_COLORS = {
@@ -43,9 +43,11 @@ def get_points(sub):
     for _, r in sub.iterrows():
         raw_acc  = r["raw_acc"] * 100
         raw_tvd  = r["raw_tvd"]
+        raw_rsd = r["raw_rsd"]
         rb_acc   = (r["raw_acc"] + r["rb_acc"]) * 100
         rb_tvd   = r["raw_tvd"] + r["rb_tvd"]
-        rows.append((r["model"], raw_acc, raw_tvd, rb_acc, rb_tvd))
+        rb_rsd = r["raw_rsd"] + r["rb_rsd"]
+        rows.append((r["model"], raw_acc, raw_tvd, raw_rsd, rb_acc, rb_tvd, rb_rsd))
     return rows
 
 def get_avg_points(df):
@@ -54,9 +56,11 @@ def get_avg_points(df):
     for model, grp in df.groupby("model"):
         raw_acc = grp["raw_acc"].mean() * 100
         raw_tvd = grp["raw_tvd"].mean()
+        raw_rsd = grp["raw_rsd"].mean()
         rb_acc  = (grp["raw_acc"] + grp["rb_acc"]).mean() * 100
         rb_tvd  = (grp["raw_tvd"] + grp["rb_tvd"]).mean()
-        rows.append((model, raw_acc, raw_tvd, rb_acc, rb_tvd))
+        rb_rsd  = (grp["raw_rsd"] + grp["rb_rsd"]).mean()
+        rows.append((model, raw_acc, raw_tvd, raw_rsd, rb_acc, rb_tvd, rb_rsd))
     return rows
 
 
@@ -74,7 +78,7 @@ for ax, (dataset, title) in zip(axes, PANELS):
     raw_tvds, raw_accs = [], []
     rb_tvds,  rb_accs  = [], []
 
-    for model, raw_acc, raw_tvd, rb_acc, rb_tvd in pts:
+    for model, raw_acc, raw_tvd, raw_rsd, rb_acc, rb_tvd, rb_rsd in pts:
         color = MODEL_COLORS.get(model, "gray")
 
         # Dotted line connecting raw → rb for this model
@@ -127,12 +131,12 @@ fig.legend(handles=legend_handles + [circle_h, cross_h, empty_h],
            loc="center left", ncol=1, fontsize=11, labelspacing=1.5,
            frameon=True, bbox_to_anchor=(1.02, 0.5), borderaxespad=0.0)
 
-plt.suptitle("Bias (TVD ↓) vs Accuracy (% ↑): Before (∙) and After (×) RBCorr, Instruction-only Prompt",
+plt.suptitle("Bias (TVD ↓) vs Accuracy (% ↑): Before (∙) and After (×) RBCorr, Instronly Prompt",
              fontsize=16, fontweight="bold", y=0.98, x=0.63)
 
 # plt.tight_layout(rect=[0, 0, 1, 1])  # Leave space for legend
 # set standard tight layout:
 plt.tight_layout()
-plt.savefig("../results/mar23_bias_accuracy_scatter_instronly.png", dpi=150, bbox_inches="tight")
+plt.savefig("../results/mar23_bias_accuracy_scatter_instronly_TVD_N60K20.png", dpi=150, bbox_inches="tight")
 plt.show()
-print("Saved to ../results/mar23_bias_accuracy_scatter_instronly.png")
+print("Saved to ../results/mar23_bias_accuracy_scatter_instronly_TVD_N60K20.png")

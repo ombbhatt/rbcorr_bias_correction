@@ -4,7 +4,7 @@ from pathlib import Path
 
 # ── Paths ────────────────────────────────────────────────────────────────────
 ROOT         = Path("../outputs/Mar-23-2026")
-RESULTS_DIR  = Path("../results/Mar-23-2026")
+RESULTS_DIR  = Path("../results/Mar-23-2026_N60K20")
 
 # ── Prompt levels ────────────────────────────────────────────────────────────
 PROMPT_LEVELS = ["zeroshot", "instronly", "fewshot"]
@@ -126,14 +126,14 @@ RB_BASE_NAMES = {
 BATCH_SIZES  = [60]
 TOTAL_DATASET_SIZE = 1200
 # FIXED_K = TOTAL_DATASET_SIZE // min(BATCH_SIZES)
-# FIXED_K = 15  # Set a fixed k for all batch sizes to ensure consistency in results and avoid issues with small batch sizes
-FIXED_K = 5  # Set a fixed k for all batch sizes to ensure consistency in results and avoid issues with small batch sizes
+FIXED_K = 20  # Set a fixed k for all batch sizes to ensure consistency in results and avoid issues with small batch sizes
+# FIXED_K = 5  # Set a fixed k for all batch sizes to ensure consistency in results and avoid issues with small batch sizes
 # BATCH_K = {n: TOTAL_DATASET_SIZE // n for n in BATCH_SIZES}
 BATCH_K = {n: FIXED_K for n in BATCH_SIZES}
 
 # Transfer correction is only run at this batch size
-TRANSFER_BATCH_SIZE = 240
-BATCH_K[TRANSFER_BATCH_SIZE] = 5 
+# TRANSFER_BATCH_SIZE = 240
+# BATCH_K[TRANSFER_BATCH_SIZE] = 5
 
 # ── Output results directory structure ───────────────────────────────────────
 # results/{method}_{qtype}/{promptlevel}_{family}_{dataset}.json

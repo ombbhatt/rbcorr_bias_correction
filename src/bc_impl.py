@@ -42,8 +42,8 @@ LOGPROB_COLS = {
 ROOT_IN  = "../outputs/Mar-23-2026"
 ROOT_OUT = "../outputs/Mar-23-2026"
 
-TOTAL        = 1200
-SEED         = 75
+TOTAL        = 1200     # total items in each dataset 
+SEED         = 75       # random seed for consistent fold generation across runs
 # BATCH_SIZES  = [20, 40, 80, 120]   # must each divide evenly into TOTAL
 BATCH_SIZES   = [60]
 

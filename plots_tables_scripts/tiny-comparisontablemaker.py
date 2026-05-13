@@ -23,9 +23,9 @@ from pathlib import Path
 
 # ── Config ──────────────────────────────────────
 
-RESULTS_DIR = Path("../results/Mar-23-2026")
+RESULTS_DIR = Path("../results/Mar-23-2026_N60K20")
 
-PROMPT_LEVEL = "instronly"
+PROMPT_LEVEL = "fewshot"
 BATCH_SIZE   = 60
 
 DATASET_ORDER = [
@@ -84,7 +84,7 @@ MODEL_ORDER = [
 BATCH_KEY   = str(BATCH_SIZE)
 TOTAL       = 1200
 # K           = TOTAL // BATCH_SIZE   # 30
-K          = 5  
+K          = 20  
 
 
 # ── JSON loading ──────────────────────────────────────────────────────────────
@@ -322,7 +322,7 @@ def main():
     print_table(rows)
 
     # if args.csv:
-    save_csv(rows, Path(f"../results/comparison_mar23_{PROMPT_LEVEL}_n{BATCH_SIZE}-NEW.csv"))
+    save_csv(rows, Path(f"../results/comparison_mar23_{PROMPT_LEVEL}_n{BATCH_SIZE}-N60K20.csv"))
 
 
 if __name__ == "__main__":

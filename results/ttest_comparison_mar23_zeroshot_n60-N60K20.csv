@@ -1,0 +1,19 @@
+metric,direction,comparison,mean_diff,t_stat,p_value,significance,n_pairs
+Accuracy,higher is better,RB vs Baseline,+0.0266,+6.1300,1.99e-08,***,96
+Accuracy,higher is better,BC vs Baseline,+0.0245,+5.6964,1.36e-07,***,96
+Accuracy,higher is better,CC vs Baseline,-0.0553,-5.1158,1.62e-06,***,96
+Accuracy,higher is better,RB vs BC,+0.0022,+4.1863,6.33e-05,***,96
+Accuracy,higher is better,RB vs CC,+0.0819,+8.0532,2.33e-12,***,96
+Accuracy,higher is better,BC vs CC,+0.0798,+7.9244,4.34e-12,***,96
+TVD,lower is better,RB vs Baseline,-0.1170,-7.6911,1.34e-11,***,96
+TVD,lower is better,BC vs Baseline,-0.1176,-7.7728,9.04e-12,***,96
+TVD,lower is better,CC vs Baseline,+0.0843,+4.7995,5.90e-06,***,96
+TVD,lower is better,RB vs BC,+0.0006,+1.0802,0.2828,,96
+TVD,lower is better,RB vs CC,-0.2013,-11.2944,2.93e-19,***,96
+TVD,lower is better,BC vs CC,-0.2019,-11.3140,2.67e-19,***,96
+RSD,lower is better,RB vs Baseline,-0.1792,-6.4130,5.52e-09,***,96
+RSD,lower is better,BC vs Baseline,-0.1794,-6.4475,4.71e-09,***,96
+RSD,lower is better,CC vs Baseline,+0.1734,+4.8632,4.57e-06,***,96
+RSD,lower is better,RB vs BC,+0.0003,+0.3452,0.7307,,96
+RSD,lower is better,RB vs CC,-0.3526,-10.2596,4.61e-17,***,96
+RSD,lower is better,BC vs CC,-0.3529,-10.2576,4.66e-17,***,96

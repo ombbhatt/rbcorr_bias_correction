@@ -18,7 +18,7 @@ from config import (
     PROMPT_LEVELS, NO_ZEROSHOT,
     DATASETS, MODEL_FAMILIES, MODEL_TO_FAMILY,
     CC_FOLDERS, BC_BASE_NAMES, RB_BASE_NAMES,
-    BATCH_SIZES, BATCH_K, TRANSFER_BATCH_SIZE,
+    BATCH_SIZES, BATCH_K, # TRANSFER_BATCH_SIZE,
     RAW_LOGPROB_COLS, GT_COL,
     TASK_TO_SHORT,
 )
@@ -221,7 +221,8 @@ def iter_rb_files() -> Iterator[dict]:
         for dataset, (task_type, domain) in DATASETS.items():
             if prompt == "zeroshot" and dataset in NO_ZEROSHOT:
                 continue
-            for n in BATCH_SIZES + [TRANSFER_BATCH_SIZE]:  # Look for all batch sizes, but only TRANSFER_BATCH_SIZE will have transfer files
+            # for n in BATCH_SIZES + [TRANSFER_BATCH_SIZE]:  # Look for all batch sizes, but only TRANSFER_BATCH_SIZE will have transfer files
+            for n in BATCH_SIZES:
                 folder_name = _method_folder("rb", task_type, n)
                 for family, models in MODEL_FAMILIES.items():
                     for model in models:
@@ -231,43 +232,42 @@ def iter_rb_files() -> Iterator[dict]:
                             warnings.warn(f"Missing RB dir: {base_dir}")
                             continue
 
-                        # Standard (non-transfer) file
-                        if n != TRANSFER_BATCH_SIZE:
-                            std_path = base_dir / f"{model}_results.csv"
-                            if std_path.exists():
-                                yield dict(
-                                    prompt=prompt, dataset=dataset,
-                                    task_type=task_type, family=family,
-                                    model=model, batch_size=n,
-                                    path=std_path,
-                                    is_transfer=False,
-                                    transfer_type=None,
-                                    source_model=None,
-                                    source_dataset=None,
-                                    source_prompt=None,
-                                )
-                            else:
-                                warnings.warn(f"Missing RB file: {std_path}")
-                            continue
-
-                        # Transfer files — only at n=40
-                        # if n != TRANSFER_BATCH_SIZE:
-                        #     continue
-
-                        for tf_path in sorted(base_dir.glob(f"{model}_results_from_*.csv")):
-                            parsed = _parse_transfer_filename(tf_path.name, model,
-                                                              prompt, dataset, family)
-                            if parsed is None:
-                                warnings.warn(f"Could not parse transfer filename: {tf_path}")
-                                continue
+                        # Standard (non-transfer) file — always present for every batch size
+                        std_path = base_dir / f"{model}_results.csv"
+                        if std_path.exists():
                             yield dict(
                                 prompt=prompt, dataset=dataset,
                                 task_type=task_type, family=family,
                                 model=model, batch_size=n,
-                                path=tf_path,
-                                is_transfer=True,
-                                **parsed,
+                                path=std_path,
+                                is_transfer=False,
+                                transfer_type=None,
+                                source_model=None,
+                                source_dataset=None,
+                                source_prompt=None,
                             )
+                        else:
+                            warnings.warn(f"Missing RB file: {std_path}")
+
+                        # Transfer files — only at TRANSFER_BATCH_SIZE
+                        # # Transfer files — only at TRANSFER_BATCH_SIZE
+                        # if n != TRANSFER_BATCH_SIZE:
+                        #     continue
+
+                        # for tf_path in sorted(base_dir.glob(f"{model}_results_from_*.csv")):
+                        #     parsed = _parse_transfer_filename(tf_path.name, model,
+                        #                                       prompt, dataset, family)
+                        #     if parsed is None:
+                        #         warnings.warn(f"Could not parse transfer filename: {tf_path}")
+                        #         continue
+                        #     yield dict(
+                        #         prompt=prompt, dataset=dataset,
+                        #         task_type=task_type, family=family,
+                        #         model=model, batch_size=n,
+                        #         path=tf_path,
+                        #         is_transfer=True,
+                        #         **parsed,
+                        #     )
 
 
 def _parse_transfer_filename(filename: str, target_model: str,
@@ -335,10 +335,11 @@ def build_rb_transfer_key(record: dict) -> str:
     dataset_part = f"{target_dataset}-from{src_dataset}"
 
     # Optional suffixes
-    suffix = ""
-    if transfer_type == "model":
-        suffix = f"_{record['model']}_from{record['source_model']}"
-    elif transfer_type == "prompt":
-        suffix = f"_{record['prompt']}_from{record['source_prompt']}"
+    # suffix = ""
+    # if transfer_type == "model":
+    #     suffix = f"_{record['model']}_from{record['source_model']}"
+    # elif transfer_type == "prompt":
+    #     suffix = f"_{record['prompt']}_from{record['source_prompt']}"
 
-    return dataset_part + suffix
+    # return dataset_part + suffix
+    return dataset_part
