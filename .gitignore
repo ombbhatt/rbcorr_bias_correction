@@ -14,5 +14,7 @@ old-scripts/
 old-src/
 src/data/
 
+rename_llama_files.py
+
 gitignore.txt
 .DS_Store
