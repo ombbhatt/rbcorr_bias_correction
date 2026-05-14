@@ -1,6 +1,18 @@
 # RBCorr: Response Bias Correction in Language Models
 
-This repository serves as the codebase for our work on exploring LogProbs-based bias correction in LLMs. You can find the paper here: 
+This repository serves as the codebase for our work on exploring LogProbs-based bias correction in LLMs. You can find the paper here: https://arxiv.org/abs/2602.12445
+
+```
+@misc{bhatt2026rbcorrresponsebiascorrection,
+      title={RBCorr: Response Bias Correction in Language Models}, 
+      author={Om Bhatt and Anna A. Ivanova},
+      year={2026},
+      eprint={2602.12445},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2602.12445}, 
+}
+```
 
 ---
 
@@ -78,7 +90,7 @@ The repository contains four home folders:
    1. The JSON files are split into subfolders according to the correction method and question type. We have `corrmethods = [bc, cc, rb]` where `rb` is our method, and `qtypes = [yn, nli, mcq]`, and thus the subfolders containing the JSON files are named as `results/{corrmethod}_{qtype}/`. The JSON files within them are named using the convention `{prompt-type}_{model-family}_{dataset}.json`.
    2. The `comparison...` and `ttest...` CSV files are generated based on the result JSONs from the `results/` folder, using analysis scripts from the  `plots_tables_scripts/` folder; the plots are subsequently created using these CSV files also using scripts from the aforementioned folder.
 
-5. **`plots_tables_scripts/`:** Contains the scripts that use the `results/` JSON files to create the plots and tables used to compare and analyze model performance and correction efficacy. Not explained here for brevity.
+5. **`plots_tables_scripts/`:** Contains the scripts that use the `results/` JSON files to create the plots and tables used to compare and analyze model performance and correction efficacy.
 
 **NOTE-1:** Unless you want to re-create the full per-question LogProbs CSV files for our test suite, or run new models or datasets (either of which require compute power and storage), you do NOT need to run this primary script in `src/` at all! In fact, we do not even include the `outputs/` folder containing the per-item plain logprobs, since it takes up large amounts of data. The only purpose of these LogProbs CSV files is to serve as the input to the metrics processor scripts (in `extract_metrics/`), in order to ultimately generate the JSON-formatted performance statistics in `results/`. We already provide all of the JSON files that we generated across our test suite in `results/`! 
 
